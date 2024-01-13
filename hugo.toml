@@ -1,4 +1,36 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'qubt'
+baseURL = "https://cagatayturkann.github.ip" 
+languageCode = "en-us"
+title = "Çağatay Türkan | Blog"
+theme = "qubt"
+DefaultContentLanguage = "en"
+
+[params]
+    project_display_limit = 4
+    preserveTaxonomyNames = true
+    sitemap_priority = "0.75"
+    paginate = 12
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "blog"
+    url = "/blog"
+    weight = 2
+
+[[menu.main]]
+    name = "tags"
+    url = "/tags"
+    weight = 3
+
+[[menu.main]]
+    name = "My Projects"
+    url = "/page/project"
+    weight = 4
+
+[[menu.main]]
+    name = "about me"
+    url = "/page/about"
+    weight = 5
