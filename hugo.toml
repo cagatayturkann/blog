@@ -4,11 +4,26 @@ title = "Çağatay Türkan | Blog"
 theme = "qubt"
 DefaultContentLanguage = "en"
 
+
+
 [params]
     project_display_limit = 4
     preserveTaxonomyNames = true
     sitemap_priority = "0.75"
     paginate = 12
+    [[params.links]]
+    github = "https://github.com/cagatayturkann"
+    linkedin = "https://www.linkedin.com/in/cagatayturkann/"
+    x-twitter = "https://twitter.com/cagatayturkann"
+    facebook= "https://facebook.com/cagatayturkann"
+    instagram= "https://instagram.com/cagatayturkann"
+    
+[params.author]
+    name = "Qubt"
+    image = "author.jpeg"
+    greeting = "A personal blog theme for Hugo :evergreen_tree:"
+    icon = ":wave:"    
+    
 
 [[menu.main]]
     name = "Home"
@@ -16,21 +31,18 @@ DefaultContentLanguage = "en"
     weight = 1
 
 [[menu.main]]
-    name = "blog"
-    url = "/blog"
-    weight = 2
+    name = "About"
+    url = "/about"
+    weight = 2    
 
 [[menu.main]]
-    name = "tags"
-    url = "/tags"
+    name = "Projects"
+    url = "/project"
     weight = 3
 
 [[menu.main]]
-    name = "My Projects"
-    url = "/page/project"
+    name = "Blog"
+    url = "/blog"
     weight = 4
 
-[[menu.main]]
-    name = "about me"
-    url = "/page/about"
-    weight = 5
+
