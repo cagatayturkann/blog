@@ -1,0 +1,27 @@
+name: Deploy to cagatayturkan.github.io
+
+on:
+  push:
+    branches:
+      - main  # Burada hangi branch'e push yapılınca çalışacağını ayarlayabilirsiniz.
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Blog Repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'username/blog'  # 'username' kısmını kendi GitHub kullanıcı adınız ile değiştirin
+      
+    - name: Build with Hugo
+      run: hugo -D  # Add other hugo build command options as needed
+
+    - name: Deploy to cagatayturkan.github.io
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # Önceden oluşturduğunuz GitHub Access Token'ı burada kullanın.
+        external_repository: 'username/cagatayturkan.github.io'
+        publish_branch: 'main'  # 'cagatayturkan.github.io' reposunun hangi branch'ine deploy edileceğini belirtin
+        publish_dir: './public'
