@@ -3,7 +3,7 @@
 type: misc
 
 # change these
-jobTitle: Computer Engineer
+jobTitle: Computer Engineer M.Sc
 name: Çağatay Türkan
 bio: true
 icon: ":coffee:"
