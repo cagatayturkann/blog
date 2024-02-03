@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Blog Repository
       uses: actions/checkout@v2
       with:
-        repository: 'username/blog'  # 'username' kısmını kendi GitHub kullanıcı adınız ile değiştirin
+        repository: 'cagatayturkann/blog'  # 'username' kısmını kendi GitHub kullanıcı adınız ile değiştirin
       
     - name: Build with Hugo
       run: hugo -D  # Add other hugo build command options as needed
