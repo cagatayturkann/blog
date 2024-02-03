@@ -23,5 +23,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}  # Önceden oluşturduğunuz GitHub Access Token'ı burada kullanın.
         external_repository: 'username/cagatayturkan.github.io'
-        publish_branch: 'main'  # 'cagatayturkan.github.io' reposunun hangi branch'ine deploy edileceğini belirtin
+        publish_branch: 'master'  # 'cagatayturkan.github.io' reposunun hangi branch'ine deploy edileceğini belirtin
         publish_dir: './public'
