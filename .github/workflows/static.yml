@@ -20,7 +20,7 @@ jobs:
         hugo-version: '0.82.0'  
       
     - name: Build with Hugo
-      run: hugo  # Add other hugo build command options as needed
+      run: hugo help new # Add other hugo build command options as needed
       working-directory: /
 
     - name: Deploy to cagatayturkan.github.io
