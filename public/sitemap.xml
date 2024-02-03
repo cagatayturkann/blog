@@ -2,9 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cagatayturkann.github.ip/blog/</loc>
+    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkann.github.ip/blog/post1/</loc>
+    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://cagatayturkann.github.ip/</loc>
+    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkann.github.ip/blog/post2/</loc>
+    <lastmod>2023-11-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkann.github.ip/blog/post3/</loc>
+    <lastmod>2023-11-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkann.github.ip/blog/post4/</loc>
+    <lastmod>2023-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkann.github.ip/about/</loc>
+  </url><url>
+    <loc>https://cagatayturkann.github.ip/pages/about/</loc>
   </url><url>
     <loc>https://cagatayturkann.github.ip/categories/</loc>
+  </url><url>
+    <loc>https://cagatayturkann.github.ip/pages/</loc>
   </url><url>
     <loc>https://cagatayturkann.github.ip/tags/</loc>
   </url>

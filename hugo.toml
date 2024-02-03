@@ -1,6 +1,6 @@
-baseURL = "https://cagatayturkann.github.ip" 
+baseURL = "/" 
 languageCode = "en-us"
-title = "Çağatay Türkan | Blog"
+title = "Çağatay Türkan"
 theme = "qubt"
 DefaultContentLanguage = "en"
 
@@ -10,7 +10,7 @@ DefaultContentLanguage = "en"
     project_display_limit = 4
     preserveTaxonomyNames = true
     sitemap_priority = "0.75"
-    paginate = 12
+    paginate = 13
     [[params.links]]
     github = "https://github.com/cagatayturkann"
     linkedin = "https://www.linkedin.com/in/cagatayturkann/"
@@ -19,9 +19,9 @@ DefaultContentLanguage = "en"
     instagram= "https://instagram.com/cagatayturkann"
     
 [params.author]
-    name = "Qubt"
-    image = "author.jpeg"
-    greeting = "A personal blog theme for Hugo :evergreen_tree:"
+    name = "Çağatay Türkan"
+    image = "/images/author.jpeg"
+    greeting = "A personal blog for Computer Engineer :computer:"
     icon = ":wave:"    
     
 
@@ -35,14 +35,18 @@ DefaultContentLanguage = "en"
     url = "/about"
     weight = 2    
 
-[[menu.main]]
-    name = "Projects"
-    url = "/project"
-    weight = 3
+#[[menu.main]]
+    #name = "Projects"
+    #url = "/projects"
+    #weight = 3
 
 [[menu.main]]
-    name = "Blog"
+    name = "Blog-EN"
     url = "/blog"
     weight = 4
 
+[[menu.main]]
+    name = "Blog-TR"
+    url = "/blog-tr"
+    weight = 5
 
