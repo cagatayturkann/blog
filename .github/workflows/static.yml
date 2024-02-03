@@ -18,7 +18,7 @@ jobs:
     - name: Deploy to cagatayturkan.github.io
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_token: ${{ secrets.DEPLOY_TOKEN }}  # Önceden oluşturduğunuz GitHub Access Token'ı burada kullanın.
+        deploy_key: ${{ secrets.DEPLOY_TOKEN }}  # Önceden oluşturduğunuz GitHub Access Token'ı burada kullanın.
         external_repository: 'username/cagatayturkan.github.io'
         publish_branch: 'master'  # 'cagatayturkan.github.io' reposunun hangi branch'ine deploy edileceğini belirtin
         publish_dir: './public'
