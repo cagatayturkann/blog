@@ -20,13 +20,13 @@ jobs:
         hugo-version: '0.82.0'  
       
     - name: Build with Hugo
-      run: hugo help new # Add other hugo build command options as needed
-      working-directory: /
+      run: hugo # Add other hugo build command options as needed
+      working-directory: './'
 
     - name: Deploy to cagatayturkan.github.io
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.DEPLOY_TOKEN }}  # Önceden oluşturduğunuz GitHub Access Token'ı burada kullanın.
+        deploy_token: ${{ secrets.DEPLOY_TOKEN }}  # Önceden oluşturduğunuz GitHub Access Token'ı burada kullanın.
         external_repository: 'username/cagatayturkan.github.io'
         publish_branch: 'master'  # 'cagatayturkan.github.io' reposunun hangi branch'ine deploy edileceğini belirtin
         publish_dir: './public'
