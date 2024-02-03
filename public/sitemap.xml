@@ -2,32 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cagatayturkann.github.ip/blog/</loc>
+    <loc>/blog-tr/appstore-connect-ile-jwt-token-nasil-olusturulur/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cagatayturkann.github.ip/blog/post1/</loc>
+    <loc>/blog/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cagatayturkann.github.ip/</loc>
+    <loc>/projects/post1/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cagatayturkann.github.ip/blog/post2/</loc>
+    <loc>/blog-tr/</loc>
+    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/blog/how-to-create-jwt-token-using-app-store-connect-api/</loc>
+    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/projects/</loc>
+    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/projects/post2/</loc>
     <lastmod>2023-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cagatayturkann.github.ip/blog/post3/</loc>
+    <loc>/projects/post3/</loc>
     <lastmod>2023-11-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cagatayturkann.github.ip/blog/post4/</loc>
+    <loc>/projects/post4/</loc>
     <lastmod>2023-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cagatayturkann.github.ip/about/</loc>
+    <loc>/about/</loc>
   </url><url>
-    <loc>https://cagatayturkann.github.ip/pages/about/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>https://cagatayturkann.github.ip/categories/</loc>
-  </url><url>
-    <loc>https://cagatayturkann.github.ip/pages/</loc>
-  </url><url>
-    <loc>https://cagatayturkann.github.ip/tags/</loc>
+    <loc>/tags/</loc>
   </url>
 </urlset>
