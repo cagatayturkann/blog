@@ -16,11 +16,11 @@ jobs:
         repository: 'cagatayturkann/blog'  # 'username' kısmını kendi GitHub kullanıcı adınız ile değiştirin
         
     - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh/
-          echo "${{ secrets.deploy_token }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      run: | 
+        mkdir -p ~/.ssh/
+        echo "${{ secrets.DEPLOY_TOKEN }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
    
     - name: Deploy to cagatayturkan.github.io
