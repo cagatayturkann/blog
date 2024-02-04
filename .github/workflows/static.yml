@@ -22,7 +22,11 @@ jobs:
           echo "${{ secrets.DEPLOY_TOKEN }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-
+          
+      - name: Preserve CNAME file
+        run: |
+          cp cagatayturkann.github.io/CNAME blog/public/CNAME
+          
       - name: Deploy to cagatayturkann.github.io
         run: |
           cd blog/public  # Bu adım, "blog/public" dizinine geçiş yapar
