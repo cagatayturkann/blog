@@ -31,4 +31,4 @@ jobs:
           git init
           git add .
           git commit -m "Deploy to cagatayturkan.github.io"
-          git push --force "git@github.com:cagatayturkann/cagatayturkan.github.io.git" main
+          git push --force "git@github.com:cagatayturkann/cagatayturkan.github.io.git" master
