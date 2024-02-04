@@ -26,6 +26,10 @@ jobs:
       - name: Preserve CNAME file
         run: |
           cp blog/CNAME blog/public/CNAME
+
+      - name: Set Commit Message
+        id: set_commit_msg
+        run: echo "::set-output name=commit_msg::$(git log --format=%B -n 1)"   
           
       - name: Deploy to cagatayturkann.github.io
         run: |
@@ -34,5 +38,5 @@ jobs:
           git config --global user.name "Çağatay Türkan"
           git init
           git add .
-          git commit -m "Deploy to cagatayturkan.github.io"
+          git commit -m "Changes > ${{ steps.set_commit_msg.outputs.commit_msg }}"
           git push --force "git@github.com:cagatayturkann/cagatayturkann.github.io.git" master
