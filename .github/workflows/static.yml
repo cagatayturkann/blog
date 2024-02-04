@@ -25,7 +25,7 @@ jobs:
           
       - name: Preserve CNAME file
         run: |
-          cp cagatayturkann.github.io/CNAME blog/public/CNAME
+          cp blog/CNAME blog/public/CNAME
           
       - name: Deploy to cagatayturkann.github.io
         run: |
