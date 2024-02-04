@@ -19,9 +19,7 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "çağatay" "${{ secrets.deploy_key }}"
-          echo "çaça" "${{ secrets.DEPLOY_TOKEN }}"
-          echo "${{ secrets.deploy_key }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.DEPLOY_TOKEN }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
