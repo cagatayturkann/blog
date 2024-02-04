@@ -1,4 +1,4 @@
-name: Deploy to cagatayturkan.github.io
+name: Deploy to cagatayturkann.github.io
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
-      - name: Deploy to cagatayturkan.github.io
+      - name: Deploy to cagatayturkann.github.io
         run: |
           cd blog/public  # Bu adım, "blog/public" dizinine geçiş yapar
           git config --global user.email "cagatayturkann@gmail.com"
@@ -31,4 +31,4 @@ jobs:
           git init
           git add .
           git commit -m "Deploy to cagatayturkan.github.io"
-          git push --force "git@github.com:cagatayturkann/cagatayturkan.github.io.git" master
+          git push --force "git@github.com:cagatayturkann/cagatayturkann.github.io.git" master
