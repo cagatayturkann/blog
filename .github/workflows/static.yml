@@ -24,9 +24,12 @@ jobs:
 
    
     - name: Deploy to cagatayturkan.github.io
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.DEPLOY_TOKEN }}  # Önceden oluşturduğunuz GitHub Access Token'ı burada kullanın.
-        external_repository: 'username/cagatayturkan.github.io'
-        publish_branch: 'master'  # 'cagatayturkan.github.io' reposunun hangi branch'ine deploy edileceğini belirtin
-        publish_dir: './public'
+      run: |
+        cd cagatayturkan.github.io  # Bu adım, "cagatayturkan.github.io" deposuna geçiş yapar
+        git config --global user.email "cagatayturkann@gmail.com"
+        git config --global user.name "Çağatay Türkan"
+        git pull origin master  # Güncellemeleri almak için mevcut içeriği çekin
+        cp -R $GITHUB_WORKSPACE/blog/public/* .  # Yeni içeriği kopyalayın
+        git add .
+        git commit -m "Deploy to cagatayturkan.github.io"
+        git push origin master  # Değişiklikleri "cagatayturkan.github.io" reposuna itin
