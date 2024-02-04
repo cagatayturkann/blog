@@ -122,4 +122,4 @@ Bu işlem, App Store Connect API'ye erişim için kullanabileceğimiz uzun bir t
 
 Bu yazıdma, App Store Connect API için Node.js kullanarak bir JWT tokenı nasıl oluşturulur konusunu anlatmaya çalıştım. Bu, API'ye olan isteklerinizi doğrulamanın kritik bir adımıdır. Gelecekteki yazılarda, App Store Connect API'yi kullanmanın diğer yollarını anlatmaya çalışacağım. Okuduğunuz için teşekkür ederim.
 
-[Bu yazıyı İngilizce oku](https://cagatayturkan.com/blog/how-to-create-jwt-token-using-app-store-connect-api/)
+[Bu yazıyı İngilizce oku](https://cagatayturkan.com/blog-en/how-to-create-jwt-token-using-app-store-connect-api/)

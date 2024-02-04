@@ -42,7 +42,7 @@ DefaultContentLanguage = "en"
 
 [[menu.main]]
     name = "Blog-EN"
-    url = "/blog"
+    url = "/blog-en"
     weight = 4
 
 [[menu.main]]
