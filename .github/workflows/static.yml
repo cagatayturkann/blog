@@ -19,7 +19,7 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "${{ secrets.deploy_key }"
+          echo "${{ secrets.deploy_key }}"
           echo "${{ secrets.deploy_key }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
