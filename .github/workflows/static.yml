@@ -22,20 +22,12 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
-      - name: Set up Blog Repository
-        run: |
-          cd blog  # Bu adım, "blog" deposuna geçiş yapar
-          git config --global user.email "cagatayturkann@gmail.com"
-          git config --global user.name "Çağatay Türkan"
-          git pull origin main  # Güncellemeleri almak için mevcut içeriği çekin
-          cp -R * ../cagatayturkan.github.io/  # Yeni içeriği "cagatayturkan.github.io" dizinine kopyalayın
-
       - name: Deploy to cagatayturkan.github.io
         run: |
-          cd cagatayturkan.github.io  # Bu adım, "cagatayturkan.github.io" reposuna geçiş yapar
+          cd blog/public  # Bu adım, "blog/public" dizinine geçiş yapar
           git config --global user.email "cagatayturkann@gmail.com"
           git config --global user.name "Çağatay Türkan"
-          git pull origin main  # Güncellemeleri almak için mevcut içeriği çekin
+          git init
           git add .
           git commit -m "Deploy to cagatayturkan.github.io"
-          git push origin main  # Değişiklikleri "cagatayturkan.github.io" reposuna itin
+          git push --force "git@github.com:cagatayturkann/cagatayturkan.github.io.git" master
