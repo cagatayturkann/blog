@@ -13,7 +13,8 @@ jobs:
       - name: Checkout Blog Repository
         uses: actions/checkout@v2
         with:
-          repository: 'cagatayturkann/blog'
+          repository: 'cagatayturkann/blog'  # 'username' kısmını kendi GitHub kullanıcı adınız ile değiştirin
+          path: 'blog'  # Blog deposunu 'blog' dizinine çıkart
 
       - name: Set up SSH
         run: |
@@ -30,4 +31,4 @@ jobs:
           git init
           git add .
           git commit -m "Deploy to cagatayturkan.github.io"
-          git push --force "git@github.com:cagatayturkann/cagatayturkan.github.io.git" master
+          git push --force "git@github.com:cagatayturkann/cagatayturkan.github.io.git" main
