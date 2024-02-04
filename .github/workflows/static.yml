@@ -3,33 +3,39 @@ name: Deploy to cagatayturkan.github.io
 on:
   push:
     branches:
-      - main  # Burada hangi branch'e push yapılınca çalışacağını ayarlayabilirsiniz..
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Blog Repository
-      uses: actions/checkout@v2
-      with:
-        repository: 'cagatayturkann/blog'  # 'username' kısmını kendi GitHub kullanıcı adınız ile değiştirin
-        
-    - name: Set up SSH
-      run: | 
-        mkdir -p ~/.ssh/
-        echo "${{ secrets.DEPLOY_TOKEN }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - name: Checkout Blog Repository
+        uses: actions/checkout@v2
+        with:
+          repository: 'cagatayturkann/blog'
 
-   
-    - name: Deploy to cagatayturkan.github.io
-      run: |
-        cd cagatayturkan.github.io  # Bu adım, "cagatayturkan.github.io" deposuna geçiş yapar
-        git config --global user.email "cagatayturkann@gmail.com"
-        git config --global user.name "Çağatay Türkan"
-        git pull origin master  # Güncellemeleri almak için mevcut içeriği çekin
-        cp -R $GITHUB_WORKSPACE/blog/public/* .  # Yeni içeriği kopyalayın
-        git add .
-        git commit -m "Deploy to cagatayturkan.github.io"
-        git push origin master  # Değişiklikleri "cagatayturkan.github.io" reposuna itin
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.DEPLOY_TOKEN }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
+      - name: Set up Blog Repository
+        run: |
+          cd blog  # Bu adım, "blog" deposuna geçiş yapar
+          git config --global user.email "cagatayturkann@gmail.com"
+          git config --global user.name "Çağatay Türkan"
+          git pull origin main  # Güncellemeleri almak için mevcut içeriği çekin
+          cp -R * ../cagatayturkan.github.io/  # Yeni içeriği "cagatayturkan.github.io" dizinine kopyalayın
+
+      - name: Deploy to cagatayturkan.github.io
+        run: |
+          cd cagatayturkan.github.io  # Bu adım, "cagatayturkan.github.io" reposuna geçiş yapar
+          git config --global user.email "cagatayturkann@gmail.com"
+          git config --global user.name "Çağatay Türkan"
+          git pull origin main  # Güncellemeleri almak için mevcut içeriği çekin
+          git add .
+          git commit -m "Deploy to cagatayturkan.github.io"
+          git push origin main  # Değişiklikleri "cagatayturkan.github.io" reposuna itin
