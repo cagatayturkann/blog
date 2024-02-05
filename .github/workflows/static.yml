@@ -29,7 +29,10 @@ jobs:
 
       - name: Set Commit Message
         id: set_commit_msg
-        run: echo "::set-output name=commit_msg::$(git log --format=%B -n 1)"   
+        run: |
+          cd blog
+          commit_msg=$(git log --format=%B -n 1)
+          echo "::set-output name=commit_msg::$commit_msg"
           
       - name: Deploy to cagatayturkann.github.io
         run: |
