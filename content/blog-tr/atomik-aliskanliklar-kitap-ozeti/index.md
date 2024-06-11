@@ -125,3 +125,12 @@ Alışkanlıkların dört yasasını yeni alışkanlıklar edinmek ve kötü al�
 
 Kapsamı azaltıp plana bağlı kalın. Örneğin 300 kelime yazıyorsanız 50 kelime yazın ama her gün yapın. If-Then Tekniğini kullanın:”Eğer [beklenmedik bir şey] ise, o zaman [cevabınız].” Örneğin: Yarın sabah koşmak için zamanında uyanamazsam, işten sonra koşacağım. Öğle tatilinde yogaya yetişemezsem öğleden sonra yapacağım Öğle yemeği için sağlıksız bir şey alırsam, akşam yemeği için sağlıklı bir yemek pişiririm.
 
+### Sonuç
+
+Kitap benim için okuması oldukça faydalı bir kitap oldu. Zaten hali hazırda olan alışkanlıklarımın tekrar farkına vardım ve yeni alışkanlıklar elde edinebilmek için içerideki yöntemlerden bazılarını uygulamaya başladım. İlerleme veya sonuçları gördükçe paylaşmaya devam ederim. Umarım size de faydalı bir içerik olur. Teşekkürler.
+
+
+### Kaynakça
+- James Clear - Atomik Alışkanlıklar
+- https://medium.com/@sevketkurt/atomi%CC%87k-ali%C5%9Fkanliklar-ki%CC%87tap-%C3%B6zeti%CC%87-89393c903b06
+- https://nurdanozdemir.medium.com/atomik-al%C4%B1%C5%9Fkanl%C4%B1klar-kitap-%C3%B6zeti-bfa513c2c890
