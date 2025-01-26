@@ -11,10 +11,18 @@ jobs:
 
     steps:
       - name: Checkout Blog Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          repository: 'cagatayturkann/blog'  # 'username' kısmını kendi GitHub kullanıcı adınız ile değiştirin
-          path: 'blog'  # Blog deposunu 'blog' dizinine çıkartT
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
 
       - name: Set up SSH
         run: |
@@ -22,24 +30,13 @@ jobs:
           echo "${{ secrets.DEPLOY_TOKEN }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-          
-      - name: Preserve CNAME file
-        run: |
-          cp blog/CNAME blog/public/CNAME
 
-      - name: Set Commit Message
-        id: set_commit_msg
+      - name: Deploy to GitHub Pages
         run: |
-          cd blog
-          commit_msg=$(git log --format=%B -n 1)
-          echo "::set-output name=commit_msg::$commit_msg"
-          
-      - name: Deploy to cagatayturkann.github.io
-        run: |
-          cd blog/public  # Bu adım, "blog/public" dizinine geçiş yapar
+          cd public
           git config --global user.email "cagatayturkann@gmail.com"
           git config --global user.name "Çağatay Türkan"
           git init
           git add .
-          git commit -m "Changes > ${{ steps.set_commit_msg.outputs.commit_msg }}"
-          git push --force "git@github.com:cagatayturkann/cagatayturkann.github.io.git" master
+          git commit -m "Deploy site update"
+          git push --force "git@github.com:cagatayturkann/cagatayturkann.github.io.git" main
