@@ -37,6 +37,7 @@ jobs:
           git config --global user.email "cagatayturkann@gmail.com"
           git config --global user.name "Çağatay Türkan"
           git init
+          git checkout -b master
           git add .
           git commit -m "Deploy site update"
-          git push --force "git@github.com:cagatayturkann/cagatayturkann.github.io.git" main
+          git push --force "git@github.com:cagatayturkann/cagatayturkann.github.io.git" master:master
