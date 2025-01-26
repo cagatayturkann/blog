@@ -77,3 +77,5 @@ params:
     contact: cagatayturkann@gmail.com
   ignore:
     categories: ["privacy", "terms", "archives", "cookie"]
+  google:
+    ga4: "G-NRES0X4BGY"

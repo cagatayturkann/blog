@@ -24,6 +24,9 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: Create CNAME file
+        run: echo "cagatayturkan.com" > public/CNAME
+
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh/
