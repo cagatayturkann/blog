@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+<article class="single-article">
+    <div class="group relative">
+        <h1 class="text-3xl font-medium leading-10 text-gray-400 hover:text-gray-100">
+            <a href="{{ .RelPermalink }}">
+                {{ .Title }}
+            </a>
+        </h1>
+        <time class="flex items-center py-2 text-xl text-gray-600">
+            {{ .Date.Format "2006-01-02 15:04" }}
+            &nbsp;&nbsp;|&nbsp;&nbsp;{{ .ReadingTime }} minute read
+        </time>
+
+        {{ if .Params.cardimage }}
+        <div class="my-6">
+            <img src="{{ .Params.cardimage }}" alt="{{ .Title }}" class="w-full rounded-lg shadow-lg">
+        </div>
+        {{ end }}
+
+        <div class="mt-1 lg:pb-10 px-2 overflow-hidden break-words article-body">
+            <div class="text-gray-500">
+                <style>
+                    .article-body h1 { font-size: 36px; font-weight: 700; margin: 1.5rem 0 1rem; color: #9ca3af; }
+                    .article-body h2 { font-size: 30px; font-weight: 600; margin: 1.25rem 0 0.75rem; color: #9ca3af; }
+                    .article-body h3 { font-size: 26px; font-weight: 500; margin: 1rem 0 0.5rem; color: #9ca3af; }
+                    .article-body p { font-size: 20px; line-height: 1.8; margin: 0.75rem 0; }
+                    .article-body ul, .article-body ol { margin: 0.75rem 0; padding-left: 1.5rem; }
+                    .article-body li { font-size: 20px; line-height: 1.8; }
+                    .article-body strong { font-weight: 600; color: #d1d5db; }
+                    .article-body pre { background-color: #111827; font-size: 0.875rem; padding: 1rem; border-radius: 0.375rem; }
+                </style>
+                {{ .Content | safeHTML }}
+            </div>
+        </div>
+    </div>
+    <div class="my-10 py-5 border-t border-dashed border-t-white/10 text-xl text-gray-600">
+        {{ if gt (len .Site.Config.Services.Disqus.Shortname) 2 }}
+        {{ template "_internal/disqus.html" . }}
+        {{ end }}
+    </div>
+</article>
+
+{{ end }}

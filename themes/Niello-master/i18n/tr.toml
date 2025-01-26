@@ -1,0 +1,74 @@
+[sitename]
+other = "Çağatay Türkan"
+
+[siteslogan]
+other = "Trust me! I am an Engineer."
+
+[siteseokeywords]
+other = "blog,yazılım,teknoloji"
+
+[missing404title]
+other = "Sayfa Bulunamadı"
+
+[missing404body]
+other = "Üzgünüz, aradığınız sayfayı bulamadık."
+
+[search]
+other = "Ara"
+
+[searchplaceholder]
+other = "Arama yapmak için yazın..."
+
+[home]
+other = "Ana Sayfa"
+
+[categories]
+other = "Kategoriler"
+
+[tags]
+other = "Etiketler"
+
+[about]
+other = "Hakkımda"
+
+[minuteread]
+other = "dakika okuma"
+
+[page]
+other = "Sayfa"
+
+[next]
+other = "Sonraki"
+
+[previous]
+other = "Önceki"
+
+[posts]
+other = "gönderi"
+
+[topost]
+other = "Son Yazılar"
+
+[topcat]
+other = "Popüler Kategoriler"
+
+[toptag]
+other = "Etiketler"
+
+[intro]
+other = "Hakkımda"
+
+[archive]
+other = "Arşiv"
+
+[contact]
+other = "İletişim"
+
+[slogan]
+other = "Trust me! I am an Engineer."
+
+[archivefmt]
+other = "Ocak 2006"
+
+[recommendpost]
+other = "Önerilen Yazılar" 

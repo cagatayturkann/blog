@@ -1,0 +1,9 @@
+{
+    "title": {{ .Title | jsonify }},
+    "permalink": {{ .RelPermalink | jsonify }},
+    "summary": {{ .Summary | jsonify }},
+    "content": {{ .Plain | jsonify }},
+    "tags": {{ .Params.tags | jsonify }},
+    "categories": {{ .Params.categories | jsonify }},
+    "lang": {{ .Language.Lang | jsonify }}
+} 

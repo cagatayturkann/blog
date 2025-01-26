@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Çağatay Türkan</title>
+    <link>/en/tags/</link>
+    <description>Recent content in Tags on Çağatay Türkan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Api</title>
+      <link>/en/tags/api/</link>
+      <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>/en/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>App-Store</title>
+      <link>/en/tags/app-store/</link>
+      <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>/en/tags/app-store/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jwt</title>
+      <link>/en/tags/jwt/</link>
+      <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>/en/tags/jwt/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

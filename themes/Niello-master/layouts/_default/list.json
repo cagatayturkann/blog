@@ -1,0 +1,15 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range .Site.RegularPages -}}
+    {{- if eq .Language.Lang $.Site.Language.Lang -}}
+    {{- $.Scratch.Add "index" (dict 
+        "title" .Title 
+        "tags" .Params.tags 
+        "categories" .Params.categories 
+        "contents" .Plain 
+        "summary" .Summary
+        "permalink" .RelPermalink
+        "lang" .Language.Lang
+    ) -}}
+    {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}} 

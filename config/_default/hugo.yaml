@@ -1,0 +1,75 @@
+baseURL: "/"
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: true
+title: "Çağatay Türkan"
+theme: "Niello-master"
+
+languages:
+  en:
+    languageCode: "en-us"
+    LanguageName: "🇺🇸EN"
+    contentDir: "content/en"
+    weight: 1
+    menu:
+      main:
+        - name: "Home"
+          pageRef: "/"
+          weight: 1
+        - name: "Categories"
+          pageRef: "/categories"
+          weight: 2
+        - name: "Tags"
+          pageRef: "/tags"
+          weight: 3
+        - name: "About"
+          pageRef: "/about"
+          weight: 4
+  tr:
+    languageCode: "tr"
+    LanguageName: "🇹🇷TR"
+    contentDir: "content/tr"
+    weight: 2
+    menu:
+      main:
+        - name: "Ana Sayfa"
+          pageRef: "/"
+          weight: 1
+        - name: "Kategoriler"
+          pageRef: "/categories"
+          weight: 2
+        - name: "Etiketler"
+          pageRef: "/tags"
+          weight: 3
+        - name: "Hakkımda"
+          pageRef: "/about"
+          weight: 4
+
+# Niello theme settings
+params:
+  description: "Personal blog of Çağatay Türkan"
+  author: "Çağatay Türkan"
+  mainSections: ["blog"]
+  dateFormat: "January 2, 2006"
+  comments: false
+  images: []
+  homeText: "Welcome to my blog"
+  bannershowcase:
+    limit: 5
+
+outputs:
+  home: ["HTML", "JSON"]
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "About"
+      url: "/about"
+      weight: 2
+    - name: "Blog-EN"
+      url: "/blog-en"
+      weight: 4
+    - name: "Blog-TR"
+      url: "/blog-tr"
+      weight: 5 

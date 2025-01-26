@@ -1,0 +1,20 @@
+{{ $subfolder := .Get "subfolder" }}
+{{ $figCaption := .Get "figCaption" }}
+{{ $numCols := .Get "numCols" | default 2 }}
+
+{{ $path := path.Join "content" $.Page.File.Dir $subfolder }}
+{{ $files := readDir $path }}
+
+<div class="figure-array" style="display: grid; grid-template-columns: repeat({{ $numCols }}, 1fr); gap: 1rem;">
+    {{ range $files }}
+        {{ if or (strings.HasSuffix .Name ".jpg") (strings.HasSuffix .Name ".jpeg") (strings.HasSuffix .Name ".png") (strings.HasSuffix .Name ".webp") }}
+            {{ $imgPath := path.Join $subfolder .Name | relURL }}
+            <figure style="margin: 0;">
+                <img src="{{ $imgPath }}" alt="{{ .Name }}" style="width: 100%; height: auto;">
+            </figure>
+        {{ end }}
+    {{ end }}
+</div>
+{{ with $figCaption }}
+<figcaption style="text-align: center; margin-top: 0.5rem;">{{ . | markdownify }}</figcaption>
+{{ end }} 

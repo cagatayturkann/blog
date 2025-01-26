@@ -1,0 +1,22 @@
+project_display_limit: 4
+preserveTaxonomyNames: true
+sitemap_priority: "0.75"
+paginate: 13
+
+social:
+  - name: "github"
+    url: "https://github.com/cagatayturkann"
+  - name: "linkedin"
+    url: "https://www.linkedin.com/in/cagatayturkann/"
+  - name: "twitter"
+    url: "https://twitter.com/cagatayturkann"
+  - name: "facebook"
+    url: "https://facebook.com/cagatayturkann"
+  - name: "instagram"
+    url: "https://instagram.com/cagatayturkann"
+
+author:
+  name: "Çağatay Türkan"
+  image: "/images/author.jpeg"
+  greeting: "A personal blog for Computer Engineer :computer:"
+  icon: ":wave:" 

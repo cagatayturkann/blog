@@ -1,0 +1,107 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col items-center justify-center">
+        <div class="w-full max-w-4xl">
+            <div id="search-results">
+                <p id="loading-text" class="text-center text-xl text-gray-500">
+                    {{ if eq .Site.Language.Lang "tr" }}Aranıyor...{{ else }}Searching...{{ end }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchResults = document.getElementById('search-results');
+    const loadingText = document.getElementById('loading-text');
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q') || '';
+    let fuse;
+
+    // Get the current language
+    const currentLang = "{{ .Site.Language.Lang }}";
+    
+    // Load the index file
+    fetch('/{{ .Site.Language.Lang }}/index.json')
+        .then(response => response.json())
+        .then(data => {
+            const options = {
+                shouldSort: true,
+                threshold: 0.3,
+                minMatchCharLength: 2,
+                keys: [
+                    {
+                        name: "title",
+                        weight: 0.8
+                    },
+                    {
+                        name: "content",
+                        weight: 0.8
+                    },
+                    {
+                        name: "tags",
+                        weight: 0.5
+                    }
+                ]
+            };
+            fuse = new Fuse(data, options);
+            
+            // Perform search with query from URL
+            if (query) {
+                performSearch(query);
+            } else {
+                loadingText.textContent = currentLang === 'tr' ? 'Lütfen arama yapın.' : 'Please enter a search term.';
+            }
+        })
+        .catch(error => {
+            console.error('Error loading search index:', error);
+            loadingText.textContent = currentLang === 'tr' ? 'Arama indeksi yüklenemedi.' : 'Failed to load search index.';
+        });
+
+    function performSearch(query) {
+        if (!query || !fuse) {
+            return;
+        }
+
+        const results = fuse.search(query);
+        
+        if (results.length === 0) {
+            searchResults.innerHTML = `<p class="text-center text-xl text-gray-500">${currentLang === 'tr' ? 'Sonuç bulunamadı.' : 'No results found.'}</p>`;
+            return;
+        }
+
+        // Get unique results based on permalink
+        const uniqueResults = Array.from(new Map(results.map(item => [item.item.permalink, item])).values());
+
+        const resultsHtml = uniqueResults.map(result => {
+            const item = result.item;
+            return `
+                <a href="${item.permalink}" class="block mb-8">
+                    <div class="group">
+                        <h2 class="text-4xl font-crimson font-bold tracking-tight text-gray-300 group-hover:text-red-500 transition duration-200">
+                            ${item.title}
+                        </h2>
+                        ${item.summary ? `
+                            <p class="mt-4 text-gray-500 text-lg">
+                                ${item.summary}
+                            </p>
+                        ` : ''}
+                        ${item.tags ? `
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                ${item.tags.map(tag => `
+                                    <span class="px-3 py-1 text-sm bg-gray-800 text-gray-400 rounded-full border border-gray-700">${tag}</span>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                </a>
+            `;
+        }).join('<div class="w-full h-[1px] my-8 bg-gray-800"></div>');
+
+        searchResults.innerHTML = resultsHtml;
+    }
+});
+</script>
+{{ end }}

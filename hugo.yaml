@@ -1,0 +1,79 @@
+baseURL: https://cagatayturkan.com/
+languageCode: en
+title: Çağatay Türkan
+theme: Niello-master
+
+outputs:
+  home: ["HTML", "JSON"]
+  section: ["HTML", "JSON"]
+  page: ["HTML", "JSON"]
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+    title: Çağatay Türkan
+    description: Software Developer
+    author: Çağatay Türkan
+    dateFormat: "January 2, 2006"
+    mainSections: ["blog"]
+    comments: false
+    slogan: "Trust me! I am an Engineer."
+    menu:
+      main:
+        - identifier: home
+          name: Home
+          url: /en/
+          weight: 1
+        - identifier: about
+          name: About
+          url: /en/about/
+          weight: 2
+        - identifier: blog-tr
+          name: Blog-TR
+          url: /tr/
+          weight: 3
+        - identifier: archives
+          name: Archives
+          url: /en/archives/
+          weight: 4
+  tr:
+    languageName: Türkçe
+    weight: 2
+    title: Çağatay Türkan
+    description: Yazılım Geliştirici
+    author: Çağatay Türkan
+    dateFormat: "2 January 2006"
+    mainSections: ["blog"]
+    comments: false
+    slogan: "Trust me! I am an Engineer."
+    menu:
+      main:
+        - identifier: home
+          name: Ana Sayfa
+          url: /tr/
+          weight: 1
+        - identifier: about
+          name: Hakkımda
+          url: /tr/about/
+          weight: 2
+        - identifier: blog-en
+          name: Blog-EN
+          url: /en/
+          weight: 3
+        - identifier: archives
+          name: Arşiv
+          url: /tr/archives/
+          weight: 4
+
+params:
+  bannershowcase:
+    categories: ["Kitap", "Geliştirme", "Development", "iOS"]
+    limit: 5
+  email:
+    contact: cagatayturkann@gmail.com
+  ignore:
+    categories: ["privacy", "terms", "archives", "cookie"]
