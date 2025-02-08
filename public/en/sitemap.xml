@@ -2,6 +2,197 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/en/blog/linux/basic-linux-commands/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/en/blog/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/"
+                />
+  </url><url>
+    <loc>/en/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/"
+                />
+  </url><url>
+    <loc>/en/categories/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/"
+                />
+  </url><url>
+    <loc>/en/tags/commands/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/en/tags/linux/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/linux/"
+                />
+  </url><url>
+    <loc>/en/categories/linux/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/linux/"
+                />
+  </url><url>
+    <loc>/en/tags/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/"
+                />
+  </url><url>
+    <loc>/en/tags/terminal/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/terminal/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/terminal/"
+                />
+  </url><url>
+    <loc>/en/blog/build-restful-api-with-fastify-nodejs/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/en/tags/fastify/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/fastify/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/fastify/"
+                />
+  </url><url>
+    <loc>/en/categories/node.js/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/node.js/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/node.js/"
+                />
+  </url><url>
+    <loc>/en/tags/nodejs/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/nodejs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/nodejs/"
+                />
+  </url><url>
+    <loc>/en/tags/git/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/git/"
+                />
+  </url><url>
+    <loc>/en/categories/git/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/git/"
+                />
+  </url><url>
+    <loc>/en/tags/git-flow/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/git-flow/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/git-flow/"
+                />
+  </url><url>
+    <loc>/en/blog/git-flow/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/git-flow/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/git-flow/"
+                />
+  </url><url>
     <loc>/en/categories/archives/</loc>
     <lastmod>2024-03-19T09:16:03+08:00</lastmod>
     <xhtml:link
@@ -26,32 +217,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="/en/archives/"
-                />
-  </url><url>
-    <loc>/en/</loc>
-    <lastmod>2024-03-19T09:16:03+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="/tr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/en/"
-                />
-  </url><url>
-    <loc>/en/categories/</loc>
-    <lastmod>2024-03-19T09:16:03+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="/tr/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/en/categories/"
                 />
   </url><url>
     <loc>/en/search/</loc>
@@ -93,19 +258,6 @@
                 href="/en/tags/app-store/"
                 />
   </url><url>
-    <loc>/en/blog/</loc>
-    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="/tr/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/en/blog/"
-                />
-  </url><url>
     <loc>/en/categories/development/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -136,19 +288,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="/en/tags/jwt/"
-                />
-  </url><url>
-    <loc>/en/tags/</loc>
-    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="/tr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/en/tags/"
                 />
   </url><url>
     <loc>/en/about/</loc>

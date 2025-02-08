@@ -6,8 +6,57 @@
     <description>Recent content in Tags on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Commands</title>
+      <link>/en/tags/commands/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/commands/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>/en/tags/linux/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terminal</title>
+      <link>/en/tags/terminal/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/terminal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fastify</title>
+      <link>/en/tags/fastify/</link>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/fastify/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nodejs</title>
+      <link>/en/tags/nodejs/</link>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>/en/tags/git/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git-Flow</title>
+      <link>/en/tags/git-flow/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/en/tags/git-flow/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Api</title>
       <link>/en/tags/api/</link>

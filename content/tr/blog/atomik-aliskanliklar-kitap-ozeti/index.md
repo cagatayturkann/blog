@@ -5,7 +5,6 @@ summary: İlk olarak bir süredir okuduğum ve yeni bitirdiğim James Clear'a ai
 date: 2024-06-11
 cardimage: "/tr/blog/atomik-aliskanliklar-kitap-ozeti/images/cover.png"
 featureimage: "tr/blog/atomik-aliskanliklar-kitap-ozeti/images/cover.png"
-featured: true
 # caption: Image caption
 categories: ["Kitap", "Kişisel Gelişim"]
 tags: ["kitap-özeti", "alışkanlıklar", "kişisel-gelişim"]

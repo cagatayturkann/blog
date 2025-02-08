@@ -2,14 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tr/tags/al%C4%B1%C5%9Fkanl%C4%B1klar/</loc>
-    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tr/blog/atomik-aliskanliklar-kitap-ozeti/</loc>
-    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tr/blog/</loc>
-    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -22,7 +16,7 @@
                 />
   </url><url>
     <loc>/tr/</loc>
-    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -35,7 +29,7 @@
                 />
   </url><url>
     <loc>/tr/tags/</loc>
-    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -48,7 +42,7 @@
                 />
   </url><url>
     <loc>/tr/categories/</loc>
-    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -59,6 +53,151 @@
                 hreflang="tr"
                 href="/tr/categories/"
                 />
+  </url><url>
+    <loc>/tr/tags/komutlar/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tr/tags/linux/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/linux/"
+                />
+  </url><url>
+    <loc>/tr/categories/linux/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/linux/"
+                />
+  </url><url>
+    <loc>/tr/blog/linux/linux-temel-komutlar%C4%B1/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tr/tags/terminal/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/terminal/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/terminal/"
+                />
+  </url><url>
+    <loc>/tr/tags/fastify/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/fastify/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/fastify/"
+                />
+  </url><url>
+    <loc>/tr/blog/fastify-ile-rest-api-olusturma/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tr/categories/node.js/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/node.js/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/node.js/"
+                />
+  </url><url>
+    <loc>/tr/tags/nodejs/</loc>
+    <lastmod>2025-02-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/nodejs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/nodejs/"
+                />
+  </url><url>
+    <loc>/tr/tags/git/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/git/"
+                />
+  </url><url>
+    <loc>/tr/categories/git/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/git/"
+                />
+  </url><url>
+    <loc>/tr/blog/git-flow/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/git-flow/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/git-flow/"
+                />
+  </url><url>
+    <loc>/tr/tags/git-flow/</loc>
+    <lastmod>2025-01-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/git-flow/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/git-flow/"
+                />
+  </url><url>
+    <loc>/tr/tags/al%C4%B1%C5%9Fkanl%C4%B1klar/</loc>
+    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tr/blog/atomik-aliskanliklar-kitap-ozeti/</loc>
+    <lastmod>2024-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tr/categories/ki%C5%9Fisel-geli%C5%9Fim/</loc>
     <lastmod>2024-06-11T00:00:00+00:00</lastmod>
