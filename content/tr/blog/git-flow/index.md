@@ -9,6 +9,7 @@ featured: true
 # caption: Image caption
 categories: ['Git']
 tags: ['git-flow', 'git']
+translationKey: "git-flow-guide"
 authors:
   - Çağatay: /images/author.jpeg
 ---
@@ -85,7 +86,7 @@ Git Flow modelinde 5 ana dal bulunur:
 
 - **hotfix:** Hotfix dalı, canlıdaki versiyonda kritik bir hata olduğunda ve bu hatanın hemen düzeltilip deploy edilmesi gerektiğinde kullanılır. Hotfix dalı master dalından oluşturulur ve genellikle 'hotfix/[versiyon]-[açıklama]' formatında isimlendirilir. Hotfix dalında hata düzeltmesi tamamlandığında bu dal hem Developer hem de Master ile merge edilir. Master ile merge edildikten sonra değişiklik yeni bir versiyon numarası ile etiketlenir.
 
-- **feature:** Yeni bir özellik eklenirken, bu özellik için bir Feature dalı oluşturulur. Feature dalları her zaman develop dalından oluşturulur ve genellikle 'feature/[özellik-adı]' formatında isimlendirilir. Bunlar özelliklere göre değişiklikler olarak düşünülebilir. Aynı anda birden fazla feature dalı açılabilir. Bu farklı geliştiricilerin farklı özellikler üzerinde çalışabileceği anlamına gelir. Özellikleri ayrı dallarda geliştirmek hem Develop dalının gereksiz commitlerle dolmasını engeller hem de feature dalını silmek suretiyle bir özellikten vazgeçmeyi kolaylaştırır. Özellik tamamlandığında bu dal Develop dalı ile merge edilir ve feature dalı silinir. Yani feature dalları sadece geliştirme süresince yaşar. Tabi bu süreçte kontrol amaçlı arada bir Develop dalından pull almak gerekebilir çünkü başka bir geliştirici feature dalını önce bitirmiş ve Develop dalına versiyon push edilmiş olabilir. Feature dalları master, release, develop veya hotfix içeren isimler içermemelidir.
+- **feature:** Yeni bir özellik eklenirken, bu özellik için bir Feature dalı oluşturulur. Feature dalları her zaman develop dalından oluşturulur ve genellikle 'feature/[özellik-adı]' formatında isimlendirilir. Bunlar özelliklere göre değişiklikler olarak düşünülebilir. Aynı anda birden fazla feature dalı açılabilir. Bu farklı geliştiricilerin farklı özellikler üzerinde çalışabileceği anlamına gelir. Özellikleri ayrı dallarda geliştirmek hem Develop dalının gereksiz commitlerle dolmasını engeller hem de feature dalını silmek suretiyle bir özellikten vazgeçmeyi kolaylaştırır. Özellik tamamlandığında bu dal Develop dalı ile merge edilir ve feature dalı silinir. Yani feature dalları sadece geliştirme süresince yaşar. Tabi bu süreçte kontrol amaçlı arada bir Develop dalından pull almak gerekebilir çünkü başka bir geliştirici feature dalını önce bitirmiş ve Develop dalına version push edilmiş olabilir. Feature dalları master, release, develop veya hotfix içeren isimler içermemelidir.
 
 - **release:** Diyelim ki tüm değişiklikler tamamlandı. Yeni bir versiyon çıkılacağı zaman Develop dalından yeni bir Release dalı oluşturulur. Release dalları genellikle 'release/[versiyon]' formatında isimlendirilir. Versiyondaki son değişiklikler, versiyon numaralarının değiştirilmesi vb. işlemler bu dalda yapılır. Release dalında sadece hata düzeltmeleri yapılmalı, yeni özellikler eklenmemelidir. Gerekli tüm değişiklikler tamamlandığında Release dalında tamamlanan tüm değişiklikler hem Master hem de Develop dallarına merge edilir. Master dalında git tag ile versiyon numarası etiketlenir ve ardından Release dalı silinir.
 

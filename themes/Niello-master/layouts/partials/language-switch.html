@@ -1,0 +1,15 @@
+{{ if .IsTranslated }}
+<div class="language-switch flex items-center space-x-2 text-gray-500 hover:text-gray-300">
+    {{ range .Translations }}
+    <a href="{{ .Permalink }}" class="flex items-center space-x-1">
+        {{ if eq .Lang "tr" }}
+        <span>🇹🇷</span>
+        <span class="text-sm">Türkçe</span>
+        {{ else if eq .Lang "en" }}
+        <span>🇬🇧</span>
+        <span class="text-sm">English</span>
+        {{ end }}
+    </a>
+    {{ end }}
+</div>
+{{ end }} 

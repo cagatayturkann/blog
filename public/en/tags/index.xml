@@ -6,26 +6,54 @@
     <description>Recent content in Tags on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 01:56:00 +0300</lastBuildDate>
     <atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript</title>
+      <link>/en/tags/javascript/</link>
+      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <guid>/en/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Object-Types</title>
+      <link>/en/tags/object-types/</link>
+      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <guid>/en/tags/object-types/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Typescript</title>
+      <link>/en/tags/typescript/</link>
+      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <guid>/en/tags/typescript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Functions</title>
+      <link>/en/tags/functions/</link>
+      <pubDate>Sat, 08 Feb 2025 23:21:00 +0300</pubDate>
+      <guid>/en/tags/functions/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Commands</title>
       <link>/en/tags/commands/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
       <guid>/en/tags/commands/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
       <link>/en/tags/linux/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
       <guid>/en/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Terminal</title>
       <link>/en/tags/terminal/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
       <guid>/en/tags/terminal/</guid>
       <description></description>
     </item>

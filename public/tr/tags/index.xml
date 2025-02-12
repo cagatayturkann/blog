@@ -6,27 +6,48 @@
     <description>Recent content in Etiketler on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
-    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 01:56:00 +0300</lastBuildDate>
     <atom:link href="/tr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript</title>
+      <link>/tr/tags/javascript/</link>
+      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <guid>/tr/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Object-Types</title>
+      <link>/tr/tags/object-types/</link>
+      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <guid>/tr/tags/object-types/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Typescript</title>
+      <link>/tr/tags/typescript/</link>
+      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <guid>/tr/tags/typescript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fonksiyonlar</title>
+      <link>/tr/tags/fonksiyonlar/</link>
+      <pubDate>Sat, 08 Feb 2025 23:21:00 +0300</pubDate>
+      <guid>/tr/tags/fonksiyonlar/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Komutlar</title>
       <link>/tr/tags/komutlar/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
       <guid>/tr/tags/komutlar/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
       <link>/tr/tags/linux/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
       <guid>/tr/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Terminal</title>
-      <link>/tr/tags/terminal/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/tr/tags/terminal/</guid>
       <description></description>
     </item>
     <item>

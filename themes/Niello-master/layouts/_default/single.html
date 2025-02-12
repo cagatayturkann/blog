@@ -7,10 +7,13 @@
                 {{ .Title }}
             </a>
         </h1>
-        <time class="flex items-center py-2 text-xl text-gray-600">
-            {{ .Date.Format "2006-01-02 15:04" }}
-            &nbsp;&nbsp;|&nbsp;&nbsp;{{ .ReadingTime }} minute read
-        </time>
+        <div class="flex justify-between items-center">
+            <time class="flex items-center py-2 text-xl text-gray-600">
+                {{ .Date.Format "2006-01-02 15:04" }}
+                &nbsp;&nbsp;|&nbsp;&nbsp;{{ .ReadingTime }} minute read
+            </time>
+            {{ partial "language-switch.html" . }}
+        </div>
 
         {{ if .Params.cardimage }}
         <div class="my-6">

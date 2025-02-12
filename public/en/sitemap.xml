@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/en/blog/linux/basic-linux-commands/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/en/blog/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
@@ -19,7 +16,7 @@
                 />
   </url><url>
     <loc>/en/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
@@ -32,7 +29,7 @@
                 />
   </url><url>
     <loc>/en/categories/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
@@ -44,11 +41,131 @@
                 href="/en/categories/"
                 />
   </url><url>
+    <loc>/en/tags/javascript/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/javascript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/javascript/"
+                />
+  </url><url>
+    <loc>/en/tags/object-types/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/object-types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/object-types/"
+                />
+  </url><url>
+    <loc>/en/tags/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/"
+                />
+  </url><url>
+    <loc>/en/tags/typescript/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/typescript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/typescript/"
+                />
+  </url><url>
+    <loc>/en/categories/typescript/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/typescript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/typescript/"
+                />
+  </url><url>
+    <loc>/en/blog/typescript-series/understanding-typescript-part3/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/typescript-series/understanding-typescript-part3/"
+                />
+  </url><url>
+    <loc>/en/tags/functions/</loc>
+    <lastmod>2025-02-08T23:21:00+03:00</lastmod>
+  </url><url>
+    <loc>/en/blog/typescript-series/understanding-typescript-part2/</loc>
+    <lastmod>2025-02-08T23:21:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/typescript-series/understanding-typescript-part2/"
+                />
+  </url><url>
+    <loc>/en/blog/typescript-series/understanding-typescript-part1/</loc>
+    <lastmod>2025-02-08T23:19:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/typescript-series/understanding-typescript-part1/"
+                />
+  </url><url>
+    <loc>/en/blog/linux/basic-linux-commands/</loc>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/linux/linux-temel-komutlar%C4%B1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/linux/basic-linux-commands/"
+                />
+  </url><url>
     <loc>/en/tags/commands/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
   </url><url>
     <loc>/en/tags/linux/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
@@ -61,7 +178,7 @@
                 />
   </url><url>
     <loc>/en/categories/linux/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
@@ -73,31 +190,8 @@
                 href="/en/categories/linux/"
                 />
   </url><url>
-    <loc>/en/tags/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="/tr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/en/tags/"
-                />
-  </url><url>
     <loc>/en/tags/terminal/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="/tr/tags/terminal/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/en/tags/terminal/"
-                />
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
   </url><url>
     <loc>/en/blog/build-restful-api-with-fastify-nodejs/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
@@ -263,6 +357,16 @@
   </url><url>
     <loc>/en/blog/how-to-create-jwt-token-using-app-store-connect-api/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/appstore-connect-ile-jwt-token-nasil-olusturulur/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/how-to-create-jwt-token-using-app-store-connect-api/"
+                />
   </url><url>
     <loc>/en/categories/ios/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>

@@ -6,12 +6,19 @@
     <description>Recent content in Kategoriler on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
-    <lastBuildDate>Sat, 08 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 01:56:00 +0300</lastBuildDate>
     <atom:link href="/tr/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript</title>
+      <link>/tr/categories/typescript/</link>
+      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <guid>/tr/categories/typescript/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Linux</title>
       <link>/tr/categories/linux/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
       <guid>/tr/categories/linux/</guid>
       <description></description>
     </item>

@@ -8,6 +8,7 @@ featureimage: /tr/blog/appstore-connect-ile-jwt-token-nasil-olusturulur/images/b
 featured: true
 categories: ["Geliştirme", "iOS"]
 tags: ["jwt", "app-store", "api"]
+translationKey: "app-store-connect-jwt"
 # caption: Image caption
 authors:
   - Çağatay: /images/author.jpeg

@@ -9,6 +9,7 @@ featured: true
 # caption: Image caption
 categories: ["Development", "iOS"]
 tags: ["jwt", "app-store", "api"]
+translationKey: "app-store-connect-jwt"
 authors:
   - Çağatay: /images/author.jpeg
 ---

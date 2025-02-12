@@ -9,6 +9,7 @@ featured: true
 # caption: Image caption
 categories: ['Git']
 tags: ['git-flow', 'git']
+translationKey: "git-flow-guide"
 authors:
   - Çağatay: /images/author.jpeg
 ---

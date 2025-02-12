@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/tr/blog/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>/tr/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>/tr/tags/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -41,8 +41,21 @@
                 href="/tr/tags/"
                 />
   </url><url>
+    <loc>/tr/tags/javascript/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/javascript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/javascript/"
+                />
+  </url><url>
     <loc>/tr/categories/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -54,11 +67,92 @@
                 href="/tr/categories/"
                 />
   </url><url>
+    <loc>/tr/tags/object-types/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/object-types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/object-types/"
+                />
+  </url><url>
+    <loc>/tr/tags/typescript/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/tags/typescript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/tags/typescript/"
+                />
+  </url><url>
+    <loc>/tr/categories/typescript/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/categories/typescript/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/categories/typescript/"
+                />
+  </url><url>
+    <loc>/tr/blog/typescript-serisi/typescripti-anlamak-bolum3/</loc>
+    <lastmod>2025-02-09T01:56:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/typescript-series/understanding-typescript-part3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum3/"
+                />
+  </url><url>
+    <loc>/tr/tags/fonksiyonlar/</loc>
+    <lastmod>2025-02-08T23:21:00+03:00</lastmod>
+  </url><url>
+    <loc>/tr/blog/typescript-serisi/typescripti-anlamak-bolum2/</loc>
+    <lastmod>2025-02-08T23:21:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/typescript-series/understanding-typescript-part2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum2/"
+                />
+  </url><url>
+    <loc>/tr/blog/typescript-serisi/typescripti-anlamak-bolum1/</loc>
+    <lastmod>2025-02-08T23:19:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/typescript-series/understanding-typescript-part1/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum1/"
+                />
+  </url><url>
     <loc>/tr/tags/komutlar/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
   </url><url>
     <loc>/tr/tags/linux/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -71,7 +165,7 @@
                 />
   </url><url>
     <loc>/tr/categories/linux/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -84,19 +178,16 @@
                 />
   </url><url>
     <loc>/tr/blog/linux/linux-temel-komutlar%C4%B1/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tr/tags/terminal/</loc>
-    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/terminal/"
+                href="/en/blog/linux/basic-linux-commands/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/terminal/"
+                href="/tr/blog/linux/linux-temel-komutlar%C4%B1/"
                 />
   </url><url>
     <loc>/tr/tags/fastify/</loc>
@@ -265,6 +356,16 @@
   </url><url>
     <loc>/tr/blog/appstore-connect-ile-jwt-token-nasil-olusturulur/</loc>
     <lastmod>2023-11-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="/en/blog/how-to-create-jwt-token-using-app-store-connect-api/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/blog/appstore-connect-ile-jwt-token-nasil-olusturulur/"
+                />
   </url><url>
     <loc>/tr/tags/app-store/</loc>
     <lastmod>2023-11-25T00:00:00+00:00</lastmod>
