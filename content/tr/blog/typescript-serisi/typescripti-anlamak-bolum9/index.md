@@ -16,7 +16,7 @@ authors:
 
 ## Giriş
 
-Modern web uygulamaları geliştirirken tip güvenliği ve kod kalitesi giderek daha önemli hale geliyor. Bu eğitimde, TypeScript'in sunduğu güçlü özellikleri gerçek bir proje üzerinde öğreneceğiz. JWT ve Google OAuth kimlik doğrulaması içeren bir Todo uygulaması geliştirirken, TypeScript'in temel kavramlarını ve best practice'lerini uygulayacağız.
+Modern web uygulamaları geliştirirken tip güvenliği ve kod kalitesi giderek daha önemli hale geliyor. Bu eğitimde, TypeScript'in sunduğu güçlü özellikleri gerçek bir proje üzerinde öğreneceğiz. JWT ve Google OAuth kimlik doğrulaması içeren bir Todo uygulaması geliştirirken, TypeScript'in temel kavramlarını ve best practice'lerini uygulayacağız. Uygulamanın tüm haline [GitHub repository](https://github.com/cagatayturkann/blogProjects/tree/main/nodejs-typescript-auth) adresinden ulaşabilirsiniz.
 
 Bu proje size şunları kazandıracak:
 

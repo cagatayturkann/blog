@@ -16,7 +16,7 @@ authors:
 
 ## Introduction
 
-Type safety and code quality are becoming increasingly important when developing modern web applications. In this tutorial, we will learn TypeScript's powerful features through a real project. While developing a Todo application with JWT and Google OAuth authentication, we will implement TypeScript's core concepts and best practices.
+Type safety and code quality are becoming increasingly important when developing modern web applications. In this tutorial, we will learn TypeScript's powerful features through a real project. While developing a Todo application with JWT and Google OAuth authentication, we will implement TypeScript's core concepts and best practices. You can access the complete project at this [GitHub repository](https://github.com/cagatayturkann/blogProjects/tree/main/nodejs-typescript-auth).
 
 This project will provide you with:
 
