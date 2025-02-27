@@ -6,12 +6,26 @@
     <description>Recent content in Categories on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Feb 2025 01:56:00 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2025 09:00:00 +0300</lastBuildDate>
     <atom:link href="/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backend</title>
+      <link>/en/categories/backend/</link>
+      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      <guid>/en/categories/backend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Node.js</title>
+      <link>/en/categories/node.js/</link>
+      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      <guid>/en/categories/node.js/</guid>
+      <description></description>
+    </item>
     <item>
       <title>TypeScript</title>
       <link>/en/categories/typescript/</link>
-      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
       <guid>/en/categories/typescript/</guid>
       <description></description>
     </item>
@@ -20,13 +34,6 @@
       <link>/en/categories/linux/</link>
       <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
       <guid>/en/categories/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Node.js</title>
-      <link>/en/categories/node.js/</link>
-      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/en/categories/node.js/</guid>
       <description></description>
     </item>
     <item>

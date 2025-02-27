@@ -6,8 +6,99 @@
     <description>Recent content in Etiketler on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
-    <lastBuildDate>Sun, 09 Feb 2025 01:56:00 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2025 09:00:00 +0300</lastBuildDate>
     <atom:link href="/tr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices</title>
+      <link>/tr/tags/microservices/</link>
+      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      <guid>/tr/tags/microservices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nodejs</title>
+      <link>/tr/tags/nodejs/</link>
+      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      <guid>/tr/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Typescript</title>
+      <link>/tr/tags/typescript/</link>
+      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      <guid>/tr/tags/typescript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Type-Guards</title>
+      <link>/tr/tags/type-guards/</link>
+      <pubDate>Fri, 21 Feb 2025 10:30:00 +0300</pubDate>
+      <guid>/tr/tags/type-guards/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Type-Narrowing</title>
+      <link>/tr/tags/type-narrowing/</link>
+      <pubDate>Fri, 21 Feb 2025 10:30:00 +0300</pubDate>
+      <guid>/tr/tags/type-narrowing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Generics</title>
+      <link>/tr/tags/generics/</link>
+      <pubDate>Wed, 12 Feb 2025 19:30:00 +0300</pubDate>
+      <guid>/tr/tags/generics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Type-Safety</title>
+      <link>/tr/tags/type-safety/</link>
+      <pubDate>Wed, 12 Feb 2025 19:30:00 +0300</pubDate>
+      <guid>/tr/tags/type-safety/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Classes</title>
+      <link>/tr/tags/classes/</link>
+      <pubDate>Wed, 12 Feb 2025 18:15:00 +0300</pubDate>
+      <guid>/tr/tags/classes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oop</title>
+      <link>/tr/tags/oop/</link>
+      <pubDate>Wed, 12 Feb 2025 18:15:00 +0300</pubDate>
+      <guid>/tr/tags/oop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Compiler</title>
+      <link>/tr/tags/compiler/</link>
+      <pubDate>Wed, 12 Feb 2025 17:05:00 +0300</pubDate>
+      <guid>/tr/tags/compiler/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Configuration</title>
+      <link>/tr/tags/configuration/</link>
+      <pubDate>Wed, 12 Feb 2025 17:05:00 +0300</pubDate>
+      <guid>/tr/tags/configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interfaces</title>
+      <link>/tr/tags/interfaces/</link>
+      <pubDate>Wed, 12 Feb 2025 16:51:00 +0300</pubDate>
+      <guid>/tr/tags/interfaces/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Type-System</title>
+      <link>/tr/tags/type-system/</link>
+      <pubDate>Wed, 12 Feb 2025 16:51:00 +0300</pubDate>
+      <guid>/tr/tags/type-system/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Javascript</title>
       <link>/tr/tags/javascript/</link>
@@ -20,13 +111,6 @@
       <link>/tr/tags/object-types/</link>
       <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
       <guid>/tr/tags/object-types/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Typescript</title>
-      <link>/tr/tags/typescript/</link>
-      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
-      <guid>/tr/tags/typescript/</guid>
       <description></description>
     </item>
     <item>
@@ -55,13 +139,6 @@
       <link>/tr/tags/fastify/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
       <guid>/tr/tags/fastify/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nodejs</title>
-      <link>/tr/tags/nodejs/</link>
-      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/tr/tags/nodejs/</guid>
       <description></description>
     </item>
     <item>

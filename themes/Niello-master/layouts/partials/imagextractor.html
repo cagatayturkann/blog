@@ -3,68 +3,64 @@
 {{ $image := "" }}
 {{ $alt := "" }}
 
-<!-- Taxonomy image, eg: categories -->
+<!-- Set default images for taxonomies -->
 {{ if eq $page.Kind "term" }}
-{{ $pages := where site.RegularPages "Params.categories" "intersect" (slice .context.Title) }}
-{{ with first 1 $pages }}
-{{ $page = index . 0 }}
-{{ end }}
-{{ end }}
-
-<!-- Taxonomy image, eg: tags -->
-{{ if eq $page.Kind "term" }}
-{{ $pages := where site.RegularPages "Params.tags" "intersect" (slice .context.Title) }}
-{{ with first 1 $pages }}
-{{ $page = index . 0 }}
-{{ end }}
+    {{ if eq $page.Type "categories" }}
+    {{ $image = "/images/default-category.svg" }}
+    {{ else if eq $page.Type "tags" }}
+    {{ $image = "/images/default-tag.svg" }}
+    {{ end }}
 {{ end }}
 
-<!-- Check if the Markdown file contains a featured image in the front matter -->
-{{ with $page.Params.featuredImage }}
-{{ $image := . | absURL }}
-{{ end }}
-
+<!-- If not a taxonomy page, try to find content images -->
 {{ if eq $image "" }}
-<!-- Local image eg: ./abc.jpeg or /abc.png -->
-{{ $regex := `img[\s]+alt="([^"]+)"[\s]+src="([^"]+)"` }}
-{{ $matches := findRESubmatch $regex $page.Content }}
-{{ with index $matches 0 }}
-  {{ $image = index . 2 | safeURL }}
-  {{ $alt = index . 1 | safeHTML }}
-{{ end }}
-{{ end }}
+    <!-- Check if the Markdown file contains a featured image in the front matter -->
+    {{ with $page.Params.featuredImage }}
+    {{ $image = . | absURL }}
+    {{ end }}
 
-{{ if eq $image "" }}
-<!-- Local image eg: ./abc.jpeg or /abc.png -->
-{{ $regex := `img[\s]+src="([^"]+)"[\s]+alt="([^"]+)"` }}
-{{ $matches := findRESubmatch $regex $page.Content }}
-{{ with index $matches 0 }}
-  {{ $image = index . 1 | safeURL }}
-  {{ $alt = index . 2 | safeHTML }}
-{{ end }}
-{{ end }}
+    {{ if eq $image "" }}
+    <!-- Local image eg: ./abc.jpeg or /abc.png -->
+    {{ $regex := `img[\s]+alt="([^"]+)"[\s]+src="([^"]+)"` }}
+    {{ $matches := findRESubmatch $regex $page.Content }}
+    {{ with index $matches 0 }}
+    {{ $image = index . 2 | safeURL }}
+    {{ $alt = index . 1 | safeHTML }}
+    {{ end }}
+    {{ end }}
 
-{{ if eq $image "" }}
-<!-- Inline image eg: data:image/jpeg;base64,... -->
-{{ $regex := `(data:image\/[a-z]+;base64,[^\"]+)` }}
-{{ $images := findRE $regex $page.Content }}
-{{ with index $images 0 }}
-{{ $image = . | safeURL }}
-{{ end }}
-{{ end }}
+    {{ if eq $image "" }}
+    <!-- Local image eg: ./abc.jpeg or /abc.png -->
+    {{ $regex := `img[\s]+src="([^"]+)"[\s]+alt="([^"]+)"` }}
+    {{ $matches := findRESubmatch $regex $page.Content }}
+    {{ with index $matches 0 }}
+    {{ $image = index . 1 | safeURL }}
+    {{ $alt = index . 2 | safeHTML }}
+    {{ end }}
+    {{ end }}
 
-{{ if eq $image "" }}
-<!-- Remote image eg: https://xxx.com/abc.jpeg -->
-{{ $regex := `https:\/\/[^\s]+\.(jpg|jpeg|png|webp)` }}
-{{ $images := findRE $regex $page.Content }}
-{{ with index $images 0 }}
-{{ $image = . | safeURL }}
-{{ end }}
-{{ end }}
+    {{ if eq $image "" }}
+    <!-- Inline image eg: data:image/jpeg;base64,... -->
+    {{ $regex := `(data:image\/[a-z]+;base64,[^\"]+)` }}
+    {{ $images := findRE $regex $page.Content }}
+    {{ with index $images 0 }}
+    {{ $image = . | safeURL }}
+    {{ end }}
+    {{ end }}
 
-<!-- Return a placeholder image if no images -->
-{{ if eq $image "" }}
-{{ $image = "/image/common-writing-empty.webp" }}
+    {{ if eq $image "" }}
+    <!-- Remote image eg: https://xxx.com/abc.jpeg -->
+    {{ $regex := `https:\/\/[^\s]+\.(jpg|jpeg|png|webp)` }}
+    {{ $images := findRE $regex $page.Content }}
+    {{ with index $images 0 }}
+    {{ $image = . | safeURL }}
+    {{ end }}
+    {{ end }}
+
+    <!-- Set default cover for regular pages -->
+    {{ if eq $image "" }}
+    {{ $image = "/images/default-cover.webp" }}
+    {{ end }}
 {{ end }}
 
 {{ $result := dict "url" $image "alt" $alt }}
