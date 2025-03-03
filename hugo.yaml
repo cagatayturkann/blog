@@ -38,7 +38,7 @@ languages:
           weight: 3
         - identifier: archives
           name: Archives
-          url: /en/archives/
+          url: /blog/en/archives/
           weight: 4
   tr:
     languageName: Türkçe
@@ -74,7 +74,7 @@ params:
     categories: ["Kitap", "Geliştirme", "Development", "iOS"]
     limit: 5
   email:
-    contact: cagatayturkann@gmail.com
+    contact: cagatayturkann@gmail.commmm
   ignore:
     categories: ["privacy", "terms", "archives", "cookie"]
   google:
