@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentLang = "{{ .Site.Language.Lang }}";
     
     // Load the index file
-    fetch('/{{ .Site.Language.Lang }}/index.json')
+    fetch('/blog/{{ .Site.Language.Lang }}/index.json')
         .then(response => response.json())
         .then(data => {
             const options = {

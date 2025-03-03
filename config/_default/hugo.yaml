@@ -21,9 +21,7 @@ languages:
         - name: "Tags"
           url: "/en/tags/"
           weight: 3
-        - name: "About"
-          url: "/en/about/"
-          weight: 4
+
   tr:
     languageCode: "tr"
     LanguageName: "🇹🇷TR"
@@ -40,9 +38,6 @@ languages:
         - name: "Etiketler"
           url: "/tr/tags/"
           weight: 3
-        - name: "Hakkımda"
-          url: "/tr/about/"
-          weight: 4
 
 # Niello theme settings
 params:
@@ -58,6 +53,15 @@ params:
 
 outputs:
   home: ["HTML", "JSON"]
+  section: ["HTML", "JSON"]
+  page: ["HTML", "JSON"]
 
 permalinks:
   blog: /:section/:filename/
+
+outputFormats:
+  JSON:
+    mediaType: application/json
+    baseName: index
+    isPlainText: true
+    notAlternative: true
