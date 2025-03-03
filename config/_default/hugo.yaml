@@ -59,5 +59,8 @@ params:
 outputs:
   home: ["HTML", "JSON"]
 
+email:
+    contact: cagatayturkann@gmail.com123
+
 permalinks:
   blog: /:section/:filename/ 

@@ -2,8 +2,8 @@
 title: "Understanding TypeScript - Part 9: Sample Project"
 summary: In this article, we will explore the process of developing a Todo application using TypeScript and Node.js with JWT and Google OAuth authentication. We will discuss the experience of designing a modern REST API by implementing TypeScript's type safety, MongoDB integration, and clean architecture principles.
 date: 2025-02-25T09:00:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum9/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum9/images/cover.svg'
+cardimage: '/blog/en/typescript-series/understanding-typescript-part9/images/cover.svg'
+featureimage: '/blog/en/typescript-series/understanding-typescript-part9/images/cover.svg'
 featured: true
 categories: ['TypeScript', 'Node.js', 'Backend']
 tags: ['typescript', 'nodejs', 'microservices']
