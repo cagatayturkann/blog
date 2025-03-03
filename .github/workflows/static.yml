@@ -1,16 +1,28 @@
-name: Deploy to cagatayturkann.github.io
+name: Deploy static content to Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Blog Repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -24,23 +36,14 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Create CNAME file
-        run: echo "cagatayturkan.com" > public/CNAME
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh/
-          echo "${{ secrets.DEPLOY_TOKEN }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public'
 
       - name: Deploy to GitHub Pages
-        run: |
-          cd public
-          git config --global user.email "cagatayturkann@gmail.com"
-          git config --global user.name "Çağatay Türkan"
-          git init
-          git checkout -b master
-          git add .
-          git commit -m "Deploy site update"
-          git push --force "git@github.com:cagatayturkann/cagatayturkann.github.io.git" master:master
+        id: deployment
+        uses: actions/deploy-pages@v4
