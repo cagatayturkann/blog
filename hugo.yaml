@@ -1,4 +1,4 @@
-baseURL: https://cagatayturkan.com/
+baseURL: https://cagatayturkan.com/blog/
 languageCode: en
 title: Çağatay Türkan
 theme: Niello-master
@@ -7,8 +7,8 @@ params:
   bannershowcase:
     categories: ["Kitap", "Geliştirme", "Development", "iOS"]
     limit: 5
-  # email:
-  #   contact: cagatayturkann@gmail.com
+  email:
+    contact: cagatayturkann@gmail.com
   ignore:
     categories: ["privacy", "terms", "archives", "cookie"]
   google:

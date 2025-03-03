@@ -110,7 +110,7 @@
         {{ range $index, $item := $archives }}
         {{ if lt $index 18 }}
         <li class="mb-1 border-b border-b-white/10 border-dashed">
-            <a href="/{{ $.Site.Language.Lang }}/archives">{{ $item.Key }}<span
+            <a href="/blog/{{ $.Site.Language.Lang }}/archives">{{ $item.Key }}<span
                     class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">{{
                     $item.Pages.Len}}</span></a>
         </li>
