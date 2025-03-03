@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Node.js on Çağatay Türkan</title>
-    <link>/tr/categories/node.js/</link>
+    <link>http://localhost:1313/blog/tr/categories/node.js/</link>
     <description>Recent content in Node.js on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
-    <atom:link href="/tr/categories/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/tr/categories/node.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modern AI Teknolojileri ve Node.js Entegrasyonu</title>
-      <link>/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/</link>
+      <link>http://localhost:1313/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
-      <guid>/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/</guid>
+      <guid>http://localhost:1313/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/</guid>
       <description>Bu makalede, yapay zeka teknolojilerinin JavaScript ekosistemindeki uygulamalarını inceleyeceğiz. AI agent&amp;rsquo;lar, tool calling, conversation memory, context yönetimi gibi temel kavramların Node.js uygulamalarında nasıl hayata geçirileceğini örnek projeler üzerinden ele alacağız.</description>
     </item>
     <item>
       <title>TypeScript&#39;i Anlamak - Bölüm 9: Örnek Proje</title>
-      <link>/tr/blog/typescript-serisi/typescripti-anlamak-bolum9/</link>
+      <link>http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum9/</link>
       <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
-      <guid>/tr/blog/typescript-serisi/typescripti-anlamak-bolum9/</guid>
+      <guid>http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum9/</guid>
       <description>Bu makalede, TypeScript ve Node.js kullanarak JWT ve Google OAuth kimlik doğrulaması içeren bir Todo uygulaması geliştirme sürecini inceleyeceğiz. TypeScript&amp;rsquo;in tip güvenliği, MongoDB entegrasyonu ve clean architecture prensiplerini uygulayarak modern bir REST API tasarlama deneyimini ele alacağız.</description>
     </item>
     <item>
       <title>Fastify ile RESTful API Oluşturma</title>
-      <link>/tr/blog/fastify-ile-rest-api-olusturma/</link>
+      <link>http://localhost:1313/blog/tr/fastify-ile-rest-api-olusturma/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/tr/blog/fastify-ile-rest-api-olusturma/</guid>
+      <guid>http://localhost:1313/blog/tr/fastify-ile-rest-api-olusturma/</guid>
       <description>Fastify, Node.js için yüksek performans ve düşük kaynak tüketimi sağlamaya odaklanan modern bir web framework&amp;rsquo;tür. Bu yazıda Fastify&amp;rsquo;ın ne olduğunu, nasıl kullanıldığını ve en iyi uygulama önerilerini detaylı olarak anlatacağım.</description>
     </item>
   </channel>

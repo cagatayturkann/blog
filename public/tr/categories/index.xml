@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kategoriler on Çağatay Türkan</title>
-    <link>/tr/categories/</link>
+    <link>http://localhost:1313/blog/tr/categories/</link>
     <description>Recent content in Kategoriler on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
-    <atom:link href="/tr/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/tr/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
-      <link>/tr/categories/ai/</link>
+      <link>http://localhost:1313/blog/tr/categories/ai/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
-      <guid>/tr/categories/ai/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>/tr/categories/javascript/</link>
+      <link>http://localhost:1313/blog/tr/categories/javascript/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
-      <guid>/tr/categories/javascript/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Node.js</title>
-      <link>/tr/categories/node.js/</link>
+      <link>http://localhost:1313/blog/tr/categories/node.js/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
-      <guid>/tr/categories/node.js/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/node.js/</guid>
       <description></description>
     </item>
     <item>
       <title>Backend</title>
-      <link>/tr/categories/backend/</link>
+      <link>http://localhost:1313/blog/tr/categories/backend/</link>
       <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
-      <guid>/tr/categories/backend/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/backend/</guid>
       <description></description>
     </item>
     <item>
       <title>TypeScript</title>
-      <link>/tr/categories/typescript/</link>
+      <link>http://localhost:1313/blog/tr/categories/typescript/</link>
       <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
-      <guid>/tr/categories/typescript/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/typescript/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>/tr/categories/linux/</link>
+      <link>http://localhost:1313/blog/tr/categories/linux/</link>
       <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
-      <guid>/tr/categories/linux/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>/tr/categories/git/</link>
+      <link>http://localhost:1313/blog/tr/categories/git/</link>
       <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>/tr/categories/git/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Kişisel Gelişim</title>
-      <link>/tr/categories/ki%C5%9Fisel-geli%C5%9Fim/</link>
+      <link>http://localhost:1313/blog/tr/categories/ki%C5%9Fisel-geli%C5%9Fim/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>/tr/categories/ki%C5%9Fisel-geli%C5%9Fim/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/ki%C5%9Fisel-geli%C5%9Fim/</guid>
       <description></description>
     </item>
     <item>
       <title>Kitap</title>
-      <link>/tr/categories/kitap/</link>
+      <link>http://localhost:1313/blog/tr/categories/kitap/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>/tr/categories/kitap/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/kitap/</guid>
       <description></description>
     </item>
     <item>
       <title>Archives</title>
-      <link>/tr/categories/archives/</link>
+      <link>http://localhost:1313/blog/tr/categories/archives/</link>
       <pubDate>Tue, 19 Mar 2024 09:16:03 +0800</pubDate>
-      <guid>/tr/categories/archives/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/archives/</guid>
       <description></description>
     </item>
     <item>
       <title>Geliştirme</title>
-      <link>/tr/categories/geli%C5%9Ftirme/</link>
+      <link>http://localhost:1313/blog/tr/categories/geli%C5%9Ftirme/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>/tr/categories/geli%C5%9Ftirme/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/geli%C5%9Ftirme/</guid>
       <description></description>
     </item>
     <item>
       <title>IOS</title>
-      <link>/tr/categories/ios/</link>
+      <link>http://localhost:1313/blog/tr/categories/ios/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>/tr/categories/ios/</guid>
+      <guid>http://localhost:1313/blog/tr/categories/ios/</guid>
       <description></description>
     </item>
   </channel>

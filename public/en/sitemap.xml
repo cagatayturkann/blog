@@ -2,694 +2,697 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/en/tags/ai/</loc>
+    <loc>http://localhost:1313/blog/en/tags/ai/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/ai/"
+                href="http://localhost:1313/blog/tr/tags/ai/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/ai/"
+                href="http://localhost:1313/blog/en/tags/ai/"
                 />
   </url><url>
-    <loc>/en/categories/ai/</loc>
+    <loc>http://localhost:1313/blog/en/categories/ai/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/ai/"
+                href="http://localhost:1313/blog/tr/categories/ai/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/ai/"
+                href="http://localhost:1313/blog/en/categories/ai/"
                 />
   </url><url>
-    <loc>/en/blog/</loc>
+    <loc>http://localhost:1313/blog/en/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/"
+                href="http://localhost:1313/blog/tr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/"
+                href="http://localhost:1313/blog/en/"
                 />
   </url><url>
-    <loc>/en/</loc>
+    <loc>http://localhost:1313/blog/en/categories/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/"
+                href="http://localhost:1313/blog/tr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/"
+                href="http://localhost:1313/blog/en/categories/"
                 />
   </url><url>
-    <loc>/en/categories/</loc>
+    <loc>http://localhost:1313/blog/en/categories/javascript/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/"
+                href="http://localhost:1313/blog/tr/categories/javascript/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/"
+                href="http://localhost:1313/blog/en/categories/javascript/"
                 />
   </url><url>
-    <loc>/en/categories/javascript/</loc>
+    <loc>http://localhost:1313/blog/en/modern-ai-technologies-nodejs-integrations/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/javascript/"
+                href="http://localhost:1313/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/javascript/"
+                href="http://localhost:1313/blog/en/modern-ai-technologies-nodejs-integrations/"
                 />
   </url><url>
-    <loc>/en/blog/modern-ai-technologies-nodejs-integrations/</loc>
+    <loc>http://localhost:1313/blog/en/categories/node.js/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/"
+                href="http://localhost:1313/blog/tr/categories/node.js/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/modern-ai-technologies-nodejs-integrations/"
+                href="http://localhost:1313/blog/en/categories/node.js/"
                 />
   </url><url>
-    <loc>/en/categories/node.js/</loc>
+    <loc>http://localhost:1313/blog/en/tags/nodejs/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/node.js/"
+                href="http://localhost:1313/blog/tr/tags/nodejs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/node.js/"
+                href="http://localhost:1313/blog/en/tags/nodejs/"
                 />
   </url><url>
-    <loc>/en/tags/nodejs/</loc>
+    <loc>http://localhost:1313/blog/en/tags/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/nodejs/"
+                href="http://localhost:1313/blog/tr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/nodejs/"
+                href="http://localhost:1313/blog/en/tags/"
                 />
   </url><url>
-    <loc>/en/tags/</loc>
-    <lastmod>2025-03-01T10:00:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="/tr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/en/tags/"
-                />
-  </url><url>
-    <loc>/en/categories/backend/</loc>
+    <loc>http://localhost:1313/blog/en/categories/backend/</loc>
     <lastmod>2025-02-25T09:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/backend/"
+                href="http://localhost:1313/blog/tr/categories/backend/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/backend/"
+                href="http://localhost:1313/blog/en/categories/backend/"
                 />
   </url><url>
-    <loc>/en/tags/microservices/</loc>
+    <loc>http://localhost:1313/blog/en/tags/microservices/</loc>
     <lastmod>2025-02-25T09:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/microservices/"
+                href="http://localhost:1313/blog/tr/tags/microservices/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/microservices/"
+                href="http://localhost:1313/blog/en/tags/microservices/"
                 />
   </url><url>
-    <loc>/en/tags/typescript/</loc>
+    <loc>http://localhost:1313/blog/en/tags/typescript/</loc>
     <lastmod>2025-02-25T09:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/typescript/"
+                href="http://localhost:1313/blog/tr/tags/typescript/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/typescript/"
+                href="http://localhost:1313/blog/en/tags/typescript/"
                 />
   </url><url>
-    <loc>/en/categories/typescript/</loc>
+    <loc>http://localhost:1313/blog/en/categories/typescript/</loc>
     <lastmod>2025-02-25T09:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/typescript/"
+                href="http://localhost:1313/blog/tr/categories/typescript/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/typescript/"
+                href="http://localhost:1313/blog/en/categories/typescript/"
                 />
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part9/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/</loc>
+    <lastmod>2025-02-25T09:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part9/</loc>
     <lastmod>2025-02-25T09:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum9/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum9/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part9/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part9/"
                 />
   </url><url>
-    <loc>/en/tags/type-guards/</loc>
+    <loc>http://localhost:1313/blog/en/tags/type-guards/</loc>
     <lastmod>2025-02-21T10:30:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/type-guards/"
+                href="http://localhost:1313/blog/tr/tags/type-guards/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/type-guards/"
+                href="http://localhost:1313/blog/en/tags/type-guards/"
                 />
   </url><url>
-    <loc>/en/tags/type-narrowing/</loc>
+    <loc>http://localhost:1313/blog/en/tags/type-narrowing/</loc>
     <lastmod>2025-02-21T10:30:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/type-narrowing/"
+                href="http://localhost:1313/blog/tr/tags/type-narrowing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/type-narrowing/"
+                href="http://localhost:1313/blog/en/tags/type-narrowing/"
                 />
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part8/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part8/</loc>
     <lastmod>2025-02-21T10:30:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum8/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum8/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part8/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part8/"
                 />
   </url><url>
-    <loc>/en/tags/generics/</loc>
+    <loc>http://localhost:1313/blog/en/tags/generics/</loc>
     <lastmod>2025-02-12T19:30:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/generics/"
+                href="http://localhost:1313/blog/tr/tags/generics/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/generics/"
+                href="http://localhost:1313/blog/en/tags/generics/"
                 />
   </url><url>
-    <loc>/en/tags/type-safety/</loc>
+    <loc>http://localhost:1313/blog/en/tags/type-safety/</loc>
     <lastmod>2025-02-12T19:30:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/type-safety/"
+                href="http://localhost:1313/blog/tr/tags/type-safety/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/type-safety/"
+                href="http://localhost:1313/blog/en/tags/type-safety/"
                 />
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part7/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part7/</loc>
     <lastmod>2025-02-12T19:30:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum7/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum7/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part7/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part7/"
                 />
   </url><url>
-    <loc>/en/tags/classes/</loc>
+    <loc>http://localhost:1313/blog/en/tags/classes/</loc>
     <lastmod>2025-02-12T18:15:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/classes/"
+                href="http://localhost:1313/blog/tr/tags/classes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/classes/"
+                href="http://localhost:1313/blog/en/tags/classes/"
                 />
   </url><url>
-    <loc>/en/tags/oop/</loc>
+    <loc>http://localhost:1313/blog/en/tags/oop/</loc>
     <lastmod>2025-02-12T18:15:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/oop/"
+                href="http://localhost:1313/blog/tr/tags/oop/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/oop/"
+                href="http://localhost:1313/blog/en/tags/oop/"
                 />
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part6/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part6/</loc>
     <lastmod>2025-02-12T18:15:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum6/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum6/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part6/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part6/"
                 />
   </url><url>
-    <loc>/en/tags/compiler/</loc>
+    <loc>http://localhost:1313/blog/en/tags/compiler/</loc>
     <lastmod>2025-02-12T17:05:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/compiler/"
+                href="http://localhost:1313/blog/tr/tags/compiler/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/compiler/"
+                href="http://localhost:1313/blog/en/tags/compiler/"
                 />
   </url><url>
-    <loc>/en/tags/configuration/</loc>
+    <loc>http://localhost:1313/blog/en/tags/configuration/</loc>
     <lastmod>2025-02-12T17:05:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/configuration/"
+                href="http://localhost:1313/blog/tr/tags/configuration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/configuration/"
+                href="http://localhost:1313/blog/en/tags/configuration/"
                 />
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part5/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part5/</loc>
     <lastmod>2025-02-12T17:05:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum5/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum5/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part5/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part5/"
                 />
   </url><url>
-    <loc>/en/tags/interfaces/</loc>
+    <loc>http://localhost:1313/blog/en/tags/interfaces/</loc>
     <lastmod>2025-02-12T16:51:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/interfaces/"
+                href="http://localhost:1313/blog/tr/tags/interfaces/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/interfaces/"
+                href="http://localhost:1313/blog/en/tags/interfaces/"
                 />
   </url><url>
-    <loc>/en/tags/type-system/</loc>
+    <loc>http://localhost:1313/blog/en/tags/type-system/</loc>
     <lastmod>2025-02-12T16:51:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/type-system/"
+                href="http://localhost:1313/blog/tr/tags/type-system/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/type-system/"
+                href="http://localhost:1313/blog/en/tags/type-system/"
                 />
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part4/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part4/</loc>
     <lastmod>2025-02-12T16:51:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum4/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum4/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part4/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part4/"
                 />
   </url><url>
-    <loc>/en/tags/javascript/</loc>
+    <loc>http://localhost:1313/blog/en/tags/javascript/</loc>
     <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/javascript/"
+                href="http://localhost:1313/blog/tr/tags/javascript/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/javascript/"
+                href="http://localhost:1313/blog/en/tags/javascript/"
                 />
   </url><url>
-    <loc>/en/tags/object-types/</loc>
+    <loc>http://localhost:1313/blog/en/tags/object-types/</loc>
     <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/object-types/"
+                href="http://localhost:1313/blog/tr/tags/object-types/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/object-types/"
+                href="http://localhost:1313/blog/en/tags/object-types/"
                 />
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part3/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part3/</loc>
     <lastmod>2025-02-09T01:56:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum3/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part3/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part3/"
                 />
   </url><url>
-    <loc>/en/tags/functions/</loc>
+    <loc>http://localhost:1313/blog/en/tags/functions/</loc>
     <lastmod>2025-02-08T23:21:00+03:00</lastmod>
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part2/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part2/</loc>
     <lastmod>2025-02-08T23:21:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum2/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part2/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part2/"
                 />
   </url><url>
-    <loc>/en/blog/typescript-series/understanding-typescript-part1/</loc>
+    <loc>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part1/</loc>
     <lastmod>2025-02-08T23:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/typescript-serisi/typescripti-anlamak-bolum1/"
+                href="http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/typescript-series/understanding-typescript-part1/"
+                href="http://localhost:1313/blog/en/typescript-series/understanding-typescript-part1/"
                 />
   </url><url>
-    <loc>/en/blog/linux/basic-linux-commands/</loc>
+    <loc>http://localhost:1313/blog/en/linux/basic-linux-commands/</loc>
     <lastmod>2025-02-08T18:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/linux/linux-temel-komutlar%C4%B1/"
+                href="http://localhost:1313/blog/tr/linux/linux-temel-komutlar%C4%B1/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/linux/basic-linux-commands/"
+                href="http://localhost:1313/blog/en/linux/basic-linux-commands/"
                 />
   </url><url>
-    <loc>/en/tags/commands/</loc>
+    <loc>http://localhost:1313/blog/en/tags/commands/</loc>
     <lastmod>2025-02-08T18:19:00+03:00</lastmod>
   </url><url>
-    <loc>/en/tags/linux/</loc>
+    <loc>http://localhost:1313/blog/en/tags/linux/</loc>
     <lastmod>2025-02-08T18:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/linux/"
+                href="http://localhost:1313/blog/tr/tags/linux/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/linux/"
+                href="http://localhost:1313/blog/en/tags/linux/"
                 />
   </url><url>
-    <loc>/en/categories/linux/</loc>
+    <loc>http://localhost:1313/blog/en/categories/linux/</loc>
     <lastmod>2025-02-08T18:19:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/linux/"
+                href="http://localhost:1313/blog/tr/categories/linux/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/linux/"
+                href="http://localhost:1313/blog/en/categories/linux/"
                 />
   </url><url>
-    <loc>/en/tags/terminal/</loc>
+    <loc>http://localhost:1313/blog/en/linux/</loc>
+    <lastmod>2025-02-08T18:19:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="http://localhost:1313/blog/tr/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="http://localhost:1313/blog/en/linux/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/en/tags/terminal/</loc>
     <lastmod>2025-02-08T18:19:00+03:00</lastmod>
   </url><url>
-    <loc>/en/blog/build-restful-api-with-fastify-nodejs/</loc>
+    <loc>http://localhost:1313/blog/en/build-restful-api-with-fastify-nodejs/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/en/tags/fastify/</loc>
+    <loc>http://localhost:1313/blog/en/tags/fastify/</loc>
     <lastmod>2025-02-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/fastify/"
+                href="http://localhost:1313/blog/tr/tags/fastify/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/fastify/"
+                href="http://localhost:1313/blog/en/tags/fastify/"
                 />
   </url><url>
-    <loc>/en/tags/git/</loc>
+    <loc>http://localhost:1313/blog/en/tags/git/</loc>
     <lastmod>2025-01-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/git/"
+                href="http://localhost:1313/blog/tr/tags/git/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/git/"
+                href="http://localhost:1313/blog/en/tags/git/"
                 />
   </url><url>
-    <loc>/en/categories/git/</loc>
+    <loc>http://localhost:1313/blog/en/categories/git/</loc>
     <lastmod>2025-01-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/git/"
+                href="http://localhost:1313/blog/tr/categories/git/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/git/"
+                href="http://localhost:1313/blog/en/categories/git/"
                 />
   </url><url>
-    <loc>/en/tags/git-flow/</loc>
+    <loc>http://localhost:1313/blog/en/tags/git-flow/</loc>
     <lastmod>2025-01-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/git-flow/"
+                href="http://localhost:1313/blog/tr/tags/git-flow/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/git-flow/"
+                href="http://localhost:1313/blog/en/tags/git-flow/"
                 />
   </url><url>
-    <loc>/en/blog/git-flow/</loc>
+    <loc>http://localhost:1313/blog/en/git-flow/</loc>
     <lastmod>2025-01-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/blog/git-flow/"
+                href="http://localhost:1313/blog/tr/git-flow/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/blog/git-flow/"
+                href="http://localhost:1313/blog/en/git-flow/"
                 />
   </url><url>
-    <loc>/en/categories/archives/</loc>
+    <loc>http://localhost:1313/blog/en/categories/archives/</loc>
     <lastmod>2024-03-19T09:16:03+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/archives/"
+                href="http://localhost:1313/blog/tr/categories/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/archives/"
+                href="http://localhost:1313/blog/en/categories/archives/"
                 />
   </url><url>
-    <loc>/en/archives/</loc>
+    <loc>http://localhost:1313/blog/en/archives/</loc>
     <lastmod>2024-03-19T09:16:03+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/archives/"
+                href="http://localhost:1313/blog/tr/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/archives/"
+                href="http://localhost:1313/blog/en/archives/"
                 />
   </url><url>
-    <loc>/en/search/</loc>
+    <loc>http://localhost:1313/blog/en/search/</loc>
     <lastmod>2024-01-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/search/"
+                href="http://localhost:1313/blog/tr/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/search/"
+                href="http://localhost:1313/blog/en/search/"
                 />
   </url><url>
-    <loc>/en/tags/api/</loc>
+    <loc>http://localhost:1313/blog/en/tags/api/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/api/"
+                href="http://localhost:1313/blog/tr/tags/api/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/api/"
+                href="http://localhost:1313/blog/en/tags/api/"
                 />
   </url><url>
-    <loc>/en/tags/app-store/</loc>
+    <loc>http://localhost:1313/blog/en/tags/app-store/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/app-store/"
+                href="http://localhost:1313/blog/tr/tags/app-store/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/app-store/"
+                href="http://localhost:1313/blog/en/tags/app-store/"
                 />
   </url><url>
-    <loc>/en/categories/development/</loc>
+    <loc>http://localhost:1313/blog/en/categories/development/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/en/blog/how-to-create-jwt-token-using-app-store-connect-api/</loc>
-    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="/tr/blog/appstore-connect-ile-jwt-token-nasil-olusturulur/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="/en/blog/how-to-create-jwt-token-using-app-store-connect-api/"
-                />
-  </url><url>
-    <loc>/en/categories/ios/</loc>
+    <loc>http://localhost:1313/blog/en/how-to-create-jwt-token-using-app-store-connect-api/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/categories/ios/"
+                href="http://localhost:1313/blog/tr/appstore-connect-ile-jwt-token-nasil-olusturulur/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/categories/ios/"
+                href="http://localhost:1313/blog/en/how-to-create-jwt-token-using-app-store-connect-api/"
                 />
   </url><url>
-    <loc>/en/tags/jwt/</loc>
+    <loc>http://localhost:1313/blog/en/categories/ios/</loc>
     <lastmod>2023-11-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/tags/jwt/"
+                href="http://localhost:1313/blog/tr/categories/ios/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/tags/jwt/"
+                href="http://localhost:1313/blog/en/categories/ios/"
                 />
   </url><url>
-    <loc>/en/about/</loc>
+    <loc>http://localhost:1313/blog/en/tags/jwt/</loc>
+    <lastmod>2023-11-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
-                href="/tr/about/"
+                href="http://localhost:1313/blog/tr/tags/jwt/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="/en/about/"
+                href="http://localhost:1313/blog/en/tags/jwt/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog/en/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="http://localhost:1313/blog/tr/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="http://localhost:1313/blog/en/about/"
                 />
   </url>
 </urlset>

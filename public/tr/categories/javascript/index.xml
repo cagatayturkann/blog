@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on Çağatay Türkan</title>
-    <link>/tr/categories/javascript/</link>
+    <link>http://localhost:1313/blog/tr/categories/javascript/</link>
     <description>Recent content in JavaScript on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
-    <atom:link href="/tr/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/tr/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modern AI Teknolojileri ve Node.js Entegrasyonu</title>
-      <link>/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/</link>
+      <link>http://localhost:1313/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
-      <guid>/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/</guid>
+      <guid>http://localhost:1313/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/</guid>
       <description>Bu makalede, yapay zeka teknolojilerinin JavaScript ekosistemindeki uygulamalarını inceleyeceğiz. AI agent&amp;rsquo;lar, tool calling, conversation memory, context yönetimi gibi temel kavramların Node.js uygulamalarında nasıl hayata geçirileceğini örnek projeler üzerinden ele alacağız.</description>
     </item>
   </channel>
