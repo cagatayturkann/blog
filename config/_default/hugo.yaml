@@ -1,4 +1,4 @@
-baseURL: "https://cagatayturkan.com/"
+baseURL: "https://cagatayturkan.com"
 defaultContentLanguage: "en"
 defaultContentLanguageInSubdir: true
 title: "Çağatay Türkan"
@@ -13,16 +13,16 @@ languages:
     menu:
       main:
         - name: "Home"
-          pageRef: "/"
+          url: "/en/"
           weight: 1
         - name: "Categories"
-          pageRef: "/categories"
+          url: "/en/categories/"
           weight: 2
         - name: "Tags"
-          pageRef: "/tags"
+          url: "/en/tags/"
           weight: 3
         - name: "About"
-          pageRef: "/about"
+          url: "/en/about/"
           weight: 4
   tr:
     languageCode: "tr"
@@ -32,16 +32,16 @@ languages:
     menu:
       main:
         - name: "Ana Sayfa"
-          pageRef: "/"
+          url: "/tr/"
           weight: 1
         - name: "Kategoriler"
-          pageRef: "/categories"
+          url: "/tr/categories/"
           weight: 2
         - name: "Etiketler"
-          pageRef: "/tags"
+          url: "/tr/tags/"
           weight: 3
         - name: "Hakkımda"
-          pageRef: "/about"
+          url: "/tr/about/"
           weight: 4
 
 # Niello theme settings
@@ -62,18 +62,17 @@ outputs:
 menu:
   main:
     - name: "Home"
-      url: "/"
+      url: "/en/"
       weight: 1
     - name: "About"
-      url: "/about"
+      url: "/en/about/"
       weight: 2
     - name: "Blog-EN"
-      url: "/blog/en"
+      url: "/en/blog/"
       weight: 4
     - name: "Blog-TR"
-      url: "/blog/tr"
+      url: "/tr/blog/"
       weight: 5
 
 permalinks:
-  en/blog: /blog/en/:filename/
-  tr/blog: /blog/tr/:filename/ 
+  blog: /:section/:filename/ 
