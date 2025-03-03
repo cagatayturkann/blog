@@ -1,4 +1,4 @@
-baseURL: "/"
+baseURL: "https://cagatayturkan.com/blog/"
 defaultContentLanguage: "en"
 defaultContentLanguageInSubdir: true
 title: "Çağatay Türkan"
@@ -68,8 +68,8 @@ menu:
       url: "/about"
       weight: 2
     - name: "Blog-EN"
-      url: "/blog-en"
+      url: "/blog/en"
       weight: 4
     - name: "Blog-TR"
-      url: "/blog-tr"
+      url: "/blog/tr"
       weight: 5 
