@@ -1,4 +1,4 @@
-baseURL: https://cagatayturkan.com/blog
+baseURL: https://cagatayturkan.com/
 languageCode: en
 title: Çağatay Türkan
 theme: Niello-master
@@ -24,21 +24,9 @@ languages:
     slogan: "Trust me! I am an Engineer."
     menu:
       main:
-        - identifier: home
-          name: Home
-          url: /en/
-          weight: 1
-        - identifier: about
-          name: About
-          url: /en/about/
-          weight: 2
-        - identifier: blog-tr
-          name: Blog-TR
-          url: /tr/
-          weight: 3
         - identifier: archives
           name: Archives
-          url: /blog/en/archives/
+          url: blog/en/archives/
           weight: 4
   tr:
     languageName: Türkçe
@@ -51,30 +39,17 @@ languages:
     comments: false
     slogan: "Trust me! I am an Engineer."
     menu:
-      main:
-        - identifier: home
-          name: Ana Sayfa
-          url: /tr/
-          weight: 1
-        - identifier: about
-          name: Hakkımda
-          url: /tr/about/
-          weight: 2
-        - identifier: blog-en
-          name: Blog-EN
-          url: /en/
-          weight: 3
-        - identifier: archives
-          name: Arşiv
-          url: /tr/archives/
-          weight: 4
+      - identifier: archives
+        name: Arşiv
+        url: /tr/archives/
+        weight: 4
 
 params:
   bannershowcase:
     categories: ["Kitap", "Geliştirme", "Development", "iOS"]
     limit: 5
   email:
-    contact: cagatayturkann@gmail.commmm
+    contact: cagatayturkann@gmail.com
   ignore:
     categories: ["privacy", "terms", "archives", "cookie"]
   google:
