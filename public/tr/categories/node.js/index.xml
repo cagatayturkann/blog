@@ -6,8 +6,15 @@
     <description>Recent content in Node.js on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
-    <lastBuildDate>Tue, 25 Feb 2025 09:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
     <atom:link href="/tr/categories/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modern AI Teknolojileri ve Node.js Entegrasyonu</title>
+      <link>/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/</link>
+      <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      <guid>/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/</guid>
+      <description>Bu makalede, yapay zeka teknolojilerinin JavaScript ekosistemindeki uygulamalarını inceleyeceğiz. AI agent&amp;rsquo;lar, tool calling, conversation memory, context yönetimi gibi temel kavramların Node.js uygulamalarında nasıl hayata geçirileceğini örnek projeler üzerinden ele alacağız.</description>
+    </item>
     <item>
       <title>TypeScript&#39;i Anlamak - Bölüm 9: Örnek Proje</title>
       <link>/tr/blog/typescript-serisi/typescripti-anlamak-bolum9/</link>

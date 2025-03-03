@@ -6,20 +6,34 @@
     <description>Recent content in Categories on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Feb 2025 09:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
     <atom:link href="/en/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Backend</title>
-      <link>/en/categories/backend/</link>
-      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
-      <guid>/en/categories/backend/</guid>
+      <title>AI</title>
+      <link>/en/categories/ai/</link>
+      <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      <guid>/en/categories/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>/en/categories/javascript/</link>
+      <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      <guid>/en/categories/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Node.js</title>
       <link>/en/categories/node.js/</link>
-      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
       <guid>/en/categories/node.js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Backend</title>
+      <link>/en/categories/backend/</link>
+      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      <guid>/en/categories/backend/</guid>
       <description></description>
     </item>
     <item>

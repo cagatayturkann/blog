@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1A1A2E" />
+  
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#16213E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F3460;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Dot pattern -->
+    <pattern id="dotPattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1" fill="#4CAF50" opacity="0.15" />
+    </pattern>
+  </defs>
+  
+  <!-- Background with gradient and dots -->
+  <rect width="1200" height="630" fill="url(#bgGradient)" />
+  <rect width="1200" height="630" fill="url(#dotPattern)" />
+  
+  <!-- Node.js logo (left aligned, using the official SVG) -->
+  <g transform="translate(300, 200)">
+    <!-- Official Node.js logo -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid" fill="#8cc84b" transform="translate(50,0)"><path d="M14.656.427c.8-.453 1.82-.455 2.6 0L29.2 7.16c.747.42 1.247 1.253 1.24 2.114v13.5c.005.897-.544 1.748-1.332 2.16l-11.88 6.702a2.6 2.6 0 0 1-2.639-.073l-3.565-2.06c-.243-.145-.516-.26-.688-.495.152-.204.422-.23.642-.32.496-.158.95-.4 1.406-.656.115-.08.256-.05.366.022l3.04 1.758c.217.125.437-.04.623-.145l11.665-6.583c.144-.07.224-.222.212-.38V9.334c.016-.18-.087-.344-.25-.417L16.19 2.244a.41.41 0 0 0-.465-.001L3.892 8.93c-.16.073-.27.235-.25.415v13.37c-.014.158.07.307.215.375l3.162 1.785c.594.32 1.323.5 1.977.265a1.5 1.5 0 0 0 .971-1.409l.003-13.29c-.014-.197.172-.36.363-.34h1.52c.2-.005.357.207.33.405L12.18 23.88c.001 1.188-.487 2.48-1.586 3.063-1.354.7-3.028.553-4.366-.12l-3.4-1.88c-.8-.4-1.337-1.264-1.332-2.16v-13.5a2.46 2.46 0 0 1 1.282-2.141L14.656.427zM18.1 9.785c1.727-.1 3.576-.066 5.13.785 1.203.652 1.87 2.02 1.892 3.358-.034.18-.222.28-.394.267-.5-.001-1.002.007-1.504-.003-.213.008-.336-.188-.363-.376-.144-.64-.493-1.273-1.095-1.582-.924-.463-1.996-.44-3.004-.43-.736.04-1.527.103-2.15.535-.48.328-.624 1-.453 1.522.16.383.603.506.964.62 2.082.544 4.287.5 6.33 1.207.845.292 1.672.86 1.962 1.745.378 1.186.213 2.604-.63 3.556-.684.784-1.68 1.2-2.675 1.442-1.323.295-2.695.302-4.038.17-1.263-.144-2.577-.476-3.552-1.336-.834-.724-1.24-1.852-1.2-2.94.01-.184.193-.312.37-.297h1.5c.202-.014.35.16.36.35.093.6.322 1.25.854 1.6 1.026.662 2.313.616 3.487.635.973-.043 2.065-.056 2.86-.7.42-.367.543-.98.43-1.508-.123-.446-.6-.653-1-.8-2.055-.65-4.285-.414-6.32-1.15-.826-.292-1.625-.844-1.942-1.693-.443-1.2-.24-2.687.693-3.607.9-.915 2.22-1.268 3.47-1.394z"/></svg>
+  </g>
+  
+  <!-- AI Neural Network Visualization (right side) -->
+  <g transform="translate(800, 200)">
+    <!-- Neural network nodes -->
+    <circle cx="0" cy="-60" r="15" fill="#4CAF50" opacity="0.9"/>
+    <circle cx="-60" cy="-20" r="15" fill="#4CAF50" opacity="0.9"/>
+    <circle cx="60" cy="-20" r="15" fill="#4CAF50" opacity="0.9"/>
+    <circle cx="-100" cy="30" r="15" fill="#4CAF50" opacity="0.9"/>
+    <circle cx="-30" cy="30" r="15" fill="#4CAF50" opacity="0.9"/>
+    <circle cx="30" cy="30" r="15" fill="#4CAF50" opacity="0.9"/>
+    <circle cx="100" cy="30" r="15" fill="#4CAF50" opacity="0.9"/>
+    <circle cx="-60" cy="80" r="15" fill="#4CAF50" opacity="0.9"/>
+    <circle cx="60" cy="80" r="15" fill="#4CAF50" opacity="0.9"/>
+    
+    <!-- Connections between nodes -->
+    <line x1="0" y1="-60" x2="-60" y2="-20" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="-60" x2="60" y2="-20" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    
+    <line x1="-60" y1="-20" x2="-100" y2="30" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="-60" y1="-20" x2="-30" y2="30" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="-60" y1="-20" x2="30" y2="30" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    
+    <line x1="60" y1="-20" x2="-30" y2="30" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="60" y1="-20" x2="30" y2="30" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="60" y1="-20" x2="100" y2="30" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    
+    <line x1="-100" y1="30" x2="-60" y2="80" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="-30" y1="30" x2="-60" y2="80" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="-30" y1="30" x2="60" y2="80" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="30" y1="30" x2="-60" y2="80" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="30" y1="30" x2="60" y2="80" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    <line x1="100" y1="30" x2="60" y2="80" stroke="#4CAF50" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Data flow animations in the neural network -->
+    <circle cx="0" cy="-60" r="3" fill="white" opacity="0.8">
+      <animate attributeName="cy" values="-60;-20" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="0;-60" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0" dur="1s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="0" cy="-60" r="3" fill="white" opacity="0.8">
+      <animate attributeName="cy" values="-60;-20" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="0;60" dur="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0" dur="1s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Connection lines between Node.js and AI -->
+  <line x1="440" y1="200" x2="680" y2="200" stroke="#4CAF50" stroke-width="2" stroke-dasharray="10,5"/>
+  <line x1="440" y1="180" x2="680" y2="180" stroke="#66CDAA" stroke-width="2" stroke-dasharray="10,5"/>
+  <line x1="440" y1="220" x2="680" y2="220" stroke="#9370DB" stroke-width="3" stroke-dasharray="10,5"/>
+  
+  <!-- Animated data flow points on the connection lines -->
+  <circle cx="460" cy="200" r="4" fill="#4CAF50">
+    <animate attributeName="cx" values="440;680" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="520" cy="180" r="3" fill="#66CDAA">
+    <animate attributeName="cx" values="440;680" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="600" cy="220" r="4" fill="#9370DB">
+    <animate attributeName="cx" values="440;680" dur="2.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Title positioned lower to avoid overlap with logos -->
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="white">
+    Modern AI Teknolojileri ve
+  </text>
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="white">
+    Node.js Entegrasyonu
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="540" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#4CAF50">
+    AI Agents • Embeddings • RAG • VectorDB • Tool Calling • Conversation Memory • Ollama • LiteLLM • N8n
+  </text>
+  
+  <!-- Decorative line -->
+  <line x1="300" y1="570" x2="900" y2="570" stroke="#4CAF50" stroke-width="2" opacity="0.7"/>
+</svg>
