@@ -81,4 +81,5 @@ params:
     ga4: "G-NRES0X4BGY"
 
 permalinks:
-  blog: /blog/:lang/:filename/
+  en/blog: /blog/en/:filename/
+  tr/blog: /blog/tr/:filename/
