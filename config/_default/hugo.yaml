@@ -13,16 +13,16 @@ languages:
     menu:
       main:
         - name: "Home"
-          url: "/blog/en/"
+          url: "/en/"
           weight: 1
         - name: "Categories"
-          url: "/blog/en/categories/"
+          url: "/en/categories/"
           weight: 2
         - name: "Tags"
-          url: "/blog/en/tags/"
+          url: "/en/tags/"
           weight: 3
         - name: "About"
-          url: "/blog/en/about/"
+          url: "/en/about/"
           weight: 4
   tr:
     languageCode: "tr"
@@ -32,23 +32,23 @@ languages:
     menu:
       main:
         - name: "Ana Sayfa"
-          url: "/blog/tr/"
+          url: "/tr/"
           weight: 1
         - name: "Kategoriler"
-          url: "/blog/tr/categories/"
+          url: "/tr/categories/"
           weight: 2
         - name: "Etiketler"
-          url: "/blog/tr/tags/"
+          url: "/tr/tags/"
           weight: 3
         - name: "Hakkımda"
-          url: "/blog/tr/about/"
+          url: "/tr/about/"
           weight: 4
 
 # Niello theme settings
 params:
   description: "Personal blog of Çağatay Türkan"
   author: "Çağatay Türkan"
-  mainSections: ["blog"]
+  mainSections: [""]
   dateFormat: "January 2, 2006"
   comments: false
   images: []
@@ -68,10 +68,10 @@ menu:
       url: "/blog/en/about/"
       weight: 2
     - name: "Blog-EN"
-      url: "/blog/en/blog/"
+      url: "/blog/en/"
       weight: 4
     - name: "Blog-TR"
-      url: "/blog/tr/blog/"
+      url: "/blog/tr/"
       weight: 5
 
 permalinks:
