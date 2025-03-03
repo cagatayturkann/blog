@@ -44,6 +44,9 @@ languages:
           pageRef: "/about"
           weight: 4
 
+permalinks:
+  blog: /:lang/:filename/
+
 # Niello theme settings
 params:
   description: "Personal blog of Çağatay Türkan"
