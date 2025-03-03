@@ -59,20 +59,5 @@ params:
 outputs:
   home: ["HTML", "JSON"]
 
-menu:
-  main:
-    - name: "Home"
-      url: "/blog/en/"
-      weight: 1
-    - name: "About"
-      url: "/blog/en/about/"
-      weight: 2
-    - name: "Blog-EN"
-      url: "/blog/en/"
-      weight: 4
-    - name: "Blog-TR"
-      url: "/blog/tr/"
-      weight: 5
-
 permalinks:
   blog: /:section/:filename/ 
