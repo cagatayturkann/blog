@@ -3,8 +3,8 @@ title: "How to Create JWT Tokens for using App Store Connect API?"
 # subtitle: "Blog post subtitle :zap:"
 summary: Hello everyone! Welcome to the first article about App Store Connect API. In this first article, I am going to give a brief explanation of App Store Connect API and how to create JWT tokens for the API.
 date: 2023-11-24
-cardimage: /en/blog/how-to-create-jwt-token-using-app-store-connect-api/images/bg.jpg
-featureimage: /en/blog/how-to-create-jwt-token-using-app-store-connect-api/images/bg.jpg
+cardimage: /blog/en/how-to-create-jwt-token-using-app-store-connect-api/images/bg.jpg
+featureimage: /blog/en/how-to-create-jwt-token-using-app-store-connect-api/images/bg.jpg
 featured: true
 # caption: Image caption
 categories: ["Development", "iOS"]

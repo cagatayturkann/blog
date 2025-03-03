@@ -2,7 +2,7 @@
 title: 'Linux Temel Komutları - Bölüm 1'
 summary: Bu makale serisinde, her geliştiricinin bilmesi gereken en sık kullanılan Linux komutlarını inceleyeceğiz. İlk bölümde, Linux sisteminizi etkili bir şekilde yönetmenize yardımcı olacak 20 temel komutu ele alacağız.
 date: 2025-02-08T18:19:00+03:00
-cardimage: '/tr/blog/linux/linux-temel-komutları/images/cover.png'
+cardimage: '/blog/tr/linux/linux-temel-komutları/images/cover.png'
 featureimage: 'tr/blog/linux/linux-temel-komutları/images/cover.png'
 featured: true
 categories: ['Linux']

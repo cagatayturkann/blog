@@ -2,8 +2,8 @@
 title: "TypeScript'i Anlamak - Bölüm 6: Sınıflar"
 summary: Bu makalede, TypeScript'in sınıf yapısını detaylı bir şekilde inceleyeceğiz. Sınıf tanımlamaları, erişim belirleyicileri, getter/setter metodları ve soyut sınıflar gibi konuları ele alacağız.
 date: 2025-02-12T18:15:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum6/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum6/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum6/images/cover.svg'
+featureimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum6/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'classes', 'oop']

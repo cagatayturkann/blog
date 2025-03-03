@@ -2,8 +2,8 @@
 title: "TypeScript'i Anlamak - Bölüm 4: Interfaces"
 summary: Bu yazıda, TypeScript'in önemli özelliklerinden biri olan interface'leri detaylı bir şekilde inceleyeceğiz. Type Aliases ile farklarını anlayacak ve pratik kullanım senaryolarını öğreneceğiz.
 date: 2025-02-12T16:51:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum4/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum4/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum4/images/cover.svg'
+featureimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum4/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'interfaces', 'type-system']

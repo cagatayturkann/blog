@@ -2,7 +2,7 @@
 title: 'Understanding TypeScript - Part 2: Functions'
 summary: In this article, we'll explore TypeScript functions in detail, covering parameter types, return types, and special function types that make TypeScript unique and powerful.
 date: 2025-02-08T23:21:00+03:00
-cardimage: '/en/blog/typescript-series/understanding-typescript-part2/images/cover.svg'
+cardimage: '/blog/en/typescript-series/understanding-typescript-part2/images/cover.svg'
 featureimage: 'en/blog/typescript-series/understanding-typescript-part2/images/cover.svg'
 featured: true
 categories: ['TypeScript']

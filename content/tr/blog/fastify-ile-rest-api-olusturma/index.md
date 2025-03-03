@@ -3,7 +3,7 @@ title: 'Fastify ile RESTful API Oluşturma'
 # subtitle: "Blog post subtitle :zap:"
 summary: Fastify, Node.js için yüksek performans ve düşük kaynak tüketimi sağlamaya odaklanan modern bir web framework'tür. Bu yazıda Fastify'ın ne olduğunu, nasıl kullanıldığını ve en iyi uygulama önerilerini detaylı olarak anlatacağım.
 date: 2025-02-07  
-cardimage: '/tr/blog/fastify-ile-rest-api-olusturma/images/cover.png'
+cardimage: '/blog/tr/fastify-ile-rest-api-olusturma/images/cover.png'
 featureimage: 'tr/blog/fastify-ile-rest-api-olusturma/images/cover.png'
 featured: true
 # caption: Image caption

@@ -2,7 +2,7 @@
 title: 'Understanding TypeScript - Part 1: The Basics'
 summary: TypeScript is a powerful superset of JavaScript that adds static typing to the language. In this article series, we'll explore TypeScript from basics to advanced concepts, starting with fundamental types and type inference.
 date: 2025-02-08T23:19:00+03:00
-cardimage: '/en/blog/typescript-series/understanding-typescript-part1/images/cover.svg'
+cardimage: '/blog/en/typescript-series/understanding-typescript-part1/images/cover.svg'
 featureimage: 'en/blog/typescript-series/understanding-typescript-part1/images/cover.svg'
 featured: true
 categories: ['TypeScript']

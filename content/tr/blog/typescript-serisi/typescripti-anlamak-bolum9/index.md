@@ -2,8 +2,8 @@
 title: "TypeScript'i Anlamak - Bölüm 9: Örnek Proje"
 summary: Bu makalede, TypeScript ve Node.js kullanarak JWT ve Google OAuth kimlik doğrulaması içeren bir Todo uygulaması geliştirme sürecini inceleyeceğiz. TypeScript'in tip güvenliği, MongoDB entegrasyonu ve clean architecture prensiplerini uygulayarak modern bir REST API tasarlama deneyimini ele alacağız.
 date: 2025-02-25T09:00:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum9/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum9/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum9/images/cover.svg'
+featureimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum9/images/cover.svg'
 featured: true
 categories: ['TypeScript', 'Node.js', 'Backend']
 tags: ['typescript', 'nodejs', 'microservices']

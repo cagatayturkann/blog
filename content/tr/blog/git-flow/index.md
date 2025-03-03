@@ -3,7 +3,7 @@ title: 'Git Flow Nedir?'
 # subtitle: "Blog post subtitle :zap:"
 summary: Git Flow, versiyon kontrol sistemlerinde dal yönetimini sistematikleştiren etkili bir yaklaşımdır. Bu makalede Git Flow'un ne olduğunu, nasıl kullanıldığını ve en iyi uygulama önerilerini detaylı olarak açıklayacağım.
 date: 2025-01-30
-cardimage: '/tr/blog/git-flow/images/cover.png'
+cardimage: '/blog/tr/git-flow/images/cover.png'
 featureimage: 'tr/blog/git-flow/images/cover.png'
 featured: true
 # caption: Image caption

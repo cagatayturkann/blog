@@ -2,8 +2,8 @@
 title: 'Modern AI Teknolojileri ve Node.js Entegrasyonu'
 summary: Bu makalede, yapay zeka teknolojilerinin JavaScript ekosistemindeki uygulamalarını inceleyeceğiz. AI agent'lar, tool calling, conversation memory, context yönetimi gibi temel kavramların Node.js uygulamalarında nasıl hayata geçirileceğini örnek projeler üzerinden ele alacağız.
 date: 2025-03-01T10:00:00+03:00
-cardimage: '/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/images/cover.svg'
-featureimage: '/tr/blog/modern-ai-teknolojileri-nodejs-entegrasyonu/images/cover.svg'
+cardimage: '/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/images/cover.svg'
+featureimage: '/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/images/cover.svg'
 featured: true
 categories: ['AI', 'Node.js', 'JavaScript']
 tags: ['ai', 'nodejs']

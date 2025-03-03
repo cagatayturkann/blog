@@ -3,7 +3,7 @@ title: 'Build a RESTful API with Fastify and Node.js'
 # subtitle: "Blog post subtitle :zap:"
 summary: Fastify is a modern web framework for Node.js that focuses on providing high performance with low overhead. In this article, I will explain in detail what Fastify is, how it's used, and best practice recommendations.
 date: 2025-02-07  
-cardimage: '/en/blog/build-restful-api-with-fastify-nodejs/images/cover.png'
+cardimage: '/blog/en/build-restful-api-with-fastify-nodejs/images/cover.png'
 featureimage: 'en/blog/build-restful-api-with-fastify-nodejs/images/cover.png'
 featured: true
 # caption: Image caption

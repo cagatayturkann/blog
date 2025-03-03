@@ -3,7 +3,7 @@ title: "Atomik Alışkanlıklar Kitap Özeti?"
 # subtitle: "Blog post subtitle :zap:"
 summary: İlk olarak bir süredir okuduğum ve yeni bitirdiğim James Clear'a ait Atomik Alışkanlıklar kitabının özetini, kitabı okurken kendi çizdiğim taraflar ve izlediğim/okuduğum diğer kitap özetlerinden derlediğim notlarla...
 date: 2024-06-11
-cardimage: "/tr/blog/atomik-aliskanliklar-kitap-ozeti/images/cover.png"
+cardimage: "/blog/tr/atomik-aliskanliklar-kitap-ozeti/images/cover.png"
 featureimage: "tr/blog/atomik-aliskanliklar-kitap-ozeti/images/cover.png"
 # caption: Image caption
 categories: ["Kitap", "Kişisel Gelişim"]

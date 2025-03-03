@@ -2,8 +2,8 @@
 title: "TypeScript'i Anlamak - Bölüm 8: Type Narrowing"
 summary: Bu makalede, TypeScript'te type narrowing (tip daraltma) tekniklerini inceleyeceğiz. typeof, instanceof, type predicates gibi tip kontrol yöntemlerini ve discriminated unions yapısını ele alacağız.
 date: 2025-02-21T10:30:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum7/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum7/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum7/images/cover.svg'
+featureimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum7/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'type-narrowing', 'type-guards']

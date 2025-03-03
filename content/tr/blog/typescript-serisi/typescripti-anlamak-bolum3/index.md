@@ -2,8 +2,8 @@
 title: "TypeScript'i Anlamak - Bölüm 3: Obje Tipleri"
 summary: Bu makalede, TypeScript'teki obje tiplerini detaylı bir şekilde inceleyeceğiz. Obje tanımlamaları, tip takma adları ve iç içe objelerle çalışmayı öğreneceğiz.
 date: 2025-02-09T01:56:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum3/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum3/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum3/images/cover.svg'
+featureimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum3/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'javascript', 'object-types']

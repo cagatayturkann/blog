@@ -2,7 +2,7 @@
 title: "TypeScript'i Anlamak - Bölüm 1: Temeller"
 summary: TypeScript, JavaScript'e statik tip desteği ekleyen güçlü bir üst kümedir. Bu makale serisinde, TypeScript'i temellerden ileri seviyeye kadar keşfedeceğiz ve temel tipler ve tip çıkarımı ile başlayacağız.
 date: 2025-02-08T23:19:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum1/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum1/images/cover.svg'
 featureimage: 'tr/blog/typescript-serisi/typescripti-anlamak-bolum1/images/cover.svg'
 featured: true
 categories: ['TypeScript']

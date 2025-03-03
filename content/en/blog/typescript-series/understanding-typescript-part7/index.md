@@ -2,14 +2,14 @@
 title: "Understanding TypeScript - Part 7: Generics"
 summary: In this article, we'll explore generics, one of TypeScript's most powerful features. We'll learn how to write reusable code while maintaining type safety.
 date: 2025-02-12T19:30:00+03:00
-cardimage: '/en/blog/typescript-series/understanding-typescript-part7/images/cover.svg'
-featureimage: '/en/blog/typescript-series/understanding-typescript-part7/images/cover.svg'
+cardimage: '/blog/blog/en/typescript-series/understanding-typescript-part7/images/cover.svg'
+featureimage: '/blog/blog/en/typescript-series/understanding-typescript-part7/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'generics', 'type-safety']
 translationKey: 'typescript-generics'
 authors:
-  - Cagatay: /images/author.jpeg
+  - Cagatay: /blog/images/author.jpeg
 ---
 
 Hello! In this part of our TypeScript series, we'll explore generic structures that make your code more flexible and reusable. Generics allow us to write functions and classes that can work with different data types while maintaining type safety.

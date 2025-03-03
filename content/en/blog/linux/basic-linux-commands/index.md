@@ -2,7 +2,7 @@
 title: 'Basic Linux Commands - Part 1'
 summary: In this article series, we will explore the most commonly used Linux commands that every developer should know. This first part covers 20 essential commands that will help you navigate and manage your Linux system effectively.
 date: 2025-02-08T18:19:00+03:00
-cardimage: '/en/blog/linux/basic-linux-commands/images/cover.png'
+cardimage: '/blog/en/linux/basic-linux-commands/images/cover.png'
 featureimage: 'en/blog/linux/basic-linux-commands/images/cover.png'
 featured: true
 categories: ['Linux']

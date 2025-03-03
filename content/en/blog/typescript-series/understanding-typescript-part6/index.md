@@ -2,8 +2,8 @@
 title: "Understanding TypeScript - Part 6: Classes"
 summary: In this article, we will examine TypeScript's class structure in detail. We will cover topics such as class definitions, access modifiers, getter/setter methods, and abstract classes.
 date: 2025-02-12T18:15:00+03:00
-cardimage: '/en/blog/typescript-series/understanding-typescript-part6/images/cover.svg'
-featureimage: '/en/blog/typescript-series/understanding-typescript-part6/images/cover.svg'
+cardimage: '/blog/en/typescript-series/understanding-typescript-part6/images/cover.svg'
+featureimage: '/blog/en/typescript-series/understanding-typescript-part6/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'classes', 'oop']

@@ -2,8 +2,8 @@
 title: "Understanding TypeScript - Part 8: Type Narrowing"
 summary: In this article, we'll explore type narrowing techniques in TypeScript. We'll cover type checking methods like typeof, instanceof, type predicates, and discriminated unions.
 date: 2025-02-21T10:30:00+03:00
-cardimage: '/en/blog/typescript-series/understanding-typescript-part8/images/cover.svg'
-featureimage: '/en/blog/typescript-series/understanding-typescript-part8/images/cover.svg'
+cardimage: '/blog/en/typescript-series/understanding-typescript-part8/images/cover.svg'
+featureimage: '/blog/en/typescript-series/understanding-typescript-part8/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'type-narrowing', 'type-guards']

@@ -2,8 +2,8 @@
 title: "TypeScript'i Anlamak - Bölüm 5: TypeScript Derleyicisi"
 summary: Bu makalede, TypeScript derleyicisini detaylı bir şekilde inceleyeceğiz. Derleyici ayarları, yapılandırma seçenekleri ve proje yapılandırmasının nasıl yönetileceğini öğreneceğiz.
 date: 2025-02-12T17:05:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum5/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum5/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum5/images/cover.svg'
+featureimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum5/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'compiler', 'configuration']

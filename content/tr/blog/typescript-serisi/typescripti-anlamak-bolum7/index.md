@@ -2,8 +2,8 @@
 title: "TypeScript'i Anlamak - Bölüm 7: Generics"
 summary: Bu makalede, TypeScript'in en güçlü özelliklerinden biri olan generic yapıları inceleyeceğiz. Tip güvenliğini korurken yeniden kullanılabilir kod yazmanın yollarını öğreneceğiz.
 date: 2025-02-12T19:30:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum7/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum7/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum7/images/cover.svg'
+featureimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum7/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'generics', 'type-safety']

@@ -3,7 +3,7 @@ title: 'What is Git Flow?'
 # subtitle: "Blog post subtitle :zap:"
 summary: Git Flow is an effective approach that systematizes branch management in version control systems. In this article, I will explain in detail what Git Flow is, how it's used, and best practice recommendations.
 date: 2025-01-31  
-cardimage: '/en/blog/git-flow/images/cover.png'
+cardimage: '/blog/en/git-flow/images/cover.png'
 featureimage: 'en/blog/git-flow/images/cover.png'
 featured: true
 # caption: Image caption

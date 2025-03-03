@@ -2,8 +2,8 @@
 title: "TypeScript'i Anlamak - Bölüm 2: Fonksiyonlar"
 summary: Bu makalede, TypeScript fonksiyonlarını detaylı bir şekilde inceleyeceğiz. Parametre tipleri, dönüş tipleri ve TypeScript'i benzersiz ve güçlü kılan özel fonksiyon tiplerini ele alacağız.
 date: 2025-02-08T23:21:00+03:00
-cardimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum2/images/cover.svg'
-featureimage: '/tr/blog/typescript-serisi/typescripti-anlamak-bolum2/images/cover.svg'
+cardimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum2/images/cover.svg'
+featureimage: '/blog/tr/typescript-serisi/typescripti-anlamak-bolum2/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'javascript', 'fonksiyonlar']

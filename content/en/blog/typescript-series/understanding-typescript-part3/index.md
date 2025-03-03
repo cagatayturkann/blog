@@ -2,8 +2,8 @@
 title: 'Understanding TypeScript - Part 3: Object Types'
 summary: In this article, we will explore object types in TypeScript in detail. We will learn about object definitions, type aliases, and working with nested objects.
 date: 2025-02-09T01:56:00+03:00
-cardimage: '/en/blog/typescript-series/understanding-typescript-part3/images/cover.svg'
-featureimage: '/en/blog/typescript-series/understanding-typescript-part3/images/cover.svg'
+cardimage: '/blog/en/typescript-series/understanding-typescript-part3/images/cover.svg'
+featureimage: '/blog/en/typescript-series/understanding-typescript-part3/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'javascript', 'object-types']

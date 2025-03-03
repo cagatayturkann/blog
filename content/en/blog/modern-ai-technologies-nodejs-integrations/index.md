@@ -2,8 +2,8 @@
 title: 'Modern AI Technologies and Node.js Integration'
 summary: In this article, we will explore the applications of artificial intelligence technologies in the JavaScript ecosystem. We will discuss how fundamental concepts such as AI agents, tool calling, conversation memory, and context management can be implemented in Node.js applications through example projects.
 date: 2025-03-01T10:00:00+03:00
-cardimage: '/en/blog/modern-ai-technologies-nodejs-integrations/images/cover.svg'
-featureimage: '/en/blog/modern-ai-technologies-nodejs-integrations/images/cover.svg'
+cardimage: '/blog/en/modern-ai-technologies-nodejs-integrations/images/cover.svg'
+featureimage: '/blog/en/modern-ai-technologies-nodejs-integrations/images/cover.svg'
 featured: true
 categories: ['AI', 'Node.js', 'JavaScript']
 tags: ['ai', 'nodejs']

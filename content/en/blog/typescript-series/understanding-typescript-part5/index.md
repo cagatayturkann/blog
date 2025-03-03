@@ -2,8 +2,8 @@
 title: "Understanding TypeScript - Part 5: The TypeScript Compiler"
 summary: In this article, we will examine the TypeScript compiler in detail. We will learn how to manage compiler settings, configuration options, and project configuration.
 date: 2025-02-12T17:05:00+03:00
-cardimage: '/en/blog/typescript-series/understanding-typescript-part5/images/cover.svg'
-featureimage: '/en/blog/typescript-series/understanding-typescript-part5/images/cover.svg'
+cardimage: '/blog/en/typescript-series/understanding-typescript-part5/images/cover.svg'
+featureimage: '/blog/en/typescript-series/understanding-typescript-part5/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'compiler', 'configuration']

@@ -2,8 +2,8 @@
 title: 'Understanding TypeScript - Part 4: Interfaces'
 summary: In this article, we will examine interfaces, one of the important features of TypeScript, in detail. We will understand their differences from Type Aliases and learn practical use cases.
 date: 2025-02-12T16:51:00+03:00
-cardimage: '/en/blog/typescript-series/understanding-typescript-part4/images/cover.svg'
-featureimage: '/en/blog/typescript-series/understanding-typescript-part4/images/cover.svg'
+cardimage: '/blog/en/typescript-series/understanding-typescript-part4/images/cover.svg'
+featureimage: '/blog/en/typescript-series/understanding-typescript-part4/images/cover.svg'
 featured: true
 categories: ['TypeScript']
 tags: ['typescript', 'interfaces', 'type-system']

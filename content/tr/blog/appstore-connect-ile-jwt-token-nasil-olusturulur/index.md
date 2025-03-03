@@ -3,8 +3,8 @@ title: "App Store Connect API için JWT Token Nasıl Oluşturulur?"
 # subtitle: "Blog post subtitle :zap:"
 summary: App Store Connect API, App Store Connect'te gerçekleştirdiğiniz işlemleri otomatikleştiren bir REST API'dir. Bu API, geliştiricilere uygulama gönderme ve güncelleme işlemlerinden, iç uygulama satın almalarını yönetmeye, uygulama performansını ve kullanıcı etkileşimini..
 date: 2023-11-25
-cardimage:  /tr/blog/appstore-connect-ile-jwt-token-nasil-olusturulur/images/bg.jpg
-featureimage: /tr/blog/appstore-connect-ile-jwt-token-nasil-olusturulur/images/bg.jpg
+cardimage:  /blog/tr/appstore-connect-ile-jwt-token-nasil-olusturulur/images/bg.jpg
+featureimage: /blog/tr/appstore-connect-ile-jwt-token-nasil-olusturulur/images/bg.jpg
 featured: true
 categories: ["Geliştirme", "iOS"]
 tags: ["jwt", "app-store", "api"]
