@@ -697,17 +697,5 @@
                 hreflang="tr"
                 href="http://localhost:1313/blog/tr/tags/jwt/"
                 />
-  </url><url>
-    <loc>http://localhost:1313/blog/tr/about/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/blog/en/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="http://localhost:1313/blog/tr/about/"
-                />
   </url>
 </urlset>

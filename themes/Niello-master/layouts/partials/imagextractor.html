@@ -6,9 +6,9 @@
 <!-- Set default images for taxonomies -->
 {{ if eq $page.Kind "term" }}
     {{ if eq $page.Type "categories" }}
-    {{ $image = "/images/default-category.svg" }}
+    {{ $image = "/blog/images/default-category.svg" }}
     {{ else if eq $page.Type "tags" }}
-    {{ $image = "/images/default-tag.svg" }}
+    {{ $image = "/blog/images/default-tag.svg" }}
     {{ end }}
 {{ end }}
 
