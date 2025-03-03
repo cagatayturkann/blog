@@ -79,3 +79,9 @@ params:
     categories: ["privacy", "terms", "archives", "cookie"]
   google:
     ga4: "G-NRES0X4BGY"
+
+permalinks:
+  en:
+    blog: /blog/en/:filename/
+  tr:
+    blog: /blog/tr/:filename/
