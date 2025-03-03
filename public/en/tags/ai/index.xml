@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ai on Çağatay Türkan</title>
+    <link>/en/tags/ai/</link>
+    <description>Recent content in Ai on Çağatay Türkan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
+    <atom:link href="/en/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modern AI Technologies and Node.js Integration</title>
+      <link>/en/blog/modern-ai-technologies-nodejs-integrations/</link>
+      <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      <guid>/en/blog/modern-ai-technologies-nodejs-integrations/</guid>
+      <description>In this article, we will explore the applications of artificial intelligence technologies in the JavaScript ecosystem. We will discuss how fundamental concepts such as AI agents, tool calling, conversation memory, and context management can be implemented in Node.js applications through example projects.</description>
+    </item>
+  </channel>
+</rss>
