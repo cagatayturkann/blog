@@ -2,206 +2,206 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Etiketler on Çağatay Türkan</title>
-    <link>http://localhost:1313/blog/tr/tags/</link>
+    <link>https://cagatayturkan.com/blog/tr/tags/</link>
     <description>Recent content in Etiketler on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cagatayturkan.com/blog/tr/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ai</title>
-      <link>http://localhost:1313/blog/tr/tags/ai/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/ai/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/ai/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Nodejs</title>
-      <link>http://localhost:1313/blog/tr/tags/nodejs/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/nodejs/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/nodejs/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/nodejs/</guid>
       <description></description>
     </item>
     <item>
       <title>Microservices</title>
-      <link>http://localhost:1313/blog/tr/tags/microservices/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/microservices/</link>
       <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/microservices/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/microservices/</guid>
       <description></description>
     </item>
     <item>
       <title>Typescript</title>
-      <link>http://localhost:1313/blog/tr/tags/typescript/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/typescript/</link>
       <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/typescript/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/typescript/</guid>
       <description></description>
     </item>
     <item>
       <title>Type-Guards</title>
-      <link>http://localhost:1313/blog/tr/tags/type-guards/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/type-guards/</link>
       <pubDate>Fri, 21 Feb 2025 10:30:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/type-guards/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/type-guards/</guid>
       <description></description>
     </item>
     <item>
       <title>Type-Narrowing</title>
-      <link>http://localhost:1313/blog/tr/tags/type-narrowing/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/type-narrowing/</link>
       <pubDate>Fri, 21 Feb 2025 10:30:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/type-narrowing/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/type-narrowing/</guid>
       <description></description>
     </item>
     <item>
       <title>Generics</title>
-      <link>http://localhost:1313/blog/tr/tags/generics/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/generics/</link>
       <pubDate>Wed, 12 Feb 2025 19:30:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/generics/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/generics/</guid>
       <description></description>
     </item>
     <item>
       <title>Type-Safety</title>
-      <link>http://localhost:1313/blog/tr/tags/type-safety/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/type-safety/</link>
       <pubDate>Wed, 12 Feb 2025 19:30:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/type-safety/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/type-safety/</guid>
       <description></description>
     </item>
     <item>
       <title>Classes</title>
-      <link>http://localhost:1313/blog/tr/tags/classes/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/classes/</link>
       <pubDate>Wed, 12 Feb 2025 18:15:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/classes/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/classes/</guid>
       <description></description>
     </item>
     <item>
       <title>Oop</title>
-      <link>http://localhost:1313/blog/tr/tags/oop/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/oop/</link>
       <pubDate>Wed, 12 Feb 2025 18:15:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/oop/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/oop/</guid>
       <description></description>
     </item>
     <item>
       <title>Compiler</title>
-      <link>http://localhost:1313/blog/tr/tags/compiler/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/compiler/</link>
       <pubDate>Wed, 12 Feb 2025 17:05:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/compiler/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/compiler/</guid>
       <description></description>
     </item>
     <item>
       <title>Configuration</title>
-      <link>http://localhost:1313/blog/tr/tags/configuration/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/configuration/</link>
       <pubDate>Wed, 12 Feb 2025 17:05:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/configuration/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/configuration/</guid>
       <description></description>
     </item>
     <item>
       <title>Interfaces</title>
-      <link>http://localhost:1313/blog/tr/tags/interfaces/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/interfaces/</link>
       <pubDate>Wed, 12 Feb 2025 16:51:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/interfaces/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/interfaces/</guid>
       <description></description>
     </item>
     <item>
       <title>Type-System</title>
-      <link>http://localhost:1313/blog/tr/tags/type-system/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/type-system/</link>
       <pubDate>Wed, 12 Feb 2025 16:51:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/type-system/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/type-system/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>http://localhost:1313/blog/tr/tags/javascript/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/javascript/</link>
       <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/javascript/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Object-Types</title>
-      <link>http://localhost:1313/blog/tr/tags/object-types/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/object-types/</link>
       <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/object-types/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/object-types/</guid>
       <description></description>
     </item>
     <item>
       <title>Fonksiyonlar</title>
-      <link>http://localhost:1313/blog/tr/tags/fonksiyonlar/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/fonksiyonlar/</link>
       <pubDate>Sat, 08 Feb 2025 23:21:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/fonksiyonlar/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/fonksiyonlar/</guid>
       <description></description>
     </item>
     <item>
       <title>Komutlar</title>
-      <link>http://localhost:1313/blog/tr/tags/komutlar/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/komutlar/</link>
       <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/komutlar/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/komutlar/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/blog/tr/tags/linux/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/linux/</link>
       <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/linux/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Fastify</title>
-      <link>http://localhost:1313/blog/tr/tags/fastify/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/fastify/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/fastify/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/fastify/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/blog/tr/tags/git/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/git/</link>
       <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/git/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Git-Flow</title>
-      <link>http://localhost:1313/blog/tr/tags/git-flow/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/git-flow/</link>
       <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/git-flow/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/git-flow/</guid>
       <description></description>
     </item>
     <item>
       <title>Alışkanlıklar</title>
-      <link>http://localhost:1313/blog/tr/tags/al%C4%B1%C5%9Fkanl%C4%B1klar/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/al%C4%B1%C5%9Fkanl%C4%B1klar/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/al%C4%B1%C5%9Fkanl%C4%B1klar/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/al%C4%B1%C5%9Fkanl%C4%B1klar/</guid>
       <description></description>
     </item>
     <item>
       <title>Kişisel-Gelişim</title>
-      <link>http://localhost:1313/blog/tr/tags/ki%C5%9Fisel-geli%C5%9Fim/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/ki%C5%9Fisel-geli%C5%9Fim/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/ki%C5%9Fisel-geli%C5%9Fim/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/ki%C5%9Fisel-geli%C5%9Fim/</guid>
       <description></description>
     </item>
     <item>
       <title>Kitap-Özeti</title>
-      <link>http://localhost:1313/blog/tr/tags/kitap-%C3%B6zeti/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/kitap-%C3%B6zeti/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/kitap-%C3%B6zeti/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/kitap-%C3%B6zeti/</guid>
       <description></description>
     </item>
     <item>
       <title>Api</title>
-      <link>http://localhost:1313/blog/tr/tags/api/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/api/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/api/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>App-Store</title>
-      <link>http://localhost:1313/blog/tr/tags/app-store/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/app-store/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/app-store/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/app-store/</guid>
       <description></description>
     </item>
     <item>
       <title>Jwt</title>
-      <link>http://localhost:1313/blog/tr/tags/jwt/</link>
+      <link>https://cagatayturkan.com/blog/tr/tags/jwt/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/tr/tags/jwt/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/tags/jwt/</guid>
       <description></description>
     </item>
   </channel>

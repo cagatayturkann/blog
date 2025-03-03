@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Çağatay Türkan</title>
+    <link>https://cagatayturkan.com/blog/en/</link>
+    <description>Recent content on Çağatay Türkan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
+    <atom:link href="https://cagatayturkan.com/blog/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modern AI Technologies and Node.js Integration</title>
+      <link>https://cagatayturkan.com/blog/en/modern-ai-technologies-nodejs-integrations/</link>
+      <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/modern-ai-technologies-nodejs-integrations/</guid>
+      <description>In this article, we will explore the applications of artificial intelligence technologies in the JavaScript ecosystem. We will discuss how fundamental concepts such as AI agents, tool calling, conversation memory, and context management can be implemented in Node.js applications through example projects.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 9: Sample Project</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part9/</link>
+      <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part9/</guid>
+      <description>In this article, we will explore the process of developing a Todo application using TypeScript and Node.js with JWT and Google OAuth authentication. We will discuss the experience of designing a modern REST API by implementing TypeScript&amp;rsquo;s type safety, MongoDB integration, and clean architecture principles.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 8: Type Narrowing</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part8/</link>
+      <pubDate>Fri, 21 Feb 2025 10:30:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part8/</guid>
+      <description>In this article, we&amp;rsquo;ll explore type narrowing techniques in TypeScript. We&amp;rsquo;ll cover type checking methods like typeof, instanceof, type predicates, and discriminated unions.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 7: Generics</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part7/</link>
+      <pubDate>Wed, 12 Feb 2025 19:30:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part7/</guid>
+      <description>In this article, we&amp;rsquo;ll explore generics, one of TypeScript&amp;rsquo;s most powerful features. We&amp;rsquo;ll learn how to write reusable code while maintaining type safety.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 6: Classes</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part6/</link>
+      <pubDate>Wed, 12 Feb 2025 18:15:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part6/</guid>
+      <description>In this article, we will examine TypeScript&amp;rsquo;s class structure in detail. We will cover topics such as class definitions, access modifiers, getter/setter methods, and abstract classes.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 5: The TypeScript Compiler</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part5/</link>
+      <pubDate>Wed, 12 Feb 2025 17:05:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part5/</guid>
+      <description>In this article, we will examine the TypeScript compiler in detail. We will learn how to manage compiler settings, configuration options, and project configuration.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 4: Interfaces</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part4/</link>
+      <pubDate>Wed, 12 Feb 2025 16:51:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part4/</guid>
+      <description>In this article, we will examine interfaces, one of the important features of TypeScript, in detail. We will understand their differences from Type Aliases and learn practical use cases.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 3: Object Types</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part3/</link>
+      <pubDate>Sun, 09 Feb 2025 01:56:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part3/</guid>
+      <description>In this article, we will explore object types in TypeScript in detail. We will learn about object definitions, type aliases, and working with nested objects.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 2: Functions</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part2/</link>
+      <pubDate>Sat, 08 Feb 2025 23:21:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part2/</guid>
+      <description>In this article, we&amp;rsquo;ll explore TypeScript functions in detail, covering parameter types, return types, and special function types that make TypeScript unique and powerful.</description>
+    </item>
+    <item>
+      <title>Understanding TypeScript - Part 1: The Basics</title>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part1/</link>
+      <pubDate>Sat, 08 Feb 2025 23:19:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part1/</guid>
+      <description>TypeScript is a powerful superset of JavaScript that adds static typing to the language. In this article series, we&amp;rsquo;ll explore TypeScript from basics to advanced concepts, starting with fundamental types and type inference.</description>
+    </item>
+    <item>
+      <title>Basic Linux Commands - Part 1</title>
+      <link>https://cagatayturkan.com/blog/en/linux/basic-linux-commands/</link>
+      <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/linux/basic-linux-commands/</guid>
+      <description>In this article series, we will explore the most commonly used Linux commands that every developer should know. This first part covers 20 essential commands that will help you navigate and manage your Linux system effectively.</description>
+    </item>
+    <item>
+      <title>Build a RESTful API with Fastify and Node.js</title>
+      <link>https://cagatayturkan.com/blog/en/build-restful-api-with-fastify-nodejs/</link>
+      <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/build-restful-api-with-fastify-nodejs/</guid>
+      <description>Fastify is a modern web framework for Node.js that focuses on providing high performance with low overhead. In this article, I will explain in detail what Fastify is, how it&amp;rsquo;s used, and best practice recommendations.</description>
+    </item>
+    <item>
+      <title>What is Git Flow?</title>
+      <link>https://cagatayturkan.com/blog/en/git-flow/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/git-flow/</guid>
+      <description>Git Flow is an effective approach that systematizes branch management in version control systems. In this article, I will explain in detail what Git Flow is, how it&amp;rsquo;s used, and best practice recommendations.</description>
+    </item>
+    <item>
+      <title>Archives</title>
+      <link>https://cagatayturkan.com/blog/en/archives/</link>
+      <pubDate>Tue, 19 Mar 2024 09:16:03 +0800</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/archives/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How to Create JWT Tokens for using App Store Connect API?</title>
+      <link>https://cagatayturkan.com/blog/en/how-to-create-jwt-token-using-app-store-connect-api/</link>
+      <pubDate>Fri, 24 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://cagatayturkan.com/blog/en/how-to-create-jwt-token-using-app-store-connect-api/</guid>
+      <description>Hello everyone! Welcome to the first article about App Store Connect API. In this first article, I am going to give a brief explanation of App Store Connect API and how to create JWT tokens for the API.</description>
+    </item>
+  </channel>
+</rss>

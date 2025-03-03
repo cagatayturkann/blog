@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Type-Narrowing on Çağatay Türkan</title>
-    <link>http://localhost:1313/blog/tr/tags/type-narrowing/</link>
+    <link>https://cagatayturkan.com/blog/tr/tags/type-narrowing/</link>
     <description>Recent content in Type-Narrowing on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <lastBuildDate>Fri, 21 Feb 2025 10:30:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tr/tags/type-narrowing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cagatayturkan.com/blog/tr/tags/type-narrowing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TypeScript&#39;i Anlamak - Bölüm 8: Type Narrowing</title>
-      <link>http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum8/</link>
+      <link>https://cagatayturkan.com/blog/tr/typescript-serisi/typescripti-anlamak-bolum8/</link>
       <pubDate>Fri, 21 Feb 2025 10:30:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/typescript-serisi/typescripti-anlamak-bolum8/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/typescript-serisi/typescripti-anlamak-bolum8/</guid>
       <description>Bu makalede, TypeScript&amp;rsquo;te type narrowing (tip daraltma) tekniklerini inceleyeceğiz. typeof, instanceof, type predicates gibi tip kontrol yöntemlerini ve discriminated unions yapısını ele alacağız.</description>
     </item>
   </channel>

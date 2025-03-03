@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Archives on Çağatay Türkan</title>
-    <link>http://localhost:1313/blog/tr/categories/archives/</link>
+    <link>https://cagatayturkan.com/blog/tr/categories/archives/</link>
     <description>Recent content in Archives on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <lastBuildDate>Tue, 19 Mar 2024 09:16:03 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tr/categories/archives/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cagatayturkan.com/blog/tr/categories/archives/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arşiv</title>
-      <link>http://localhost:1313/blog/tr/archives/</link>
+      <link>https://cagatayturkan.com/blog/tr/archives/</link>
       <pubDate>Tue, 19 Mar 2024 09:16:03 +0800</pubDate>
-      <guid>http://localhost:1313/blog/tr/archives/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/archives/</guid>
       <description></description>
     </item>
   </channel>

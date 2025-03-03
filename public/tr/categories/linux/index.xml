@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Çağatay Türkan</title>
-    <link>http://localhost:1313/blog/tr/categories/linux/</link>
+    <link>https://cagatayturkan.com/blog/tr/categories/linux/</link>
     <description>Recent content in Linux on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>tr</language>
     <lastBuildDate>Sat, 08 Feb 2025 18:19:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tr/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cagatayturkan.com/blog/tr/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Temel Komutları - Bölüm 1</title>
-      <link>http://localhost:1313/blog/tr/linux/linux-temel-komutlar%C4%B1/</link>
+      <link>https://cagatayturkan.com/blog/tr/linux/linux-temel-komutlar%C4%B1/</link>
       <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/tr/linux/linux-temel-komutlar%C4%B1/</guid>
+      <guid>https://cagatayturkan.com/blog/tr/linux/linux-temel-komutlar%C4%B1/</guid>
       <description>Bu makale serisinde, her geliştiricinin bilmesi gereken en sık kullanılan Linux komutlarını inceleyeceğiz. İlk bölümde, Linux sisteminizi etkili bir şekilde yönetmenize yardımcı olacak 20 temel komutu ele alacağız.</description>
     </item>
   </channel>

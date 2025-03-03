@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Generics on Çağatay Türkan</title>
-    <link>http://localhost:1313/blog/en/tags/generics/</link>
+    <link>https://cagatayturkan.com/blog/en/tags/generics/</link>
     <description>Recent content in Generics on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 12 Feb 2025 19:30:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/en/tags/generics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cagatayturkan.com/blog/en/tags/generics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding TypeScript - Part 7: Generics</title>
-      <link>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part7/</link>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part7/</link>
       <pubDate>Wed, 12 Feb 2025 19:30:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part7/</guid>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part7/</guid>
       <description>In this article, we&amp;rsquo;ll explore generics, one of TypeScript&amp;rsquo;s most powerful features. We&amp;rsquo;ll learn how to write reusable code while maintaining type safety.</description>
     </item>
   </channel>

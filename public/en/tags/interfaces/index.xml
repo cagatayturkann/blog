@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interfaces on Çağatay Türkan</title>
-    <link>http://localhost:1313/blog/en/tags/interfaces/</link>
+    <link>https://cagatayturkan.com/blog/en/tags/interfaces/</link>
     <description>Recent content in Interfaces on Çağatay Türkan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 12 Feb 2025 16:51:00 +0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/en/tags/interfaces/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cagatayturkan.com/blog/en/tags/interfaces/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding TypeScript - Part 4: Interfaces</title>
-      <link>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part4/</link>
+      <link>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part4/</link>
       <pubDate>Wed, 12 Feb 2025 16:51:00 +0300</pubDate>
-      <guid>http://localhost:1313/blog/en/typescript-series/understanding-typescript-part4/</guid>
+      <guid>https://cagatayturkan.com/blog/en/typescript-series/understanding-typescript-part4/</guid>
       <description>In this article, we will examine interfaces, one of the important features of TypeScript, in detail. We will understand their differences from Type Aliases and learn practical use cases.</description>
     </item>
   </channel>
