@@ -45,7 +45,7 @@ languages:
           weight: 4
 
 permalinks:
-  blog: /:lang/:filename/
+  blog: /:sections/:filename/
 
 # Niello theme settings
 params:
