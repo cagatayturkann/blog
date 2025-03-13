@@ -1,96 +1,157 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Kategoriler on Çağatay Türkan</title>
     <link>https://cagatayturkan.com/blog/tr/categories/</link>
     <description>Recent content in Kategoriler on Çağatay Türkan</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
-    <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
-    <atom:link href="https://cagatayturkan.com/blog/tr/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/tr/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
       <link>https://cagatayturkan.com/blog/tr/categories/ai/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/ai/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>JavaScript</title>
       <link>https://cagatayturkan.com/blog/tr/categories/javascript/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/javascript/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>Node.js</title>
       <link>https://cagatayturkan.com/blog/tr/categories/node.js/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/node.js/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>Backend</title>
       <link>https://cagatayturkan.com/blog/tr/categories/backend/</link>
       <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/backend/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>TypeScript</title>
       <link>https://cagatayturkan.com/blog/tr/categories/typescript/</link>
       <pubDate>Tue, 25 Feb 2025 09:00:00 +0300</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/typescript/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>Linux</title>
       <link>https://cagatayturkan.com/blog/tr/categories/linux/</link>
       <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/linux/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>Git</title>
       <link>https://cagatayturkan.com/blog/tr/categories/git/</link>
       <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/git/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>Kişisel Gelişim</title>
       <link>https://cagatayturkan.com/blog/tr/categories/ki%C5%9Fisel-geli%C5%9Fim/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/ki%C5%9Fisel-geli%C5%9Fim/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>Kitap</title>
       <link>https://cagatayturkan.com/blog/tr/categories/kitap/</link>
       <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/kitap/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>Archives</title>
       <link>https://cagatayturkan.com/blog/tr/categories/archives/</link>
       <pubDate>Tue, 19 Mar 2024 09:16:03 +0800</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/archives/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>Geliştirme</title>
       <link>https://cagatayturkan.com/blog/tr/categories/geli%C5%9Ftirme/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/geli%C5%9Ftirme/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
     <item>
       <title>IOS</title>
       <link>https://cagatayturkan.com/blog/tr/categories/ios/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/categories/ios/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
   </channel>
-</rss>
+</rss> 

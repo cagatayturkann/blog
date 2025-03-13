@@ -1,19 +1,674 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AI on Çağatay Türkan</title>
     <link>https://cagatayturkan.com/blog/tr/categories/ai/</link>
     <description>Recent content in AI on Çağatay Türkan</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
-    <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate>
-    <atom:link href="https://cagatayturkan.com/blog/tr/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Mar 2025 10:00:00 +0300</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/tr/categories/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modern AI Teknolojileri ve Node.js Entegrasyonu</title>
       <link>https://cagatayturkan.com/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/</link>
       <pubDate>Sat, 01 Mar 2025 10:00:00 +0300</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/</guid>
       <description>Bu makalede, yapay zeka teknolojilerinin JavaScript ekosistemindeki uygulamalarını inceleyeceğiz. AI agent&amp;rsquo;lar, tool calling, conversation memory, context yönetimi gibi temel kavramların Node.js uygulamalarında nasıl hayata geçirileceğini örnek projeler üzerinden ele alacağız.</description>
+      
+      <cardimage>https://cagatayturkan.com/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/images/cover.svg</cardimage>
+      
+      
+      <featureimage>https://cagatayturkan.com/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/images/cover.svg</featureimage>
+      
+      <content:encoded>&lt;h1 id=&#34;modern-ai-teknolojileri-ve-nodejs-entegrasyonu&#34;&gt;Modern AI Teknolojileri ve Node.js Entegrasyonu&lt;/h1&gt;
+&lt;h2 id=&#34;giriş&#34;&gt;Giriş&lt;/h2&gt;
+&lt;p&gt;Yapay zeka teknolojileri, özellikle dil modelleri, yazılım geliştirme dünyasını hızla dönüştürüyor. Node.js gibi popüler bir platform ile AI teknolojilerini entegre etmek, JavaScript ekosisteminde çalışan geliştiricilere inanılmaz fırsatlar sunuyor. Bu makalede, modern AI konseptlerini Node.js çerçevesinde nasıl uygulayabileceğimizi inceleyeceğiz.&lt;/p&gt;
+&lt;p&gt;Bu yazı size şunları kazandıracak:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AI terminolojisini ve temel kavramlarını anlama&lt;/li&gt;
+&lt;li&gt;Node.js ile LLM (Large Language Model) entegrasyonu&lt;/li&gt;
+&lt;li&gt;AI agent&amp;rsquo;lar oluşturma ve araç çağırma (tool calling) yeteneğini anlama&lt;/li&gt;
+&lt;li&gt;Açık kaynak AI teknolojilerini (Ollama, LiteLLM, LlamaCPP) Node.js uygulamalarında kullanma&lt;/li&gt;
+&lt;li&gt;Otomatik iş akışları için N8n ile AI entegrasyonu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Projelerin tam kodlarına &lt;a href=&#34;https://github.com/cagatayturkann/blogProjects/tree/main/nodejs-ai-examples&#34;&gt;GitHub repository&lt;/a&gt; adresinden erişebilirsiniz.&lt;/p&gt;
+&lt;h2 id=&#34;1-ai-agentlar-akıllı-asistanlar-geliştirme&#34;&gt;1. AI Agent&amp;rsquo;lar: Akıllı Asistanlar Geliştirme&lt;/h2&gt;
+&lt;h3 id=&#34;ai-agent-nedir&#34;&gt;AI Agent Nedir?&lt;/h3&gt;
+&lt;p&gt;AI agent, LLM&amp;rsquo;leri (Large Language Models) kullanarak belirli görevleri gerçekleştirmek üzere tasarlanmış yazılım sistemleridir. Bu ajanlar, insan benzeri düşünme, karar verme ve çevresiyle etkileşim kurma yeteneklerine sahiptir. AI agent&amp;rsquo;ı, belirli görevleri yerine getirmek üzere tasarlanmış otonom bir yazılım bileşenidir. Bu agentlar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Veri alır (input): Örneğin, kullanıcıdan gelen sorgular veya sistemden gelen veriler.&lt;/li&gt;
+&lt;li&gt;İşlem yapar (processing): Bu veriler üzerinde analiz yapar, karar verir veya model çalıştırır.&lt;/li&gt;
+&lt;li&gt;Çıktı verir (output): Sonuçları veya eylemleri gerçekleştirir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Modern AI agent&amp;rsquo;lar tipik olarak şu bileşenleri içerir:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;LLM (Beyin)&lt;/strong&gt;: Doğal dil anlama ve üretme yeteneği&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bellek (Memory)&lt;/strong&gt;: Geçmiş etkileşimleri hatırlama&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Araçlar (Tools)&lt;/strong&gt;: API&amp;rsquo;ler, veritabanları ve diğer sistemlerle etkileşime geçme yeteneği&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Planlama&lt;/strong&gt;: Karmaşık görevleri alt görevlere bölebilme&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;AI Agent&amp;rsquo;lar reaktif yani herhangi bir kullanıcı tetikleyicisi olmadan kendi başına veri toplama, çevri analizi vs işlemler yapmayan basit agentlar olabileceği gibi daha yaygın olarak otonom da olabilir. Otonom bir agent; örneğin, bir akıllı ev sisteminde olduğu gibi, ortamı sürekli izleyebilir, belirli durumları algılayıp kendi kararlarını verebilir. Bu tarz bir agent; sürekli sensör vb kaynaklardan veri toplar, bu verileri analiz eder ve bu analize göre kendi başına belirli görevler başlatır veya ayarlar.&lt;/p&gt;
+&lt;h3 id=&#34;nodejs-ile-ai-agent-oluşturma&#34;&gt;Node.js ile AI Agent Oluşturma&lt;/h3&gt;
+&lt;p&gt;Node.js ve OpenAI API kullanarak basit bir otonom agent örneği yapalım. Bu örnekte, ajan belirli aralıklarla &amp;ldquo;sensör verisi&amp;rdquo; üretip, bu veriye göre OpenAI&amp;rsquo;dan aldığı karara göre hareket ediyor. Öncelikle gerekli paketi indiriyoruz.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install openai
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Daha sonra ise kodumuz aşağıdaki şekilde.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;OpenAI&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;openai&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// OpenAI yapılandırması: API anahtarınızı buraya ekleyin.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openai&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OpenAI&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;apiKey&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;your-api-key&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Otonom ajan fonksiyonu
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;autonomousAgent&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Ajan çalışmaya başladı...&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// 1. Adım: Sensör verisini simüle et (örneğin, rastgele bir sayı)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sensorData&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Math.&lt;span style=&#34;color:#a6e22e&#34;&gt;random&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Sensör verisi:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;sensorData&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// 2. Adım: Sensör verisine dayalı karar vermek için OpenAI&amp;#39;ya prompt gönder
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prompt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`Sensör verisi: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;sensorData&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;. Eğer veri 50&amp;#39;den büyükse &amp;#34;Alarm&amp;#34;, 50 veya daha düşükse &amp;#34;Normal&amp;#34; sonucunu tek kelime olarak ver.`&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openai&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;chat&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;completions&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;model&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;gpt-4o-mini&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [{ &lt;span style=&#34;color:#a6e22e&#34;&gt;role&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prompt&lt;/span&gt; }],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;max_tokens&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;temperature&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.3&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;decision&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;choices&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;trim&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Ajan Kararı:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;decision&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// 3. Adım: OpenAI&amp;#39;dan gelen karara göre hareket et
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;decision&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Alarm&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Alarm durumu tespit edildi, gerekli işlemleri başlatıyor...&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// Burada alarmı tetiklemek veya bildirim göndermek gibi işlemler yapılabilir.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;decision&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Normal&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Durum normal, bekleme modunda...&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// Normal durumda yapılacak başka işlemler eklenebilir.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Bilinmeyen karar, tekrar kontrol ediliyor...&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;// Beklenmeyen durumlarda hata yönetimi yapılabilir.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hata oluştu:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Ajanı her 30 saniyede bir otomatik olarak çalıştır.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setInterval&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;autonomousAgent&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10000&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Program başladığında hemen bir kere çalıştır.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;autonomousAgent&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu kod parçasını daha detaylı açıklayacak olursak&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Sensör Verisi Üretimi:&lt;/strong&gt; Agent, her çalıştığında rastgele bir sayı üretiyor. Bu sayı, örnek bir sensör verisi olarak düşünülüyor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Karar Süreci:&lt;/strong&gt; Üretilen sensör verisi, bir prompt içerisinde OpenAI API&amp;rsquo;ya gönderiliyor. Bu prompt, veriye göre &amp;ldquo;Alarm&amp;rdquo; veya &amp;ldquo;Normal&amp;rdquo; kelimesi döndürmesini istiyor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eylem:&lt;/strong&gt; OpenAI&amp;rsquo;dan gelen yanıt, agentın kararını belirliyor. Eğer yanıt &amp;ldquo;Alarm&amp;rdquo; ise, agent alarm durumunu tetikleyen işlemleri gerçekleştiriyor; &amp;ldquo;Normal&amp;rdquo; ise, bekleme modunda kalıyor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Otonomluk:&lt;/strong&gt; Agent, kullanıcı müdahalesi olmadan belirli aralıklarla (burada her 30 saniyede bir) kendi başına çalışarak, sensör verisini değerlendiriyor ve otomatik olarak karar veriyor.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Bu örnek, otonom agent kavramını, sadece kullanıcı girdisine bağlı olmayan, kendi kendini tetikleyen ve belirli şartlara göre karar veren bir yapı olarak göstermektedir. Böylece, sistem belirli bir zaman döngüsünde bağımsız çalışarak çevresel veriye göre eylem alabiliyor.&lt;/p&gt;
+&lt;h3 id=&#34;ai-agent-çalışma-prensibi&#34;&gt;AI Agent Çalışma Prensibi&lt;/h3&gt;
+&lt;p&gt;AI agent&amp;rsquo;lar genellikle şu adımları izler:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Düşünme&lt;/strong&gt;: İstenen görev için bir plan oluşturma&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aracı Seçme&lt;/strong&gt;: Görevi tamamlamak için hangi aracı kullanacağına karar verme&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eylem&lt;/strong&gt;: Seçilen aracı kullanarak belirli bir eylemi gerçekleştirme&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gözlemleme&lt;/strong&gt;: Eylemin sonucunu inceleme&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;İlerleme&lt;/strong&gt;: Sonuca göre yeni bir düşünme-eylem döngüsü başlatma&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Bu yaklaşım ReAct (Reasoning and Acting) olarak bilinir ve LLM&amp;rsquo;in düşünmeyle eylemi birleştirmesini sağlar.&lt;/p&gt;
+&lt;h3 id=&#34;neden-bu-özellik-önemli&#34;&gt;Neden Bu Özellik Önemli?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Otomatikleştirilebilir işlemleri akıllı asistanlara devredebilirsiniz&lt;/li&gt;
+&lt;li&gt;İnsan kullanıcılara daha doğal bir arayüz sunabilirsiniz&lt;/li&gt;
+&lt;li&gt;Karmaşık iş akışlarını modüler araçlarla basitleştirebilirsiniz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-embedding-rag-vectordb&#34;&gt;2. Embedding, RAG, VectorDB&lt;/h2&gt;
+&lt;h3 id=&#34;embedding&#34;&gt;Embedding&lt;/h3&gt;
+&lt;p&gt;Embedding, metin veya diğer veri türlerini sayısal vektörlere dönüştürme işlemidir. Bu vektörler, verinin anlamsal özelliklerini sayısal formatta temsil eder. Örneğin, &amp;ldquo;köpek&amp;rdquo; ve &amp;ldquo;kedi&amp;rdquo; kelimeleri birbirine yakın vektörlerle temsil edilirken, &amp;ldquo;araba&amp;rdquo; daha uzak bir vektörle temsil edilir.&lt;/p&gt;
+&lt;p&gt;Embeddingler şu amaçlarla kullanılır:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Metin benzerliği hesaplama&lt;/li&gt;
+&lt;li&gt;Doküman sınıflandırma&lt;/li&gt;
+&lt;li&gt;Semantik arama&lt;/li&gt;
+&lt;li&gt;Öneriler oluşturma&lt;/li&gt;
+&lt;li&gt;Duygu analizi&lt;/li&gt;
+&lt;li&gt;Metin özetleme&lt;/li&gt;
+&lt;li&gt;Doğal dil işleme görevleri&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Embedding&amp;rsquo;lerin çalışma prensibi şu şekildedir:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Tokenization&lt;/strong&gt;: Metin önce daha küçük parçalara (token) ayrılır&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vektör Dönüşümü&lt;/strong&gt;: Her token, yüzlerce veya binlerce boyutlu bir vektöre dönüştürülür&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Normalizasyon&lt;/strong&gt;: Vektörler normalize edilerek karşılaştırılabilir hale getirilir&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Embedding&amp;rsquo;lerin en önemli özelliği, benzer anlamlara sahip içeriklerin vektör uzayında birbirine yakın konumlanmasıdır. Bu sayede, metin tabanlı aramalarda kelime eşleştirmeden ziyade anlam bazlı sonuçlar elde edilebilir. Örneğin, &amp;ldquo;mutlu&amp;rdquo; ve &amp;ldquo;sevinçli&amp;rdquo; kelimeleri vektör uzayında birbirine yakın konumlanırken, &amp;ldquo;üzgün&amp;rdquo; kelimesi uzak bir noktada yer alır.&lt;/p&gt;
+&lt;h3 id=&#34;rag-retrieval-augmented-generation&#34;&gt;RAG (Retrieval Augmented Generation)&lt;/h3&gt;
+&lt;p&gt;RAG, büyük dil modellerinin (LLM) mevcut bilgi tabanını harici kaynaklarla zenginleştiren bir tekniktir. RAG sistemi şu şekilde çalışır:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Retrieval (Getirme)&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kullanıcı sorusu ile ilgili dokümanlar veya bilgiler veritabanından çekilir&lt;/li&gt;
+&lt;li&gt;Semantic search kullanılarak en alakalı içerikler bulunur&lt;/li&gt;
+&lt;li&gt;Embedding benzerliği ile dokümanlar sıralanır&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Augmentation (Zenginleştirme)&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bulunan bilgiler LLM&amp;rsquo;e gönderilen prompt&amp;rsquo;a eklenir&lt;/li&gt;
+&lt;li&gt;Bilgiler önem sırasına göre düzenlenir&lt;/li&gt;
+&lt;li&gt;Bağlam penceresi optimize edilir&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Generation (Üretim)&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LLM, zenginleştirilmiş bağlamı kullanarak yanıt üretir&lt;/li&gt;
+&lt;li&gt;Yanıt, verilen kaynaklara referans verebilir&lt;/li&gt;
+&lt;li&gt;Güvenilirlik skoru hesaplanabilir&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;RAG&amp;rsquo;ın avantajları:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Güncel bilgi kullanımı&lt;/li&gt;
+&lt;li&gt;Doğruluk oranının artması&lt;/li&gt;
+&lt;li&gt;Özelleştirilmiş yanıtlar&lt;/li&gt;
+&lt;li&gt;Hallüsinasyonların azalması&lt;/li&gt;
+&lt;li&gt;Kaynakların takip edilebilirliği&lt;/li&gt;
+&lt;li&gt;Dinamik bilgi güncelleme imkanı&lt;/li&gt;
+&lt;li&gt;Domain-specific bilgi entegrasyonu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vector-db&#34;&gt;Vector DB&lt;/h3&gt;
+&lt;p&gt;Vector veritabanları, embedding vektörlerini depolamak ve bu vektörler üzerinde benzerlik araması yapmak için özelleştirilmiş veritabanı sistemleridir. Geleneksel veritabanlarından farklı olarak, vektörler arasındaki benzerliği hızlı bir şekilde hesaplayabilirler.&lt;/p&gt;
+&lt;p&gt;Vector DB&amp;rsquo;lerin temel özellikleri:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yüksek boyutlu vektörleri verimli şekilde depolama&lt;/li&gt;
+&lt;li&gt;Benzerlik bazlı arama (cosine similarity, euclidean distance)&lt;/li&gt;
+&lt;li&gt;Hızlı yakın komşu (nearest neighbor) sorguları&lt;/li&gt;
+&lt;li&gt;Ölçeklenebilirlik&lt;/li&gt;
+&lt;li&gt;CRUD operasyonları&lt;/li&gt;
+&lt;li&gt;Metadata filtreleme&lt;/li&gt;
+&lt;li&gt;Batch işlem desteği&lt;/li&gt;
+&lt;li&gt;Vektör indeksleme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Vector DB&amp;rsquo;ler özellikle şu alanlarda kullanılır:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Semantik doküman araması&lt;/li&gt;
+&lt;li&gt;Öneri sistemleri&lt;/li&gt;
+&lt;li&gt;Görüntü ve ses benzerliği analizi&lt;/li&gt;
+&lt;li&gt;Doğal dil işleme uygulamaları&lt;/li&gt;
+&lt;li&gt;Yüz tanıma sistemleri&lt;/li&gt;
+&lt;li&gt;Anomali tespiti&lt;/li&gt;
+&lt;li&gt;Çapraz modal arama (text-to-image, image-to-text)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Popüler Vector DB çözümleri:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pinecone: Tam yönetilen, ölçeklenebilir çözüm&lt;/li&gt;
+&lt;li&gt;Weaviate: Açık kaynak, self-hosted seçeneği&lt;/li&gt;
+&lt;li&gt;Milvus: Yüksek performanslı, dağıtık mimari&lt;/li&gt;
+&lt;li&gt;Qdrant: Rust tabanlı, hızlı ve hafif&lt;/li&gt;
+&lt;li&gt;ChromaDB: Python odaklı, başlangıç için ideal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-tool-calling-aia-yeni-yetenekler-kazandırma&#34;&gt;3. Tool Calling: AI&amp;rsquo;a Yeni Yetenekler Kazandırma&lt;/h2&gt;
+&lt;h3 id=&#34;tool-calling-nedir&#34;&gt;Tool Calling Nedir?&lt;/h3&gt;
+&lt;p&gt;Tool calling (araç çağırma), bir AI modelinin dış fonksiyonları veya API&amp;rsquo;leri çağırabilme yeteneğidir. Bu, AI&amp;rsquo;ın kendi bilgi sınırları dışındaki işlemleri gerçekleştirmesini sağlar.&lt;/p&gt;
+&lt;p&gt;Modern LLM&amp;rsquo;ler, JSON formatında araç çağrısı yapabilme yeteneğine sahiptir. Bu, modelin gerçekleştirmek istediği eylemi ve gerekli parametreleri tanımlamasını sağlar.&lt;/p&gt;
+&lt;h3 id=&#34;nodejs-ile-tool-calling&#34;&gt;Node.js ile Tool Calling&lt;/h3&gt;
+&lt;p&gt;OpenAI API&amp;rsquo;sini kullanarak tool calling implementasyonu yapalım. Aşağıdaki örnekte, Node.js kullanarak &amp;ldquo;tool calling&amp;rdquo; kavramını gösteren bir agent oluşturuyoruz. Bu agent iki farklı &amp;ldquo;aracı&amp;rdquo; çağırıyor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hava Durumu API&amp;rsquo;si (OpenWeatherMap):&lt;/strong&gt; Agent, belirli bir konum için güncel hava durumu verisini alıyor. - &lt;strong&gt;OpenAI API:&lt;/strong&gt; Aldığı hava durumu verisini kullanarak, günün nasıl geçtiğine dair kısa bir analiz istiyor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu iki aracı ardışık şekilde kullanarak, ajanın dış kaynaklardan veri toplayıp bu veriyi işlediğini görebiliriz.&lt;/p&gt;
+&lt;p&gt;Öncelikle gerekli kütüphaneleri indiriyoruz&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install axios openai
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Örnek kodumuz ise aşağıdaki şekilde.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;axios&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;axios&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;OpenAI&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;openai&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// API anahtarlarınızı girin
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;WEATHER_API_KEY&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;your-api-key&amp;gt;&amp;#39;&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// OpenWeatherMap API anahtarınız
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Hava durumu sorgulanacak konum
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;LOCATION&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Istanbul&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// OpenAI yapılandırması
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openai&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OpenAI&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;apiKey&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;your-api-key&amp;gt;&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 1. Adım: Hava Durumu API&amp;#39;sini çağıran fonksiyon
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getWeatherData&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;location&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;axios&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#e6db74&#34;&gt;`https://api.openweathermap.org/data/2.5/weather?q=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;location&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;appid=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;WEATHER_API_KEY&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;amp;units=metric`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hava durumu API hatası:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 2. Adım: OpenAI API&amp;#39;ye veriyi gönderip analiz yapan fonksiyon
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;analyzeWeather&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;weatherData&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;weatherData&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hava durumu verisi alınamadı.&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// Hava durumu verisine dayalı prompt oluşturma
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prompt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`Şu an &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;weatherData&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;de hava &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;weatherData&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;weather&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;description&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; ve sıcaklık &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;weatherData&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;temp&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;°C. Bu hava durumuna göre, gün nasıl geçiyor ve ne tür bir aktivite önerirsiniz? Kısa bir özet ver.`&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openai&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;chat&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;completions&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;model&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;gpt-4o-mini&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [{ &lt;span style=&#34;color:#a6e22e&#34;&gt;role&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prompt&lt;/span&gt; }],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;max_tokens&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;temperature&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.7&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;choices&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;trim&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;OpenAI API hatası:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hava durumu analiz edilemedi.&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Ana fonksiyon: Araçları sırasıyla çağırır
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Tool Calling Ajanı başlatılıyor...&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// Hava durumu verisini almak için aracı çağırma
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;weatherData&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getWeatherData&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;LOCATION&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Alınan Hava Durumu Verisi:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;weatherData&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// OpenAI API&amp;#39;ye veriyi gönderip analiz alıyoruz
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;analysis&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;analyzeWeather&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;weatherData&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Analiz Sonucu:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;analysis&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu örnekte, agent &amp;ldquo;tool calling&amp;rdquo; yaparak iki farklı dış kaynağı (OpenWeatherMap ve OpenAI) kullanıyor. Öncelikle hava durumu verisi toplanıyor; ardından bu veri, bir analiz için OpenAI API&amp;rsquo;sine gönderiliyor. Böylece, ajanın kendi yeteneklerinin ötesinde dış kaynaklardan faydalanması sağlanıyor.&lt;/p&gt;
+&lt;h3 id=&#34;farklı-araç-türleri&#34;&gt;Farklı Araç Türleri&lt;/h3&gt;
+&lt;p&gt;AI sistemlerinize entegre edebileceğiniz bazı araç türleri:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Veritabanı İşlemleri&lt;/strong&gt;: Veri sorgulama, ekleme, güncelleme&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API Çağrıları&lt;/strong&gt;: Harici servislere bağlanma (hava durumu, borsa, haberler)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dosya İşlemleri&lt;/strong&gt;: Dosya okuma, yazma, dönüştürme&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hesaplamalar&lt;/strong&gt;: Karmaşık matematiksel işlemler&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Takvim/Zamanlama&lt;/strong&gt;: Etkinlik oluşturma, hatırlatıcı ayarlama&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;tool-calling-best-practices&#34;&gt;Tool Calling Best Practices&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Açık Tanımlamalar&lt;/strong&gt;: Araçlarınızı açık ve net tanımlayın, parametreleri dokumentasyon içerisinde detaylandırın&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Güvenlik Kontrolleri&lt;/strong&gt;: Kullanıcı girdilerini doğrulayın&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Graceful Failure&lt;/strong&gt;: Araçlar hata verdiğinde zarif bir şekilde geri dönüş yapın&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aşamalı Geliştirme&lt;/strong&gt;: Önce basit araçlarla başlayın, sonra karmaşıklığı artırın&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;4-conversation-memory-aiya-hafıza-kazandırma&#34;&gt;4. Conversation Memory: AI&amp;rsquo;ya Hafıza Kazandırma&lt;/h2&gt;
+&lt;h3 id=&#34;conversation-memory-nedir&#34;&gt;Conversation Memory Nedir?&lt;/h3&gt;
+&lt;p&gt;Conversation memory, bir AI sisteminin önceki etkileşimleri hatırlama ve buna göre yanıt verme yeteneğidir. Bu özellik, sohbetin tutarlı ve bağlamsal olmasını sağlar.&lt;/p&gt;
+&lt;h3 id=&#34;neden-önemli&#34;&gt;Neden Önemli?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bağlamsal tutarlılık sağlar. Kullanıcılar her seferinde bağlam vermek zorunda kalmaz. Yani diyalog sırasında, agent önceki mesajları &amp;lsquo;hatırlar&amp;rsquo;. Böylece, örneğin bir sohbet başlangıcından verilen bilgiler, sonraki yanıtların daha anlamlı ve tutarlı olmasını sağlar.&lt;/li&gt;
+&lt;li&gt;AI, önceki isteklere referans verebilir&lt;/li&gt;
+&lt;li&gt;Daha doğal ve insana benzer etkileşimler sağlar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Conversation memory için örnek bir kullanımdan şu şekilde bahsedebiliriz. Bir chatbot, kullanıcının adını, ilgili alanlarını ya da daha önce sorduğu soruları belleğinde tutarak, sonraki yanıtlarda bu bilgileri referans alır. Böylece, her mesaj birbirine bağlı hale gelir ve sohbet bir doğal bir akış kazanır. Bu bellek genellikle, önceki mesajların belirli bir kısmını saklayarak gerçekleştirilir. Dil modelleri, bu geçmiş bilgiyi input olarak kullanarak, daha iyi bir bağlam anlayışı ile yanıt üretir. Konuşma belleğinin etkin kullanımı, bellek boyutu ve uzun diyaloglarda bilgilerin güncelliğini koruma gibi zorlukları da beraberinde getirir. Sonuç olarak, konuşma belleği yani conversation memory, AI Agent&amp;rsquo;larının daha &amp;lsquo;akıılı&amp;rsquo; ve bağlamsal yanıtlar üretebilmesi için kritik bir bileşendir. Bu özellik, uzun ve anlamlı sohbetler kurulmasına olanak tanır.&lt;/p&gt;
+&lt;h3 id=&#34;nodejs-ile-conversation-memory&#34;&gt;Node.js ile Conversation Memory&lt;/h3&gt;
+&lt;p&gt;Aşağıdaki örnek; conversation memory tutan bir chatbot örneği. Bu örnekte her kullanıcının sohbet geçmişi MongoDB&amp;rsquo;de tutuluyor ve yeni bir mesaj geldiğinde geçmişi prpmpt olarak OpenAI&amp;rsquo;ya gönderiyoruz.&lt;/p&gt;
+&lt;p&gt;Önce gerekli kütüphaneleri yükleyelim:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install mongodb express openai
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Örnek kodumuz ise aşağıdaki şekilde:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;express&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;express&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;MongoClient&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mongodb&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;OpenAI&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;openai&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;express&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;express&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;json&lt;/span&gt;());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OPENAI_API_KEY&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;your-api-key&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MONGO_URI&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mongodb://localhost:27017&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DATABASE_NAME&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;conversationDB&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;COLLECTION_NAME&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;conversations&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// OpenAI yapılandırması
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openai&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OpenAI&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;apiKey&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OPENAI_API_KEY&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// MongoDB bağlantısı
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;client&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MongoClient&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;MONGO_URI&lt;/span&gt;, { &lt;span style=&#34;color:#a6e22e&#34;&gt;useUnifiedTopology&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;conversationCollection&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;client&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#a6e22e&#34;&gt;connect&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;db&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;client&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;db&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;DATABASE_NAME&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;conversationCollection&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;db&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;collection&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;COLLECTION_NAME&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;MongoDB&amp;#39;ye bağlanıldı.&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  })
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;) =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;MongoDB bağlantı hatası:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Chat endpoint&amp;#39;i
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;post&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/chat&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;req&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;userId&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;req&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;body&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;userId&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;400&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;send&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;userId ve message gerekli.&amp;#39;&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Kullanıcının önceki sohbet geçmişini al
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;conversation&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;conversationCollection&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;findOne&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;userId&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;conversation&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;conversation&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;userId&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [] };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Kullanıcı mesajını geçmişe ekle
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;conversation&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;push&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;role&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Konuşma geçmişini prompt&amp;#39;a dönüştür
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prompt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;conversation&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;msg&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;prompt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;msg&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;role&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Kullanıcı&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Ajan&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;msg&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\n`&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;prompt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Ajan:&amp;#39;&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// Ajanın yanıt vermesi için
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// OpenAI API çağrısı
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;openai&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;chat&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;completions&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;model&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;gpt-4o-mini&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [{ &lt;span style=&#34;color:#a6e22e&#34;&gt;role&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;prompt&lt;/span&gt; }],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;max_tokens&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;temperature&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.7&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;agentReply&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;choices&lt;/span&gt;[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;trim&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Ajan yanıtını geçmişe ekle
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;conversation&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;push&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;role&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;agent&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;agentReply&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// Güncellenmiş sohbeti MongoDB&amp;#39;ye kaydet (upsert)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;conversationCollection&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;updateOne&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;userId&lt;/span&gt; }, { &lt;span style=&#34;color:#a6e22e&#34;&gt;$set&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;conversation&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;messages&lt;/span&gt; } }, { &lt;span style=&#34;color:#a6e22e&#34;&gt;upsert&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;send&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;reply&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;agentReply&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  } &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Sohbet işlenirken hata:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;send&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Sunucu hatası&amp;#39;&lt;/span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;listen&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;3000&lt;/span&gt;, () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Sunucu 3000 portunda çalışıyor.&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu örnek kodda, her kullanıcının sohbet geçmişi userId ile MongoDB&amp;rsquo;de saklanıyor. Yeni bir mesaj geldiğinde, bu geçmiş alınarak OpenAI prompt&amp;rsquo;una dahil ediliyor. Böylece, model önceki konuşmayı da göz önünde bulundarak yanıt üretiyor.&lt;/p&gt;
+&lt;p&gt;Örnek cURL isteği:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl --location &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://localhost:3000/chat&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;--header &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Content-Type: application/json&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;--data &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;userId&amp;#34;: &amp;#34;123&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;#34;message&amp;#34;: &amp;#34;istanbul&amp;#39;&lt;/span&gt;da hava kaç derece&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Örnek senaryo ise şu şekilde gelişebilir:
+User =&amp;gt; bugün İstanbul&amp;rsquo;da hava kaç derece
+Agent =&amp;gt; İstanbul&amp;rsquo;da hava 23 derece ve güneşli
+User =&amp;gt; peki ya İzmir?
+Agent=&amp;gt; İzmir&amp;rsquo;de hava 26 derece ve güneşli.&lt;/p&gt;
+&lt;p&gt;Agent burada geçmişi tuttuğu için ikinci soruda &amp;lsquo;hava durumu&amp;rsquo; vb. kelimeler geçmemesine rağmen sadece &amp;lsquo;peki ya İzmir&amp;rsquo; seçeneğinden sohbet gemmişini tuttuğu için hava durumuu bilgisini alacak ve ona göre cevabı verecektir.&lt;/p&gt;
+&lt;h2 id=&#34;5-model-context-protocol-llm-bağlamını-yönetme&#34;&gt;5. Model Context Protocol: LLM Bağlamını Yönetme&lt;/h2&gt;
+&lt;p&gt;Model Context Protocol yani MCP; bir dil modeline (örneğin GPT-4, Claude 3.7 Sonnet) hangi bilgilerin, hangi formatta ve nasıl sağlanacağına dair belirli kuralları ve yapılandırmaları ifade eder. Bu kavramı daha iyi anlamak için aşağıdaki başlıklara da değinelim.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Bağlamın Tanımlanması ve Formatlanması&lt;/strong&gt;
+Bağlam Nedir =&amp;gt; Dil modelleri, yanıt üretirken sadece kendilerine gönderilen girdiye (prompt) dayanır. Bu girdi, sohbetin geçmişi, sistem yönergeleri, kullanıcı soruları ve hatta araç çağrılarından elde edilen veriler gibi çeşitli unsurları içerebilir.
+Protokol Nedir =&amp;gt; Protokol ifadesi, bu bilgilerin nasıl düzenleneceğini, sıralanacağını ve formatlanacağını belirleyen kuralları ifade eder. Örneğin OpenAI&amp;rsquo;nın ChatGPT modeli, sohbet geçmişini &amp;lsquo;system&amp;rsquo;, &amp;lsquo;user&amp;rsquo; ve &amp;lsquo;assistant&amp;rsquo; rolleriyle ayırır. Bu yapı, modelin hangi bilgileri öncelikli olarak dikkate alacağını belirler.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Konuşma Belleği ve Bağlam Yönetimi&lt;/strong&gt;
+Konuşma Belleği =&amp;gt; Konuşma belleği, önceki mesajların hatırlanmasını sağlayan bir mekanizmadır. Ancak model, durum bilgisini doğrudan saklamaz; her seferinde önceki mesajlar prompt&amp;rsquo;a eklenerek bağlam sağlanır.
+Token Sınırı =&amp;gt; Modellerin işleyebileceği toplam token sayısı sınırlıdır. Bu nedenle, hangi geçmiş mesajların dahil edileceği, hangi bilgilerin özetleneceği gibi kararlar &amp;ldquo;model context protocol&amp;rdquo; kapsamında ele alınır. Bu, modelin en alakalı bilgiyi görmesini sağlar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dinamik ve Statik Bilgiler&lt;/strong&gt;
+Dinamik Bilgiler =&amp;gt; Sohbet sırasında sürekli güncellenen bilgiler (örneğin, kullanıcı mesajları, araçlardan gelen yanıtlar) dinamik bağlamın bir parçası olarak prompt&amp;rsquo;a eklenir.
+Statik Bilgiler =&amp;gt; Bazı sistem yönergeleri, modelin nasıl davranması gerektiğini belirten sabit komutlar veya bilgiler de olabilir. Örneğin, modelin belirli bir ton veya dilde yanıt vermesini istemek gibi.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Uygulama Örneği&lt;/strong&gt;
+Diyelim ki bir chatbot oluşturuyoruz. MCP bu chatbot projesinde şu mantıkla çalışabilir&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sistem Mesajı =&amp;gt;&lt;/strong&gt; &amp;ldquo;Bu bir müşteri destek sohbetidir. Cevaplarını nazik ve yardımcı bir üslupla ver.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kullanıcı Mesajları =&amp;gt;&lt;/strong&gt; &amp;ldquo;Merhaba, hesabımda sorun var&amp;rdquo; gibi geçmiş mesajlar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Araç Çağrıları =&amp;gt;&lt;/strong&gt; Eğer dış API&amp;rsquo;lerden veri alınıyorsa, bu verilerde uygun şekilde prompt&amp;rsquo;a dahil edilir.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prompt Oluşturma =&amp;gt;&lt;/strong&gt; Tüm bu bilgiler belirli bir sırayla ve formatla (örneğin, Kullanıcı: &amp;hellip;, Agent: &amp;hellip;) birleştirilir ve modelin yanıt üretmesi için gönderilir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Özetleyecek olursak MCP, dil modeline hangi bilgilerin verileceğini, bu bilgilerin nasıl yapılandırılacağını ve modelin nasıl daha etkili yanıtlar üreteceğini belirleyen bir rehber gibidir. Doğru bir protokol oluşturmak, modelin bağlamı daha iyi anlamasına ve daha tutarlı, alakalı cevaplar vermesine yardımcı olur. Bu kavram, özellikle uzun ve karmaşık diyaloglarda, doğru bilgiyi modelin anlayabileceği sınır dahilinde tutmak için kritik bir öneme sahiptir.&lt;/p&gt;
+&lt;h2 id=&#34;6-fine-tuning-llmleri-özelleştirme&#34;&gt;6. Fine-tuning: LLM&amp;rsquo;leri Özelleştirme&lt;/h2&gt;
+&lt;p&gt;Fine-tuning, önceden eğitilmiş bir dil modelini (LLM) belirli bir görev veya domain için özelleştirme sürecidir. Bu süreç, modelin belirli bir kullanım senaryosu için daha doğru ve tutarlı yanıtlar üretmesini sağlar.&lt;/p&gt;
+&lt;h3 id=&#34;fine-tuning-ne-zaman-kullanılmalı&#34;&gt;Fine-tuning Ne Zaman Kullanılmalı?&lt;/h3&gt;
+&lt;p&gt;Fine-tuning şu durumlarda özellikle faydalıdır:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Özel domain bilgisi gerektiren görevler&lt;/li&gt;
+&lt;li&gt;Tutarlı format veya stil gerektiren çıktılar&lt;/li&gt;
+&lt;li&gt;Marka sesi ve ton uyumu gereken durumlar&lt;/li&gt;
+&lt;li&gt;Teknik terminoloji kullanımı&lt;/li&gt;
+&lt;li&gt;Çok sayıda benzer görev tekrarı&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;fine-tuning-avantajları&#34;&gt;Fine-tuning Avantajları&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Daha İyi Performans&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Domain-specific görevlerde daha doğru yanıtlar&lt;/li&gt;
+&lt;li&gt;Daha tutarlı çıktı formatı&lt;/li&gt;
+&lt;li&gt;Azaltılmış hallüsinasyonlar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Maliyet Optimizasyonu&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Daha kısa promptlar kullanabilme&lt;/li&gt;
+&lt;li&gt;Daha az token tüketimi&lt;/li&gt;
+&lt;li&gt;Daha hızlı yanıt süreleri&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Özelleştirilmiş Davranış&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Marka diline uygun yanıtlar&lt;/li&gt;
+&lt;li&gt;Tutarlı ton ve üslup&lt;/li&gt;
+&lt;li&gt;Özel kuralları öğrenebilme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;fine-tuning-süreci&#34;&gt;Fine-tuning Süreci&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Veri Hazırlama&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Eğitim verisi toplama&lt;/li&gt;
+&lt;li&gt;Veri temizleme ve formatlama&lt;/li&gt;
+&lt;li&gt;Prompt-completion çiftleri oluşturma&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Model Seçimi&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Base model belirleme&lt;/li&gt;
+&lt;li&gt;Model parametrelerini ayarlama&lt;/li&gt;
+&lt;li&gt;Eğitim stratejisi seçimi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Eğitim&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hiperparametre optimizasyonu&lt;/li&gt;
+&lt;li&gt;Eğitim metriklerini izleme&lt;/li&gt;
+&lt;li&gt;Cross-validation kontrolleri&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Değerlendirme&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model performans analizi&lt;/li&gt;
+&lt;li&gt;A/B testleri&lt;/li&gt;
+&lt;li&gt;İnsan değerlendirmesi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;fine-tuning-best-practices&#34;&gt;Fine-tuning Best Practices&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Veri Kalitesi&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yüksek kaliteli eğitim verisi kullanın&lt;/li&gt;
+&lt;li&gt;Veri çeşitliliğini sağlayın&lt;/li&gt;
+&lt;li&gt;Dengeli veri dağılımı oluşturun&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Model Seçimi&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Görev için uygun boyutta model seçin&lt;/li&gt;
+&lt;li&gt;Maliyet-performans dengesini gözetin&lt;/li&gt;
+&lt;li&gt;Base model performansını değerlendirin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Eğitim Stratejisi&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kademeli fine-tuning uygulayın&lt;/li&gt;
+&lt;li&gt;Overfitting&amp;rsquo;i önleyin&lt;/li&gt;
+&lt;li&gt;Düzenli değerlendirme yapın&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deployment&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model versiyonlaması yapın&lt;/li&gt;
+&lt;li&gt;Performans izleme mekanizmaları kurun&lt;/li&gt;
+&lt;li&gt;Geri bildirim döngüsü oluşturun&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;7-ollama-litellm-llamacpp-açık-kaynak-ai-çözümleri&#34;&gt;7. Ollama, LiteLLM, LlamaCPP: Açık Kaynak AI Çözümleri&lt;/h2&gt;
+&lt;p&gt;Açık kaynaklı LLM&amp;rsquo;ler ve araçlar, AI geliştirme süreçlerini daha erişilebilir hale getiriyor. Bu bölümde, Node.js uygulamalarınızda kullanabileceğiniz popüler açık kaynak AI çözümlerini inceleyeceğiz.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ollama:&lt;/strong&gt; Ollama, kullanıcıların büyük dil modellerini (ör. LLaMA, GPT türevi modeller) kendi makinelerinde çalıştırmasını sağlayan, genellikle kullanıcı dostu bir arayüz sunan platformlardır. Bu tür uygulamalar, modelin kurulumu, güncellemeleri ve entegrasyonunu kolaylaştırmak amacıyla tasarlanır; böylece, kullanıcının internet bağlantısına bağımlı olmadan yerel olarak güvenli ve hızlı erişim sağlanabilir.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LiteLLM:&lt;/strong&gt; Litellm, &amp;ldquo;lightweight&amp;rdquo; yani hafif anlamına gelen bir yaklaşımla geliştirilmiş, büyük dil modelleriyle çalışmayı kolaylaştıran bir kütüphane ya da araçtır. Genellikle minimal kaynak kullanımı, esneklik ve hızlı prototipleme imkanı sunar. Bu tür araçlar, model eğitiminden ziyade, var olan büyük modellerin daha az kaynakla çalıştırılmasına odaklanır.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LlamaCpp:&lt;/strong&gt; LlamaCpp, Meta&amp;rsquo;nın LLaMA modeli gibi büyük dil modellerinin C++ ile optimize edilmiş bir implementasyonudur. Bu kütüphane, özellikle quantized (azaltılmış hassasiyetli) modelleri CPU üzerinde verimli bir şekilde çalıştırmayı hedefler. Böylece, güçlü GPU&amp;rsquo;lara ihtiyaç duymadan, yerel makinede LLM çalıştırmak mümkün hale gelir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;açık-kaynak-ai-çözümleri-karşılaştırması&#34;&gt;Açık Kaynak AI Çözümleri Karşılaştırması&lt;/h3&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Özellik&lt;/th&gt;
+          &lt;th&gt;Ollama&lt;/th&gt;
+          &lt;th&gt;LiteLLM&lt;/th&gt;
+          &lt;th&gt;LlamaCPP&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Kurulum Kolaylığı&lt;/td&gt;
+          &lt;td&gt;★★★★★&lt;/td&gt;
+          &lt;td&gt;★★★★☆&lt;/td&gt;
+          &lt;td&gt;★★☆☆☆&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Performans&lt;/td&gt;
+          &lt;td&gt;★★★★☆&lt;/td&gt;
+          &lt;td&gt;★★★★☆&lt;/td&gt;
+          &lt;td&gt;★★★★★&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;API Uyumluluğu&lt;/td&gt;
+          &lt;td&gt;★★★☆☆&lt;/td&gt;
+          &lt;td&gt;★★★★★&lt;/td&gt;
+          &lt;td&gt;★★☆☆☆&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Kaynak Kullanımı&lt;/td&gt;
+          &lt;td&gt;★★★☆☆&lt;/td&gt;
+          &lt;td&gt;★★★★☆&lt;/td&gt;
+          &lt;td&gt;★★★★★&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Çoklu Model Desteği&lt;/td&gt;
+          &lt;td&gt;★★★★☆&lt;/td&gt;
+          &lt;td&gt;★★★★★&lt;/td&gt;
+          &lt;td&gt;★★★☆☆&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Maliyet&lt;/td&gt;
+          &lt;td&gt;Ücretsiz&lt;/td&gt;
+          &lt;td&gt;Ücretsiz*&lt;/td&gt;
+          &lt;td&gt;Ücretsiz&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Özetle, hepsi büyük dil modellerinin yerel veya optimize edilmiş ortamlarda kullanımını kolaylaştırmaya yönelik araçlar olsa da;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ollama daha kapsamlı bir platform olarak, kullanımı basitleştirip entegre çözümler sunarken,&lt;/li&gt;
+&lt;li&gt;Litellm hafif ve modüler yapısıyla geliştiricilere esneklik sağlamak istiyor,&lt;/li&gt;
+&lt;li&gt;LlamaCpp ise özellikle performans ve düşük kaynak kullanımı açısından C++ ile optimize edilmiş bir çözüm sunuyor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu araçlar, hangi donanım ve kullanım senaryosunda çalıştırılacağına göre tercih edilebilir. Böylece, örneğin geliştirici ortamınızda hızlı prototipleme yapmak için litellm kullanabilir, performans odaklı yerel uygulamalarda ise llamaCpp tercih edilebilir; Ollama ise daha kapsamlı bir kullanıcı deneyimi arayanlara hitap edebilir.&lt;/p&gt;
+&lt;h2 id=&#34;8-n8n-ai-iş-akışları-otomasyonu&#34;&gt;8. N8n: AI İş Akışları Otomasyonu&lt;/h2&gt;
+&lt;p&gt;N8n, kod yazmadan veya minimum kod ile iş akışlarını otomatikleştirmenize olanak tanıyan açık kaynaklı bir otomasyon aracıdır. N8n&amp;rsquo;in esnek yapısı, AI hizmetlerini diğer uygulamalarla kolayca entegre etmenizi sağlar. N8N, tamamen açık kaynaklıdır; bu sayede kaynak koduna erişebilir, özelleştirebilir ve kendi ihtiyaçlarınıza göre uyarlayabilirsiniz. Sürükle bırak arayüzü sayesinde, her biri belirli bir işlemi yapan &amp;ldquo;node&amp;quot;lardan oluşan akışlar tasarlayabilirsiniz. Bu sayede, teknik bilgisi az olan kullanıcılar bile karmaşık iş akışları oluşturabilir.&lt;/p&gt;
+&lt;p&gt;N8N, çok sayıda API ve servisle enteagrasyon sağlayarak, örneğin e-posta, veritabanı, sosyal medya, dosya depolama gibi farklı sistemler arasında veri transferi veya otomatik işlemler yapmanıza olanak tanır. N8N&amp;rsquo;i kendi sunucularınızda barındırabilirsiniz. Bu, verilerin kontrolünün tamamen sizde olmasını sağlar ve özellikle gizlilik veya compliance konularında avantaj sunar.&lt;/p&gt;
+&lt;p&gt;Örneğin, bir müşteri destek sürecinde, e-posta aldığında otomatik olarak bir veritabanına kayıt eklemek, ardından Slack üzerinden bildirim göndermek istiyorsan, n8n ile bu adımları görsel olarak düzenleyip otomatik hale getirebilirsin.&lt;/p&gt;
+&lt;h3 id=&#34;n8n-ile-yapılabilecek-ai-iş-akışları&#34;&gt;N8n ile Yapılabilecek AI İş Akışları&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Belge İşleme ve Özetleme&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gelen e-posta eklerini otomatik olarak özetleme&lt;/li&gt;
+&lt;li&gt;PDF belgeleri analiz edip veri çıkarma&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Müşteri Destek Otomasyonu&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gelen müşteri sorularını analiz edip sınıflandırma&lt;/li&gt;
+&lt;li&gt;Basit sorulara otomatik yanıt oluşturma, karmaşık soruları yönlendirme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Sosyal Medya Yönetimi&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Belirli konularda otomatik içerik üretme&lt;/li&gt;
+&lt;li&gt;Yorumları duygu analizi ile sınıflandırma ve yanıtlama&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Veri Analizi ve Raporlama&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Periyodik verileri analiz etme ve özetleme&lt;/li&gt;
+&lt;li&gt;Veri anormalliklerini tespit edip uyarı gönderme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;n8n-ve-ai-entegrasyonunun-avantajları&#34;&gt;N8n ve AI Entegrasyonunun Avantajları&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Kod Yazmadan Otomasyon&lt;/strong&gt;: Teknik olmayan ekip üyeleri bile komplex AI iş akışları oluşturabilir&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Çoklu Servis Entegrasyonu&lt;/strong&gt;: 200+ entegrasyon ile AI&amp;rsquo;ı tüm iş süreçlerinize dahil edebilirsiniz&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Self-Hosting&lt;/strong&gt;: Hassas veriler içeren AI işlemleri için kendi altyapınızda çalıştırabilirsiniz&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Esnek Tetikleyiciler&lt;/strong&gt;: Zamanlayıcı, webhook, olay bazlı tetikleyiciler ile AI işlemlerini başlatabilirsiniz&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;son-söz&#34;&gt;Son Söz&lt;/h3&gt;
+&lt;p&gt;AI teknolojileri hızla gelişiyor ve bu teknolojilerin Node.js ekosistemindeki entegrasyonu giderek kolaylaşıyor. Bu makalede gördüğümüz teknikler, AI destekli uygulamalar geliştirmek için sağlam bir temel oluşturuyor.&lt;/p&gt;
+&lt;p&gt;AI agent&amp;rsquo;lar, tool calling, conversation memory ve bağlam yönetimi gibi temel kavramların yanı sıra, embedding&amp;rsquo;ler, RAG (Retrieval Augmented Generation) ve vector veritabanları gibi modern AI teknolojilerini kullanarak daha güçlü ve akıllı uygulamalar geliştirebilirsiniz. Fine-tuning ile modellerinizi özelleştirerek, domain-specific görevlerde daha başarılı sonuçlar elde edebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Açık kaynak modeller ve N8n gibi otomasyon araçlarıyla birlikte, bu teknolojileri kullanarak:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Daha doğru ve bağlama duyarlı yanıtlar üreten chatbot&amp;rsquo;lar&lt;/li&gt;
+&lt;li&gt;Akıllı doküman işleme ve analiz sistemleri&lt;/li&gt;
+&lt;li&gt;Semantik arama ve öneri motorları&lt;/li&gt;
+&lt;li&gt;Otomatikleştirilmiş iş akışları&lt;/li&gt;
+&lt;li&gt;Domain-specific AI asistanları&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;gibi çözümler geliştirebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bu makalede gösterilen tüm kod örneklerine ve daha fazlasına &lt;a href=&#34;https://github.com/cagatayturkann/blogProjects/tree/main/nodejs-ai-examples&#34;&gt;GitHub Repository&lt;/a&gt; adresinden erişebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Yapay zeka yolculuğunuzda başarılar dilerim!&lt;/p&gt;
+&lt;hr&gt;
+</content:encoded>
     </item>
+    
   </channel>
-</rss>
+</rss> 

@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Archives on Çağatay Türkan</title>
     <link>https://cagatayturkan.com/blog/en/categories/archives/</link>
     <description>Recent content in Archives on Çağatay Türkan</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Mar 2024 09:16:03 +0800</lastBuildDate>
-    <atom:link href="https://cagatayturkan.com/blog/en/categories/archives/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Mar 2024 09:16:03 +0800</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/en/categories/archives/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Archives</title>
       <link>https://cagatayturkan.com/blog/en/archives/</link>
       <pubDate>Tue, 19 Mar 2024 09:16:03 +0800</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/en/archives/</guid>
       <description></description>
+      
+      
+      <content:encoded></content:encoded>
     </item>
+    
   </channel>
-</rss>
+</rss> 

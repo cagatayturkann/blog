@@ -1,19 +1,217 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Git on Çağatay Türkan</title>
     <link>https://cagatayturkan.com/blog/tr/tags/git/</link>
     <description>Recent content in Git on Çağatay Türkan</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
-    <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://cagatayturkan.com/blog/tr/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/tr/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git Flow Nedir?</title>
       <link>https://cagatayturkan.com/blog/tr/git-flow/</link>
       <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/git-flow/</guid>
       <description>Git Flow, versiyon kontrol sistemlerinde dal yönetimini sistematikleştiren etkili bir yaklaşımdır. Bu makalede Git Flow&amp;rsquo;un ne olduğunu, nasıl kullanıldığını ve en iyi uygulama önerilerini detaylı olarak açıklayacağım.</description>
+      
+      <cardimage>https://cagatayturkan.com/blog/tr/git-flow/images/cover.png</cardimage>
+      
+      
+      <featureimage>https://cagatayturkan.com/blog/tr/blog/git-flow/images/cover.png</featureimage>
+      
+      <content:encoded>&lt;p&gt;&lt;br&gt;
+Merhaba. Bu makalede versiyon kontrol sistemlerinden kısaca bahsedip, Git Flow&amp;rsquo;un ne olduğunu ve nasıl kullanıldığını detaylı olarak anlatacağım. Versiyon kontrol sistemleri, yazılım geliştirme süreçlerinde kod versiyonlarını takip etmek ve yönetmek için kullanılan önemli araçlardır. Git Flow ise bu versiyon kontrol sistemini daha etkili kullanmamızı sağlayan bir dallanma modelidir.&lt;/p&gt;
+&lt;h2 id=&#34;versiyon-kontrol-sistemi-nedir&#34;&gt;Versiyon Kontrol Sistemi Nedir?&lt;/h2&gt;
+&lt;p&gt;Versiyon kontrol sistemi, bir veya daha fazla dosya, belge (yazılım projesi, ofis belgeleri vb.) üzerinde yaptığımız değişiklikleri adım adım kaydeden, daha sonra belirli bir versiyona geri dönmemizi sağlayan ve istenirse bunu çevrimiçi bir depoda saklayıp yönetmemize olanak tanıyan bir sistemdir. Git, SVN, BitKeeper ve Mercurial versiyon kontrol sistemlerine örnek olarak verilebilir.&lt;/p&gt;
+&lt;h3 id=&#34;neden-versiyon-kontrol-sistemleri-kullanırız&#34;&gt;Neden Versiyon Kontrol Sistemleri Kullanırız?&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Her dosya için uzun vadeli bir değişiklik geçmişi tutulur.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bu, dosya üzerinde yıllar içinde birden fazla kişi tarafından yapılan her değişikliğin takip edilmesi anlamına gelir.&lt;/li&gt;
+&lt;li&gt;Bu sayede eski ve yeni kodumuzu karşılaştırarak bulunduğumuz noktaya nasıl geldiğimizi anlayabiliriz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Takım üyelerinin aynı kod üzerinde eş zamanlı çalışmasına olanak tanır.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yazılım üzerinde farklı çalışmalar yürütmek için alt versiyonlar oluşturmak ve daha sonra ana yazılıma entegre etmek mümkündür.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Yazılıma yapılan her değişikliğin takip edilmesini ve proje yönetimiyle ilişkilendirilmesini sağlar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yazılım sorunlarının versiyonlarla ilişkilendirilmesini ve takibini sağlar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Projede hatalarla karşılaştığımızda eski kod kayıtlarına dönmemizi sağlar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;versiyon-kontrol-sistemleri&#34;&gt;Versiyon Kontrol Sistemleri&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Yerel VKS:&lt;/strong&gt; En eski versiyon kontrol sistemi yaklaşımıdır. Projemiz ve yaptığımız değişiklikler kullanıcı makinesindeki bir veritabanında saklanır. Her commit bir versiyon olarak saklanır ve her versiyon commit&amp;rsquo;e bir hash değeri atanarak ayırt edilir. Ayrıca versiyon görüntüleme özelliği sunar. Ancak bu sistemde sadece bir kullanıcı etkin olarak çalışabilir.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Merkezi VKS:&lt;/strong&gt; Birden fazla kişinin bir proje üzerinde etkin çalışabilmesi için oluşturulmuş bir versiyonlama sistemidir. CVS ve SVN merkezi versiyon kontrol sistemleridir. Bu sistemde proje paylaşılan bir depoda tutulur ve birden fazla geliştirici aynı depo üzerinde checkout ve commit işlemleri gerçekleştirir. Bu yöntem herkesin projeye katkıda bulunmasına olanak sağlarken, bazı ciddi sorunları vardır. Tek merkezi sunucu 1 saat çökerse, kullanıcılar o bir saat boyunca çalışmalarını kaydedemez veya projelerinin versiyonlanmış kopyalarına erişemezler.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dağıtık VKS:&lt;/strong&gt; Merkezi versiyon sistemlerinin, geliştiricilerin çevrimdışı çalışamaması ve deponun zarar görmesi durumunda kurtarmanın zor olması gibi kısıtlamalarından dolayı oluşturulmuş bir versiyon sistemidir. Git, Mercurial ve BitKeeper dağıtık versiyon sistemlerine örnektir. Bu sistemlerde merkezi bir depo yoktur ve proje üzerinde çalışan her makine projenin bir kopyasını kendi yerel bilgisayarında tutar. Geliştiriciler proje üzerinde değişiklik yapmak veya proje geçmişini görüntülemek istediklerinde uzak depo ile iletişim kurmaları gerekmez. Bir sunucu çökerse ve o sunucu üzerinde işbirliği yapan sistemler varsa, geliştiricilerden birinin projeyi sunucuya geri yüklemesiyle sistem kurtarılabilir. Özetle, aynı proje üzerinde farklı geliştiricilerin farklı iş akışlarıyla farklı şekillerde çalışmasına olanak tanır.&lt;/p&gt;
+&lt;h3 id=&#34;git-flow-nedir&#34;&gt;Git Flow Nedir?&lt;/h3&gt;
+&lt;p&gt;5 Ocak 2020&amp;rsquo;de nvie, &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;https://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;https://nvie.com/posts/a-successful-git-branching-model/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt; adresindeki bir yazıda git depolarını düzenli tutmak için bir model önerdi. Daha sonra bu modeli kullanmayı kolaylaştıran git uzantılarını içeren Git-Flow adlı bir proje yayınladı. GitFlow modeli temelde git versiyon kontrol sistemi üzerine kurulmuştur. Yani tüm model işlemlerini git komutlarıyla gerçekleştirmek mümkündür.&lt;/p&gt;
+&lt;h3 id=&#34;git-flowun-avantajları-ve-dezavantajları&#34;&gt;Git Flow&amp;rsquo;un Avantajları ve Dezavantajları&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Avantajları:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organize ve öngörülebilir bir geliştirme süreci sağlar&lt;/li&gt;
+&lt;li&gt;Büyük takımlar için ideal bir yapı sunar&lt;/li&gt;
+&lt;li&gt;Versiyon yönetimini basitleştirir&lt;/li&gt;
+&lt;li&gt;Her dalın net bir amacı vardır&lt;/li&gt;
+&lt;li&gt;Paralel geliştirmeyi destekler&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Dezavantajları:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Küçük projeler için fazla karmaşık olabilir&lt;/li&gt;
+&lt;li&gt;Sürekli teslimat için uygun olmayabilir&lt;/li&gt;
+&lt;li&gt;Dal yapısı bazen gereksiz karmaşıklığa yol açabilir&lt;/li&gt;
+&lt;li&gt;Ek araç kurulumu gerektirir&lt;/li&gt;
+&lt;li&gt;Öğrenme eğrisi diğer modellere göre daha yüksektir&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git-flow-alternatifleri&#34;&gt;Git Flow Alternatifleri&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub Flow:&lt;/strong&gt; Daha basit bir model, sadece master ve feature dallarını kullanır&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitLab Flow:&lt;/strong&gt; Git Flow ve GitHub Flow arasında denge kurar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trunk Based Development:&lt;/strong&gt; Ana dal üzerinde geliştirmeye odaklanır&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git-flow-çalışma-prensibi&#34;&gt;Git Flow Çalışma Prensibi&lt;/h3&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/git-flow/images/diagram.png&#34;
+    alt=&#34;git flow&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Git Flow modelinde 5 ana dal bulunur:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;master:&lt;/strong&gt; Ana dallardan biri olan Master, proje boyunca var olur. Master dalı her zaman üretime çıkabilecek kodu içerir. İdeal olarak master dalına yapılan her commit bir versiyondur ve &amp;ldquo;git tag&amp;rdquo; ile işaretlenmelidir (versiyon numarası verilmelidir). Master dalına direkt commit yapılmaz, sadece hotfix ve release dallarından merge yapılmasına izin verilir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;develop:&lt;/strong&gt; Develop, proje boyunca var olan diğer ana daldır. Develop dalı bir sonraki versiyon için yapılan değişiklikleri içerir. Tüm feature dalları önce bu dala merge edilir. Bu dal projenin ana geliştirme dalıdır ve sürekli entegrasyon (CI) süreçleri genellikle bu dal üzerinde çalışır.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;hotfix:&lt;/strong&gt; Hotfix dalı, canlıdaki versiyonda kritik bir hata olduğunda ve bu hatanın hemen düzeltilip deploy edilmesi gerektiğinde kullanılır. Hotfix dalı master dalından oluşturulur ve genellikle &amp;lsquo;hotfix/[versiyon]-[açıklama]&amp;rsquo; formatında isimlendirilir. Hotfix dalında hata düzeltmesi tamamlandığında bu dal hem Developer hem de Master ile merge edilir. Master ile merge edildikten sonra değişiklik yeni bir versiyon numarası ile etiketlenir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;feature:&lt;/strong&gt; Yeni bir özellik eklenirken, bu özellik için bir Feature dalı oluşturulur. Feature dalları her zaman develop dalından oluşturulur ve genellikle &amp;lsquo;feature/[özellik-adı]&amp;rsquo; formatında isimlendirilir. Bunlar özelliklere göre değişiklikler olarak düşünülebilir. Aynı anda birden fazla feature dalı açılabilir. Bu farklı geliştiricilerin farklı özellikler üzerinde çalışabileceği anlamına gelir. Özellikleri ayrı dallarda geliştirmek hem Develop dalının gereksiz commitlerle dolmasını engeller hem de feature dalını silmek suretiyle bir özellikten vazgeçmeyi kolaylaştırır. Özellik tamamlandığında bu dal Develop dalı ile merge edilir ve feature dalı silinir. Yani feature dalları sadece geliştirme süresince yaşar. Tabi bu süreçte kontrol amaçlı arada bir Develop dalından pull almak gerekebilir çünkü başka bir geliştirici feature dalını önce bitirmiş ve Develop dalına version push edilmiş olabilir. Feature dalları master, release, develop veya hotfix içeren isimler içermemelidir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;release:&lt;/strong&gt; Diyelim ki tüm değişiklikler tamamlandı. Yeni bir versiyon çıkılacağı zaman Develop dalından yeni bir Release dalı oluşturulur. Release dalları genellikle &amp;lsquo;release/[versiyon]&amp;rsquo; formatında isimlendirilir. Versiyondaki son değişiklikler, versiyon numaralarının değiştirilmesi vb. işlemler bu dalda yapılır. Release dalında sadece hata düzeltmeleri yapılmalı, yeni özellikler eklenmemelidir. Gerekli tüm değişiklikler tamamlandığında Release dalında tamamlanan tüm değişiklikler hem Master hem de Develop dallarına merge edilir. Master dalında git tag ile versiyon numarası etiketlenir ve ardından Release dalı silinir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git-flow-örnek-proje&#34;&gt;Git Flow Örnek Proje&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/brew install git-flow &amp;gt; git flow init&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/git-flow/images/git-flow-init.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+İlk olarak &amp;ldquo;brew install git-flow&amp;rdquo; ile kurulum yapıyoruz. GitFlow git ile birlikte gelmiyor. Ayrıca kurulması gerekiyor. Bu da dezavantajlarından biri olarak görülüyor. Git&amp;rsquo;te projeyi başlatmak için &amp;ldquo;git init&amp;rdquo; komutunu kullanıyorduk. Git-flow için git-flow sürecini başlatmak için &amp;ldquo;git flow init&amp;rdquo; komutunu giriyoruz. Komut çalıştığında eğer repo yoksa önce repo oluşturuyor. Ardından süreç için kullanılacak dal isimlerini kullanıcıya soruyor. Dal isimleri özelleştirilebilir ancak varsayılan değerlerin korunması önerilir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow feature start performance&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/git-flow/images/git-flow-feature-start.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+Bu komut yeni bir feature dalı oluşturur. Feature ismi performance olduğu için varsayılan olarak feature/performance dalı olacaktır. Aynı işlemi mevcut git komutu ile de yapabiliriz. Bunun için girmemiz gereken komut &amp;ldquo;git checkout -b myFeature feature/performance&amp;rdquo; olacaktır.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow feature finish performance&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/git-flow/images/git-flow-feature-finish.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+Bu komut daha önce açılmış bir dalı kapatır. Kapatma işlemi feature dalının develop dalına merge edilmesiyle başlar ve feature dalının silinmesiyle sonlanır. Komut çalıştırıldığında değişiklikler commit edilmemişse hata verecektir. Commit sonrası push yapılmamışsa hata verecektir. Bu işlemi normal git komutlarıyla yapmak için ilgili dalda önce commit yapılır ardından sırasıyla &amp;ldquo;git checkout develop &amp;gt; git merge &amp;ndash;no-ff feature/performance &amp;gt; git branch -D feature/performance&amp;rdquo; komutları çalıştırılır.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow release start 1.0.0&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/git-flow/images/git-flow-release-start.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+Bu komut girildiğinde yeni bir versiyon çıkışa hazır hale gelir. Komut çalıştığında Develop dalından yeni bir release/1.0.0 dalı oluşturulur. Bu işlemi mevcut git komutu ile yapmak için &amp;ldquo;git checkout -b release/1.0.0 develop&amp;rdquo; komutu çalıştırılır.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow release finish 1.0.0&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/git-flow/images/git-flow-release-finish.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+Komut girildiğinde tamamlanan versiyon master dalına alınır. Değişiklikler hem develop hem de master dalları ile merge edilir. Master dalındaki son commit versiyon numarası ile etiketlenir. Ardından release dalı otomatik olarak silinir. Aynı işlemi git komutları ile yapmak için sırasıyla aşağıdaki komutlar çalıştırılır:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff release/1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git tag -a 1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout develop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff release/1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch -d release/1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow hotfix start 1.0.1&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/git-flow/images/git-flow-hotfix-start.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+Bu komut ile yeni bir hotfix başlatılır. Hotfix dalları acil güncellemeler için kullanılır ve master dalından oluşturulur. Komut çalıştığında master dalından dallanan yeni bir hotfix/1.0.1 dalı oluşturulur. İşlemi git komutu ile yapmak için &amp;ldquo;git checkout -b hotfix/1.0.1 master&amp;rdquo; komutu çalıştırılır.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow hotfix finish 1.0.1&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/git-flow/images/git-flow-hotfix-finish.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+Bu komut ile hotfix tamamlanır. Değişiklikler hem Develop hem de Master dallarına alınır. Master dalı 1.0.1 ile etiketlenir ve hotfix dalı silinir. &amp;ldquo;git tag -l&amp;rdquo; komutu çalıştırıldığında versiyon numaraları görüntülenir. Aynı işlemi mevcut git komutları ile yapmak için sırasıyla aşağıdaki komutlar çalıştırılır:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff hotfix/1.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git tag -a 1.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout develop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff hotfix/1.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch -d hotfix/1.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;git-flow-en-iyi-uygulama-önerileri&#34;&gt;Git Flow En İyi Uygulama Önerileri&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Dal İsimlendirme Kuralları&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Feature dalları için açıklayıcı isimler kullanın (örn. feature/kullanici-dogrulama)&lt;/li&gt;
+&lt;li&gt;Hotfix ve release dalları için semantik versiyonlama kullanın&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Commit Mesajları&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Açıklayıcı commit mesajları yazın&lt;/li&gt;
+&lt;li&gt;Conventional Commits standardını takip edin&lt;/li&gt;
+&lt;li&gt;Her commit&amp;rsquo;in tek bir amacı olduğundan emin olun&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Kod İnceleme Süreci&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Feature dallarını merge etmeden önce kod incelemesi yapın&lt;/li&gt;
+&lt;li&gt;Otomatik test süreçlerini kullanın&lt;/li&gt;
+&lt;li&gt;Dokümantasyon güncellemelerini unutmayın&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Merge Stratejisi&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;no-ff (no fast-forward) parametresini kullanın&lt;/li&gt;
+&lt;li&gt;Merge çakışmalarını hızlıca çözün&lt;/li&gt;
+&lt;li&gt;Squash commit&amp;rsquo;leri kullanmayı düşünün&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;sonuç&#34;&gt;Sonuç&lt;/h3&gt;
+&lt;p&gt;Git Flow, modern yazılım geliştirme süreçlerinde dal yönetimini sistematikleştiren etkili bir yaklaşımdır. Bu iş akışı sayesinde takımlar daha organize çalışabilir, versiyonlamayı daha iyi kontrol edebilir ve kod kalitesini artırabilir. Özellikle büyük projelerde ve takım çalışmalarında, Git Flow&amp;rsquo;un sunduğu yapılandırılmış dal stratejisi geliştirme süreçlerini önemli ölçüde iyileştirir. Yukarıda bahsedilen en iyi uygulamaları takip ederek, Git Flow&amp;rsquo;u projenizde başarıyla uygulayabilir ve yazılım geliştirme süreçlerinizi daha verimli hale getirebilirsiniz.&lt;/p&gt;
+</content:encoded>
     </item>
+    
   </channel>
-</rss>
+</rss> 

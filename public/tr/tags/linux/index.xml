@@ -1,19 +1,416 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Çağatay Türkan</title>
     <link>https://cagatayturkan.com/blog/tr/tags/linux/</link>
     <description>Recent content in Linux on Çağatay Türkan</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
-    <lastBuildDate>Sat, 08 Feb 2025 18:19:00 +0300</lastBuildDate>
-    <atom:link href="https://cagatayturkan.com/blog/tr/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Feb 2025 18:19:00 +0300</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/tr/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Temel Komutları - Bölüm 1</title>
       <link>https://cagatayturkan.com/blog/tr/linux/linux-temel-komutlar%C4%B1/</link>
       <pubDate>Sat, 08 Feb 2025 18:19:00 +0300</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/linux/linux-temel-komutlar%C4%B1/</guid>
       <description>Bu makale serisinde, her geliştiricinin bilmesi gereken en sık kullanılan Linux komutlarını inceleyeceğiz. İlk bölümde, Linux sisteminizi etkili bir şekilde yönetmenize yardımcı olacak 20 temel komutu ele alacağız.</description>
+      
+      <cardimage>https://cagatayturkan.com/blog/tr/linux/linux-temel-komutlar%C4%B1/images/cover.png</cardimage>
+      
+      
+      <featureimage>https://cagatayturkan.com/blog/tr/blog/linux/linux-temel-komutlar%C4%B1/images/cover.png</featureimage>
+      
+      <content:encoded>&lt;p&gt;Herkese merhaba! Bu makale serisinde, her geliştiricinin bilmesi gereken en sık kullanılan Linux komutlarını açıklayacağım. Bu komutlar, Linux sisteminizi etkili bir şekilde yönetmek ve terminaldeki verimliliğinizi artırmak için gereklidir.&lt;/p&gt;
+&lt;h2 id=&#34;neden-linux-komutlarını-öğrenmeliyiz&#34;&gt;Neden Linux Komutlarını Öğrenmeliyiz?&lt;/h2&gt;
+&lt;p&gt;Linux komutları, terminal aracılığıyla işletim sistemimizle etkileşim kurmamızı sağlayan temel araçlardır. Bu komutları anlamak önemlidir çünkü:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Sistem üzerinde daha fazla kontrol sağlarlar&lt;/li&gt;
+&lt;li&gt;Genellikle grafiksel arayüz kullanmaktan daha hızlıdırlar&lt;/li&gt;
+&lt;li&gt;Birçok sunucu Linux üzerinde çalışır ve grafiksel arayüzleri yoktur&lt;/li&gt;
+&lt;li&gt;Otomasyon ve betik yazımı için gereklidirler&lt;/li&gt;
+&lt;li&gt;DevOps ve sistem yönetiminde yaygın olarak kullanılırlar&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;en-çok-kullanılan-linux-komutları&#34;&gt;En Çok Kullanılan Linux Komutları&lt;/h3&gt;
+&lt;p&gt;En sık kullanılan 20 Linux komutunu inceleyelim:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;ls (Listele)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Mevcut dizindeki dosya ve klasörleri listeler&lt;/li&gt;
+&lt;li&gt;Sık kullanılan seçenekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ls -l&lt;/code&gt;: Uzun format listeleme&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ls -a&lt;/code&gt;: Gizli dosyaları göster&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ls -h&lt;/code&gt;: İnsan tarafından okunabilir dosya boyutları&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls -la
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; user user  &lt;span style=&#34;color:#ae81ff&#34;&gt;220&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 .bash_profile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;3526&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 .bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 Documents
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;cd (Dizin Değiştir)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Bulunduğunuz dizini değiştirir&lt;/li&gt;
+&lt;li&gt;Kullanım örnekleri:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cd /path/to/directory&lt;/code&gt;: Belirli bir dizine git&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd ..&lt;/code&gt;: Bir üst dizine git&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd ~&lt;/code&gt;: Ana dizine git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ pwd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/home/user
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ cd Documents
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~/Documents$ cd ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ cd ~
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;pwd (Çalışma Dizinini Yazdır)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Mevcut dizin yolunu gösterir&lt;/li&gt;
+&lt;li&gt;Dosya sisteminde nerede olduğunuzu doğrulamak için kullanışlıdır&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ pwd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/home/user/Documents/projects
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;mkdir (Dizin Oluştur)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Yeni dizinler oluşturur&lt;/li&gt;
+&lt;li&gt;Seçenekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mkdir -p&lt;/code&gt;: Eğer yoksa üst dizinleri oluşturur&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ mkdir -p projects/new-project
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls -l projects/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 new-project
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;strong&gt;rm (Sil)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dosya ve dizinleri siler&lt;/li&gt;
+&lt;li&gt;Önemli seçenekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rm -r&lt;/code&gt;: Dizinleri özyinelemeli olarak sil&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rm -f&lt;/code&gt;: Onay istemeden zorla sil&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;file1.txt file2.txt test_dir
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ rm file1.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ rm -r test_dir
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;file2.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;strong&gt;cp (Kopyala)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dosya ve dizinleri kopyalar&lt;/li&gt;
+&lt;li&gt;Yaygın kullanım:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cp file1 file2&lt;/code&gt;: file1&amp;rsquo;i file2&amp;rsquo;ye kopyala&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cp -r dir1 dir2&lt;/code&gt;: Dizini özyinelemeli olarak kopyala&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ cp file1.txt backup.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ cp -r projects/ projects_backup/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;backup.txt file1.txt projects projects_backup
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;strong&gt;mv (Taşı)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dosya ve dizinleri taşır veya yeniden adlandırır&lt;/li&gt;
+&lt;li&gt;Örnekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mv old.txt new.txt&lt;/code&gt;: Dosyayı yeniden adlandır&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mv file /path/to/dir&lt;/code&gt;: Dosyayı dizine taşı&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;old.txt documents/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ mv old.txt new.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ mv new.txt documents/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls documents/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;new.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;&lt;strong&gt;cat (Birleştir)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dosya içeriğini görüntüler&lt;/li&gt;
+&lt;li&gt;Ayrıca dosyaları birleştirmek için kullanılır&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ cat file.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Bu file.txt dosyasının içeriğidir
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ cat file1.txt file2.txt &amp;gt; combined.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ cat combined.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;file1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;den içerik
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;file2&amp;#39;&lt;/span&gt;den içerik
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;&lt;strong&gt;grep (Global Regular Expression Print)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dosyalarda kalıp arar&lt;/li&gt;
+&lt;li&gt;Kullanışlı seçenekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;grep -i&lt;/code&gt;: Büyük/küçük harf duyarsız arama&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;grep -r&lt;/code&gt;: Özyinelemeli arama&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ grep -r &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;TODO&amp;#34;&lt;/span&gt; .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./src/app.js:// TODO: Hata yönetimi eklenecek
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./docs/readme.md:TODO: Dokümantasyon güncellenecek
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ grep -i &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hata&amp;#34;&lt;/span&gt; log.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Hata: Bağlantı başarısız
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hata: bağlanılamadı
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HATA: Sistem hatası
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;strong&gt;chmod (İzinleri Değiştir)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dosya izinlerini değiştirir&lt;/li&gt;
+&lt;li&gt;Format: &lt;code&gt;chmod [seçenekler] mod dosya&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls -l script.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;256&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 script.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ chmod +x script.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls -l script.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;256&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 script.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;&lt;strong&gt;sudo (Süper Kullanıcı Olarak Yap)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Komutları süper kullanıcı yetkileriyle çalıştırır&lt;/li&gt;
+&lt;li&gt;Sistem yönetimi görevleri için önemlidir&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;E: Could not open lock file - open &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;13: Permission denied&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;sudo&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; password &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; user: 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Reading package lists... Done
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Building dependency tree... Done
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;12&#34;&gt;
+&lt;li&gt;&lt;strong&gt;top&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Çalışan işlemleri ve sistem kaynaklarını gösterir&lt;/li&gt;
+&lt;li&gt;Etkileşimli işlem görüntüleyici&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ top
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;top - 10:00:00 up &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days, 3:45, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; user, load average: 0.52, 0.58, 0.59
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Tasks: &lt;span style=&#34;color:#ae81ff&#34;&gt;180&lt;/span&gt; total,   &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; running, &lt;span style=&#34;color:#ae81ff&#34;&gt;179&lt;/span&gt; sleeping,   &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; stopped,   &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; zombie
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;%Cpu&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;s&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:  5.9 us,  3.1 sy,  0.0 ni, 90.6 id,  0.4 wa,  0.0 hi,  0.0 si
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MiB Mem :  7861.1 total,   2457.2 free,   3245.5 used,   2158.4 buff/cache
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;13&#34;&gt;
+&lt;li&gt;&lt;strong&gt;ps (İşlem Durumu)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Çalışan işlemleri görüntüler&lt;/li&gt;
+&lt;li&gt;Yaygın seçenekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ps aux&lt;/code&gt;: Tüm işlemleri göster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ps aux
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user      &lt;span style=&#34;color:#ae81ff&#34;&gt;2345&lt;/span&gt;  0.0  0.1 &lt;span style=&#34;color:#ae81ff&#34;&gt;169512&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;3252&lt;/span&gt; pts/0    Ss   09:30   0:00 bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user      &lt;span style=&#34;color:#ae81ff&#34;&gt;2789&lt;/span&gt;  0.0  0.2 &lt;span style=&#34;color:#ae81ff&#34;&gt;170284&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;6432&lt;/span&gt; pts/0    R+   10:00   0:00 ps aux
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;14&#34;&gt;
+&lt;li&gt;&lt;strong&gt;df (Disk Boş Alan)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Disk alanı kullanımını gösterir&lt;/li&gt;
+&lt;li&gt;Kullanışlı seçenekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;df -h&lt;/code&gt;: İnsan tarafından okunabilir boyutlar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ df -h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Filesystem      Size  Used Avail Use% Mounted on
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/dev/sda1       234G   67G  156G  31% /
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tmpfs           3.9G     &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  3.9G   0% /tmp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/dev/sda2       100G   45G   55G  45% /home
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;15&#34;&gt;
+&lt;li&gt;&lt;strong&gt;du (Disk Kullanımı)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dizin alan kullanımını gösterir&lt;/li&gt;
+&lt;li&gt;Yaygın kullanım:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;du -sh *&lt;/code&gt;: Mevcut dizin içeriğinin boyutu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ du -sh *
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;156M    Documents
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1.2G    Downloads
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;42M     Pictures
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;890M    projects
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;16&#34;&gt;
+&lt;li&gt;&lt;strong&gt;tar&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dosya ve dizinleri arşivler&lt;/li&gt;
+&lt;li&gt;Yaygın işlemler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tar -czf&lt;/code&gt;: Arşiv oluştur&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tar -xzf&lt;/code&gt;: Arşivi çıkart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ tar -czf archive.tar.gz Documents/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ ls -lh archive.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; user user 145M Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 archive.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ tar -xzf archive.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;17&#34;&gt;
+&lt;li&gt;&lt;strong&gt;find&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Dizin hiyerarşisinde dosya arar&lt;/li&gt;
+&lt;li&gt;Örnekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;find . -name &amp;quot;*.txt&amp;quot;&lt;/code&gt;: Tüm .txt dosyalarını bul&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ find . -name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;*.txt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./documents/notes.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./projects/readme.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./backup/old.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ find . -type d -name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./projects/test
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./src/test
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;18&#34;&gt;
+&lt;li&gt;&lt;strong&gt;wget&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;İnternetten dosya indirir&lt;/li&gt;
+&lt;li&gt;Kullanışlı seçenekler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;wget -c&lt;/code&gt;: Yarıda kalan indirmeye devam et&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ wget https://example.com/file.zip
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--2025-02-08 10:00:00--  https://example.com/file.zip
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Resolving example.com... 93.184.216.34
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Connecting to example.com... connected.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HTTP request sent, awaiting response... &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt; OK
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Length: &lt;span style=&#34;color:#ae81ff&#34;&gt;52890112&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;50M&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;application/zip&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Saving to: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;file.zip&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;19&#34;&gt;
+&lt;li&gt;&lt;strong&gt;systemctl&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Systemd sistem ve servis yöneticisini kontrol eder&lt;/li&gt;
+&lt;li&gt;Yaygın kullanımlar:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;systemctl start/stop/restart/status service&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ sudo systemctl status nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;● nginx.service - Yüksek performanslı web sunucusu ve ters proxy sunucusu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     Loaded: loaded &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;/lib/systemd/system/nginx.service; enabled; vendor preset: enabled&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     Active: active &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;running&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; since Thu 2025-02-08 09:30:12 UTC; 30min ago
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;20&#34;&gt;
+&lt;li&gt;&lt;strong&gt;history&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Komut geçmişini gösterir&lt;/li&gt;
+&lt;li&gt;Kullanışlı özellikler:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;!n&lt;/code&gt;: n numaralı komutu çalıştır&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!!&lt;/code&gt;: Son komutu çalıştır&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ history
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  pwd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;  cd Documents
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;  ls -la
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;  mkdir projects
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;  cd projects
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user@linux:~$ !3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls -la
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; user user &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; 10:00 ..
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;en-iyi-uygulamalar&#34;&gt;En İyi Uygulamalar&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Her Zaman Tab Tamamlama Kullanın&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zaman kazandırır ve yazım hatalarını önler&lt;/li&gt;
+&lt;li&gt;Mevcut seçenekleri gösterir&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Komutları Çalıştırmadan Önce Kontrol Edin&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--help&lt;/code&gt; veya &lt;code&gt;man&lt;/code&gt; komutunu kullanın&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rm&lt;/code&gt; ve &lt;code&gt;sudo&lt;/code&gt; ile ekstra dikkatli olun&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Komut Geçmişini Kullanın&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Önceki komutlara göz atmak için yukarı ok tuşuna basın&lt;/li&gt;
+&lt;li&gt;Geriye dönük arama için &lt;code&gt;Ctrl+R&lt;/code&gt; kullanın&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Takma Adlar Oluşturun&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sık kullanılan komutları takma ad olarak kaydedin&lt;/li&gt;
+&lt;li&gt;Bunları &lt;code&gt;.bashrc&lt;/code&gt; veya &lt;code&gt;.zshrc&lt;/code&gt; dosyanıza ekleyin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;sonuç&#34;&gt;Sonuç&lt;/h3&gt;
+&lt;p&gt;Bu 20 komut, Linux komut satırı kullanımının temelini oluşturur. Bunları anlamak ve ustalaşmak, Linux sistemleriyle çalışırken verimliliğinizi önemli ölçüde artıracaktır. Bu serinin bir sonraki bölümünde, sistem yönetimi ve otomasyon için daha gelişmiş komutları ve teknikleri inceleyeceğiz.&lt;/p&gt;
+&lt;p&gt;Bu komutlarda ustalaşmanın anahtarının pratik yapmak olduğunu unutmayın. Günlük çalışmalarınızda bunları düzenli olarak kullanmaya çalışın ve güvenli bir ortamda denemekten çekinmeyin.&lt;/p&gt;
+&lt;p&gt;Daha gelişmiş Linux komutlarını ele alacağımız 2. Bölüm için takipte kalın!&lt;/p&gt;
+</content:encoded>
     </item>
+    
   </channel>
-</rss>
+</rss> 

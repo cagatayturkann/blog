@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cagatayturkan.com/blog/en/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/"
+                />
+  </url><url>
     <loc>https://cagatayturkan.com/blog/en/tags/ai/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
@@ -26,19 +39,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://cagatayturkan.com/blog/en/categories/ai/"
-                />
-  </url><url>
-    <loc>https://cagatayturkan.com/blog/en/</loc>
-    <lastmod>2025-03-01T10:00:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="https://cagatayturkan.com/blog/tr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://cagatayturkan.com/blog/en/"
                 />
   </url><url>
     <loc>https://cagatayturkan.com/blog/en/categories/</loc>

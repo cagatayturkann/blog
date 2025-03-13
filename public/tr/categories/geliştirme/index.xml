@@ -1,19 +1,126 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Geliştirme on Çağatay Türkan</title>
     <link>https://cagatayturkan.com/blog/tr/categories/geli%C5%9Ftirme/</link>
     <description>Recent content in Geliştirme on Çağatay Türkan</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>tr</language>
-    <lastBuildDate>Sat, 25 Nov 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://cagatayturkan.com/blog/tr/categories/geli%C5%9Ftirme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/tr/categories/geli%C5%9Ftirme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>App Store Connect API için JWT Token Nasıl Oluşturulur?</title>
       <link>https://cagatayturkan.com/blog/tr/appstore-connect-ile-jwt-token-nasil-olusturulur/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/tr/appstore-connect-ile-jwt-token-nasil-olusturulur/</guid>
       <description>App Store Connect API, App Store Connect&amp;rsquo;te gerçekleştirdiğiniz işlemleri otomatikleştiren bir REST API&amp;rsquo;dir. Bu API, geliştiricilere uygulama gönderme ve güncelleme işlemlerinden, iç uygulama satın almalarını yönetmeye, uygulama performansını ve kullanıcı etkileşimini..</description>
+      
+      <cardimage>https://cagatayturkan.com/blog/tr/appstore-connect-ile-jwt-token-nasil-olusturulur/images/bg.jpg</cardimage>
+      
+      
+      <featureimage>https://cagatayturkan.com/blog/tr/appstore-connect-ile-jwt-token-nasil-olusturulur/images/bg.jpg</featureimage>
+      
+      <content:encoded>&lt;p&gt;&lt;br&gt;
+Herkese merhabalar! App Store Connect API hakkında ilk blog yazısına hoşgeldiniz. Bu yazımda sizlere kısaca App Store Connect API&amp;rsquo;den ve API&amp;rsquo;yi kullanabilmek için nasıl JWT token oluşturabileceğinizi anlatacağım.&lt;/p&gt;
+&lt;h3 id=&#34;app-store-connect-api-nedir&#34;&gt;App Store Connect API Nedir?&lt;/h3&gt;
+&lt;p&gt;App Store Connect API, App Store Connect&amp;rsquo;te gerçekleştirdiğiniz işlemleri otomatikleştiren bir REST API&amp;rsquo;dir. Bu API, geliştiricilere uygulama gönderme ve güncelleme işlemlerinden, iç uygulama satın almalarını yönetmeye, uygulama performansını ve kullanıcı etkileşimini kapsamlı raporlar aracılığıyla izlemeye, müşteri değerlendirmelerine ve geri bildirimlere etkili bir şekilde yanıt vermeye kadar çeşitli görevleri sorunsuz bir şekilde yerine getirme imkanı sunar.&lt;/p&gt;
+&lt;h3 id=&#34;neden-jwt-token&#34;&gt;Neden JWT Token?&lt;/h3&gt;
+&lt;p&gt;Token olmadan, App Store Connect API&amp;rsquo;den yanıt alamazsınız, ancak genellikle API, kimlik doğrulama ve yetkilendirme amaçları için JSON Web Token (JWT) gerektirir. API bağlamında JWT token, istemcinin kimliğini doğrulamak ve istenen kaynaklara erişim için gerekli izinlere sahip olduğunu sağlamak için güvenli ve standart bir yöntem olarak hizmet eder.&lt;/p&gt;
+&lt;h3 id=&#34;jwt-token-nasıl-oluşturulur&#34;&gt;JWT Token Nasıl Oluşturulur?&lt;/h3&gt;
+&lt;p&gt;App Store Connect API&amp;rsquo;yi kullanmak için JWT tokenları oluşturmadan önce birkaç adımı tamamlamanız gerekmektedir.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;App Store Connect GUI üzerinden API Key oluşturun&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Özel anahtarı p8 formatında kaydedin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Issuer ID ve API Key ID değerlerini kopyalayın.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;api-key-oluşturma&#34;&gt;API Key Oluşturma&lt;/h3&gt;
+&lt;p&gt;API anahtarı oluşturmak için, hesabınızla App Store Connect web arayüzüne giriş yapın ve Users&amp;amp;Access sayfasına gidin. Sayfadaki &amp;ldquo;Keys&amp;rdquo; sekmesine tıklayın. &amp;ldquo;Keys&amp;rdquo; sekmesini görebilmek için hesabınızın bu izne sahip olması gerekmektedir. Belirli bir amaç için API anahtarı veya tüm App Store Connect API&amp;rsquo;ına erişim sağlayan yönetici API anahtarı oluşturabilirsiniz.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/appstore-connect-ile-jwt-token-nasil-olusturulur/images/apiKey.png&#34;
+    alt=&#34;api key page&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&amp;lsquo;Active&amp;rsquo; metni yanındaki artı ikonuna tıklayın, anahtar için bir isim yazın, açılan modalda anahtara erişebilecek rolleri seçin ve &amp;lsquo;Generate&amp;rsquo; düğmesine tıklayın. Ardından anahtar oluşturulacak ve listelenecektir.&lt;/p&gt;
+&lt;h3 id=&#34;özel-anahtarı-kaydedin&#34;&gt;Özel Anahtarı Kaydedin&lt;/h3&gt;
+&lt;p&gt;API Anahtarı oluşturulduktan sonra Özel Anahtarı bilgisayarınıza kaydetmeniz gerekiyor. Anahtar genellikle .p8 formatındadır. Özel anahtarla uğraşırken akılda tutmanız gereken bazı önemli noktalar bulunmaktadır.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Özel anahtar yalnızca bir kez kaydedilebilir. Kaydedildikten sonra mutlaka güvenli bir şekilde saklanması önemlidir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Özel anahtar asla süresi dolmaz ve geçerli olduğu sürece çalışır; hatta tehlikeye girmiş olsa bile. Eğer anahtarınızın artık güvenli olmadığını düşünüyorsanız, en kısa sürede App Store Connect&amp;rsquo;ten iptal edin ve yeni bir anahtar alın.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;issuer-id-ve-api-key-id-değerlerini-kopyalayın&#34;&gt;Issuer ID ve API Key ID Değerlerini Kopyalayın&lt;/h3&gt;
+&lt;p&gt;JWT token oluşturmadan önce son adım, Users&amp;amp;Access sayfasında bulabileceğiniz Issuer ID ve API Key ID&amp;rsquo;yi kopyalamaktır.&lt;/p&gt;
+&lt;h3 id=&#34;jwt-token-oluşturma&#34;&gt;JWT Token Oluşturma&lt;/h3&gt;
+&lt;p&gt;Daha önce belirttiğim gibi, JWT, App Store Connect API tarafından kullanılan belirli bir tokenı oluşturmak için kullanılır. Token oluşturma süreci aşağıdaki adımları içerir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;IssuerID:&lt;/strong&gt; User&amp;amp;Access sayfasından kopyalanan Issuer ID bilgisi.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Private Key:&lt;/strong&gt; .p8 formatında kaydedilen özel anahtar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Expiration Time:&lt;/strong&gt; Maksimum 20 dakika, token 20 dakikadan fazla geçerli olamaz, bu nedenle süresi dolmadan yeni bir token oluşturduğumuzdan emin olmalıyız.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Audience:&lt;/strong&gt; Genellikle &amp;lsquo;applestoreconnect-v1&amp;rsquo; olarak ayarlanan API sürüm değeri ile sabit bir değerdir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Algorithm:&lt;/strong&gt; JWT algoritması, örneğin ES256, token oluşturmak için gereklidir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Gerekli tüm detaylara sahip olduktan sonra, istediğiniz dil kullanarak JWT token oluşturabileceksiniz. Ben bu süreç için Node.js kullanacağım.&lt;/p&gt;
+&lt;p&gt;Aşağıdaki komutları bilgisayarınızda sırasıyla çalıştırın:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir appStoreToken
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd appStoreToken
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm init -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm i jsonwebtoken
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;touch index.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aşağıdaki kodu index.js dosyanıza yapıştırın ve ilgili alanları kendi bilgilerinizle değiştirip kaydedin.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fs&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;jwt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;jsonwebtoken&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;privateKey&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;readFileSync&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;yourPrivateKey.p8&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;apiKeyId&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Your API Key ID&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;issuerId&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Your Issuer ID&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;now&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Math.&lt;span style=&#34;color:#a6e22e&#34;&gt;round&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Date().&lt;span style=&#34;color:#a6e22e&#34;&gt;getTime&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// Notice the /1000
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nowPlus20&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;now&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1199&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// 1200 === 20 minutes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;payload&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;iss&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;issuerId&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;exp&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nowPlus20&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;aud&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;appstoreconnect-v1&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;signOptions&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;algorithm&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ES256&amp;#34;&lt;/span&gt;, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;header&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;alg&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ES256&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;kid&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;apiKeyId&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;typ&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;JWT&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;jwt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sign&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;payload&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;privateKey&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;signOptions&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@token: &amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ve son olarak aşağıdaki komutu çalıştırın.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;node index.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bu işlem, App Store Connect API&amp;rsquo;ye erişim için kullanabileceğimiz uzun bir token döndürecektir. Ayrıca, API&amp;rsquo;yi 20 dakika sonrasında kullanmaya devam etmek istiyorsak başka bir token oluşturmamız gerekecektir.&lt;/p&gt;
+&lt;h3 id=&#34;sonuç&#34;&gt;Sonuç&lt;/h3&gt;
+&lt;p&gt;Bu yazıdma, App Store Connect API için Node.js kullanarak bir JWT tokenı nasıl oluşturulur konusunu anlatmaya çalıştım. Bu, API&amp;rsquo;ye olan isteklerinizi doğrulamanın kritik bir adımıdır. Gelecekteki yazılarda, App Store Connect API&amp;rsquo;yi kullanmanın diğer yollarını anlatmaya çalışacağım. Okuduğunuz için teşekkür ederim.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cagatayturkan.com/blog-en/how-to-create-jwt-token-using-app-store-connect-api/&#34;&gt;Bu yazıyı İngilizce oku&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
     </item>
+    
   </channel>
-</rss>
+</rss> 

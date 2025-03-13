@@ -1,19 +1,217 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Git on Çağatay Türkan</title>
     <link>https://cagatayturkan.com/blog/en/categories/git/</link>
     <description>Recent content in Git on Çağatay Türkan</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://cagatayturkan.com/blog/en/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/en/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What is Git Flow?</title>
       <link>https://cagatayturkan.com/blog/en/git-flow/</link>
       <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      
       <guid>https://cagatayturkan.com/blog/en/git-flow/</guid>
       <description>Git Flow is an effective approach that systematizes branch management in version control systems. In this article, I will explain in detail what Git Flow is, how it&amp;rsquo;s used, and best practice recommendations.</description>
+      
+      <cardimage>https://cagatayturkan.com/blog/en/git-flow/images/cover.png</cardimage>
+      
+      
+      <featureimage>https://cagatayturkan.com/blog/en/blog/git-flow/images/cover.png</featureimage>
+      
+      <content:encoded>&lt;p&gt;&lt;br&gt;
+Hello. In this article, I will briefly discuss version control systems and explain in detail what Git Flow is and how it&amp;rsquo;s used. Version control systems are important tools used in software development processes to track and manage code versions. Git Flow is a branching model that enables us to use this version control system more effectively.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-a-version-control-system&#34;&gt;What is a Version Control System?&lt;/h2&gt;
+&lt;p&gt;A version control system is a system that records step-by-step changes we make to one or more files, documents (software project, office documents, etc.), allows us to revert to a specific version later, and if desired, enables us to store and manage this in an online repository. Git, SVN, BitKeeper, and Mercurial are examples of version control systems.&lt;/p&gt;
+&lt;h3 id=&#34;why-do-we-use-version-control-systems&#34;&gt;Why Do We Use Version Control Systems?&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;A complete long-term change history is kept for each file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This means tracking every change made to the file by multiple people over the years.&lt;/li&gt;
+&lt;li&gt;This allows us to compare our old and new code to understand how we got to where we are.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Allows team members to work simultaneously on the same code.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It&amp;rsquo;s possible to create sub-versions to carry out different work on the software and later integrate it into the main software.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enables tracking every change made to the software and linking it to project management.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Allows software issues to be associated with and tracked through versions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Allows us to revert to old code records when we encounter errors in the project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;version-control-systems&#34;&gt;Version Control Systems&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Local VCS:&lt;/strong&gt; This is the oldest version control system approach. Our project and the changes we make are stored in a database on the user machine. Each commit is stored as a version, and each version is distinguished by assigning a hash value to the commit. It also provides version viewing capability. However, only one user can work effectively in this system.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Centralized VCS:&lt;/strong&gt; This is a versioning system created for multiple people to work effectively on a project. CVS and SVN are centralized version control systems. In this system, the project is kept in a shared repository, and multiple developers perform checkout and commit operations on the same repository. While this method allows everyone to contribute to the project, it has some serious problems. If the single central server fails for 1 hour, users won&amp;rsquo;t be able to save their work or versioned copies of their project for that hour.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Distributed VCS:&lt;/strong&gt; This is a version system created due to the limitations of centralized version systems, such as developers&amp;rsquo; inability to work offline and difficulty in recovery if the repository is damaged. Systems like Git, Mercurial, and BitKeeper are examples of distributed version systems. In these systems, there is no central repository, and each machine working on the project keeps a copy of the project on their local computer. Developers don&amp;rsquo;t need to communicate with the remote repository when they want to make changes to the project or view project history. If one server crashes and there are systems working collaboratively on that server, the system can be recovered by having one of the developers restore the project to the server. In summary, it allows different developers on the same project to work in different ways with different workflows.&lt;/p&gt;
+&lt;h3 id=&#34;what-is-git-flow&#34;&gt;What is Git Flow?&lt;/h3&gt;
+&lt;p&gt;On January 5, 2020, nvie proposed a model for keeping git repositories organized in a post at &lt;!-- raw HTML omitted --&gt;&lt;a href=&#34;https://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;https://nvie.com/posts/a-successful-git-branching-model/&lt;/a&gt;&lt;!-- raw HTML omitted --&gt;. Later, he released a project called Git-Flow that includes git extensions to make using this model easier. The GitFlow model is fundamentally based on the git version control system. In other words, it&amp;rsquo;s possible to execute all model operations with git commands.&lt;/p&gt;
+&lt;h3 id=&#34;advantages-and-disadvantages-of-git-flow&#34;&gt;Advantages and Disadvantages of Git Flow&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Advantages:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provides an organized and predictable development process&lt;/li&gt;
+&lt;li&gt;Offers an ideal structure for large teams&lt;/li&gt;
+&lt;li&gt;Simplifies version management&lt;/li&gt;
+&lt;li&gt;Each branch has a clear purpose&lt;/li&gt;
+&lt;li&gt;Supports parallel development&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Disadvantages:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can be too complex for small projects&lt;/li&gt;
+&lt;li&gt;May not be suitable for continuous delivery&lt;/li&gt;
+&lt;li&gt;Branch structure can sometimes lead to unnecessary complexity&lt;/li&gt;
+&lt;li&gt;Requires additional tool installation&lt;/li&gt;
+&lt;li&gt;Learning curve is higher compared to other models&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;alternatives-to-git-flow&#34;&gt;Alternatives to Git Flow&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub Flow:&lt;/strong&gt; A simpler model, uses only master and feature branches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitLab Flow:&lt;/strong&gt; Strikes a balance between Git Flow and GitHub Flow&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trunk Based Development:&lt;/strong&gt; Focuses on development on the main branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git-flow-working-principle&#34;&gt;Git Flow Working Principle&lt;/h3&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/git-flow/images/diagram.png&#34;
+    alt=&#34;git flow&#34;&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Git Flow model has 5 main branches:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;master:&lt;/strong&gt; Master, one of the main branches, exists throughout the project. The master branch always contains code that can be deployed to production. Ideally, each commit to the master branch is a version and should be marked with &amp;ldquo;git tag&amp;rdquo; (given a version number). Direct commits to the master branch are not made; only merges from hotfix and release branches are allowed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;develop:&lt;/strong&gt; Develop is another main branch that exists throughout the project. The develop branch contains changes made for the next version. All feature branches are first merged into this branch. This branch is the main development branch of the project, and continuous integration (CI) processes typically run on this branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;hotfix:&lt;/strong&gt; The hotfix branch is used when there&amp;rsquo;s a critical bug in the live version that needs to be fixed and deployed immediately. The hotfix branch is created from the master branch and is typically named in the format &amp;lsquo;hotfix/[version]-[description]&amp;rsquo;. When the bug fix is completed in the hotfix branch, this branch is merged with both Developer and Master. After merging with Master, the change is tagged with a new version number.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;feature:&lt;/strong&gt; When adding a new feature, a Feature branch is created for this feature. Feature branches are always created from the develop branch and are typically named in the format &amp;lsquo;feature/[feature-name]&amp;rsquo;. These can be considered as changes relative to features. Multiple feature branches can be opened simultaneously. This means different developers can work on different features. Developing features in separate branches both prevents the Develop branch from being filled with unnecessary commits and makes it easy to abandon a feature by simply deleting the feature branch. When the feature is complete, this branch is merged with the Develop branch and the feature branch is deleted. So feature branches only live during development. Of course, during this process, you may need to occasionally pull from the Develop branch for checking purposes because another developer might have finished their feature branch first and version might have been pushed to the Develop branch. Feature branches should not include names containing master, release, develop, or hotfix.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;release:&lt;/strong&gt; Let&amp;rsquo;s say all changes are complete. When a new version is to be released, a new Release branch is created from the Develop branch. Release branches are typically named in the format &amp;lsquo;release/[version]&amp;rsquo;. Final changes in the version, changing version numbers, etc. are performed in this branch. Only bug fixes should be made in the Release branch, new features should not be added. When all necessary changes are completed, all changes completed in the Release branch are merged into both Master and Develop branches. The version number is tagged with git tag in the Master branch, and then the Release branch is deleted.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;git-flow-example-project&#34;&gt;Git Flow Example Project&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/brew install git-flow &amp;gt; git flow init&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/git-flow/images/git-flow-init.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+First, we install with &amp;ldquo;brew install git-flow&amp;rdquo;. GitFlow doesn&amp;rsquo;t come with git. It needs to be installed separately. This is considered one of its disadvantages. In git, we used the &amp;ldquo;git init&amp;rdquo; command to start the project. For git-flow, we enter the &amp;ldquo;git flow init&amp;rdquo; command to start the git-flow process. When the command runs, if no repo exists, it first creates a repo. Then it asks the user for branch names to be used for the process. Branch names can be customized, but it&amp;rsquo;s recommended to keep the default values.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow feature start performance&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/git-flow/images/git-flow-feature-start.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+This command creates a new feature branch. Since the feature name is performance, the default branch will be feature/performance. We can do the same thing with the existing git command. The command we would need to enter for this would be &amp;ldquo;git checkout -b myFeature feature/performance&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow feature finish performance&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/git-flow/images/git-flow-feature-finish.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+This command closes a previously opened branch. The closing process starts with merging the feature branch into the develop branch and ends with deleting the feature branch. If changes are not committed when the command is run, it will give an error. If push is not done after commit, it will give an error. To do this operation with normal git commands, first commit is made in the relevant branch, then &amp;ldquo;git checkout develop &amp;gt; git merge &amp;ndash;no-ff feature/performance &amp;gt; git branch -D feature/performance&amp;rdquo; commands are run in order.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow release start 1.0.0&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/git-flow/images/git-flow-release-start.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+When this command is entered, a new version becomes ready for release. When the command is run, a new release/1.0.0 branch is created from the Develop branch. To perform this operation with the existing git command, the &amp;ldquo;git checkout -b release/1.0.0 develop&amp;rdquo; command is run.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow release finish 1.0.0&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/git-flow/images/git-flow-release-finish.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+When the command is entered, the completed version is moved to the master branch. The changes are merged with both develop and master branches. The last commit in the master branch is tagged with the version number. Then the release branch is automatically deleted. To do the same operation with git commands, run the following commands in order:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff release/1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git tag -a 1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout develop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff release/1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch -d release/1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow hotfix start 1.0.1&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/git-flow/images/git-flow-hotfix-start.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+A new hotfix is started with this command. Hotfix branches are used for urgent updates and are created from the master branch. When the command runs, a new hotfix/1.0.1 branch branching from the master branch is created. To do the operation with git command, run &amp;ldquo;git checkout -b hotfix/1.0.1 master&amp;rdquo; command.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/git flow hotfix finish 1.0.1&lt;/strong&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/git-flow/images/git-flow-hotfix-finish.png&#34;
+      alt=&#34;git flow&#34;&gt;
+  &lt;/figure&gt;
+
+The hotfix is completed with this command. Changes are taken to both Develop and Master branches. The Master branch is tagged with 1.0.1 and the hotfix branch is deleted. When the &amp;ldquo;git tag -l&amp;rdquo; command is run, version numbers are displayed. To do the same operation with existing git commands, run the following commands in order:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff hotfix/1.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git tag -a 1.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git checkout develop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git merge --no-ff hotfix/1.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch -d hotfix/1.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;git-flow-best-practice-recommendations&#34;&gt;Git Flow Best Practice Recommendations&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Branch Naming Conventions&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use descriptive names for feature branches (e.g., feature/user-authentication)&lt;/li&gt;
+&lt;li&gt;Use semantic versioning for hotfix and release branches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Commit Messages&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write descriptive commit messages&lt;/li&gt;
+&lt;li&gt;Follow the Conventional Commits standard&lt;/li&gt;
+&lt;li&gt;Ensure each commit has a single purpose&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Code Review Process&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Perform code review before merging feature branches&lt;/li&gt;
+&lt;li&gt;Use automated testing processes&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t forget documentation updates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Merge Strategy&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the &amp;ndash;no-ff (no fast-forward) parameter&lt;/li&gt;
+&lt;li&gt;Resolve merge conflicts quickly&lt;/li&gt;
+&lt;li&gt;Consider using squash commits&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Git Flow is an effective approach that systematizes branch management in modern software development processes. Through this workflow, teams can work more organized, better control versioning, and improve code quality. Especially in large projects and team collaborations, the structured branch strategy offered by Git Flow significantly improves development processes. By following the best practices mentioned above, you can successfully implement Git Flow in your project and make your software development processes more efficient.&lt;/p&gt;
+</content:encoded>
     </item>
+    
   </channel>
-</rss>
+</rss> 
