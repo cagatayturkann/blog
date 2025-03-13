@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#f8f9fa" rx="8" ry="8"/>
+  
+  <!-- Title -->
+  <text x="500" y="50" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Multi-Agent RAG Architecture</text>
+  
+  <!-- User query section -->
+  <rect x="400" y="80" width="200" height="60" rx="10" ry="10" fill="#e6f7ff" stroke="#1890ff" stroke-width="2"/>
+  <text x="500" y="120" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">User Query</text>
+  
+  <!-- Arrow down from user query to orchestrator -->
+  <path d="M500,140 L500,170" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Orchestrator agent -->
+  <rect x="350" y="170" width="300" height="80" rx="10" ry="10" fill="#f0f5ff" stroke="#2f54eb" stroke-width="2"/>
+  <text x="500" y="205" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Orchestrator Agent</text>
+  <text x="500" y="230" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">Query Analysis &amp; Task Distribution</text>
+  
+  <!-- Arrows from orchestrator to specialized agents -->
+  <path d="M350,250 L150,300" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M500,250 L500,300" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M650,250 L850,300" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Specialized Agent 1 - Search Agent -->
+  <rect x="50" y="300" width="200" height="70" rx="10" ry="10" fill="#e6fffb" stroke="#13c2c2" stroke-width="2"/>
+  <text x="150" y="330" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Search Agent</text>
+  <text x="150" y="350" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">Semantic Search</text>
+  
+  <!-- Specialized Agent 2 - Retrieval Agent -->
+  <rect x="400" y="300" width="200" height="70" rx="10" ry="10" fill="#fff7e6" stroke="#fa8c16" stroke-width="2"/>
+  <text x="500" y="330" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Retrieval Agent</text>
+  <text x="500" y="350" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">Document Retrieval</text>
+  
+  <!-- Specialized Agent 3 - Planning Agent -->
+  <rect x="750" y="300" width="200" height="70" rx="10" ry="10" fill="#f9f0ff" stroke="#722ed1" stroke-width="2"/>
+  <text x="850" y="330" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Planning Agent</text>
+  <text x="850" y="350" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">Strategy &amp; Planning</text>
+  
+  <!-- Arrows from specialized agents to document stores -->
+  <path d="M150,370 L150,420" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M500,370 L500,420" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M850,370 L850,420" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Document storage section -->
+  <rect x="50" y="420" width="900" height="100" rx="10" ry="10" fill="#fff0f6" stroke="#eb2f96" stroke-width="2"/>
+  <text x="500" y="445" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Document &amp; Knowledge Stores</text>
+  
+  <!-- Document Storage Components -->
+  <rect x="80" y="460" width="160" height="40" rx="5" ry="5" fill="#ffffff" stroke="#666" stroke-width="1"/>
+  <text x="160" y="485" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Vector Database</text>
+  
+  <rect x="270" y="460" width="160" height="40" rx="5" ry="5" fill="#ffffff" stroke="#666" stroke-width="1"/>
+  <text x="350" y="485" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Document Database</text>
+  
+  <rect x="460" y="460" width="160" height="40" rx="5" ry="5" fill="#ffffff" stroke="#666" stroke-width="1"/>
+  <text x="540" y="485" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Knowledge Graph</text>
+  
+  <rect x="650" y="460" width="160" height="40" rx="5" ry="5" fill="#ffffff" stroke="#666" stroke-width="1"/>
+  <text x="730" y="485" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Structured Data</text>
+  
+  <!-- Bi-directional arrows from document store back to agents -->
+  <path d="M150,420 L150,370" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <path d="M500,420 L500,370" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <path d="M850,420 L850,370" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  
+  <!-- Arrows from specialized agents to synthesis agent -->
+  <path d="M150,370 L350,530" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M500,370 L500,530" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M850,370 L650,530" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Synthesis Agent -->
+  <rect x="350" y="530" width="300" height="70" rx="10" ry="10" fill="#f6ffed" stroke="#52c41a" stroke-width="2"/>
+  <text x="500" y="560" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Synthesis Agent</text>
+  <text x="500" y="580" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">Context Integration &amp; Response Generation</text>
+  
+  <!-- Arrow to final response -->
+  <path d="M500,600 L500,630" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Final response box -->
+  <rect x="400" y="630" width="200" height="50" rx="10" ry="10" fill="#fff2e8" stroke="#fa541c" stroke-width="2"/>
+  <text x="500" y="660" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Generated Response</text>
+  
+  <!-- Define the arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- Component Connections/Communication -->
+  <path d="M250,335 L400,335" stroke="#666" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <path d="M600,335 L750,335" stroke="#666" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  
+  <!-- Highlight Flows with Text Labels -->
+  <text x="275" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#666" transform="rotate(-30 275 275)">Search Tasks</text>
+  <text x="500" y="280" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Retrieval Tasks</text>
+  <text x="725" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#666" transform="rotate(30 725 275)">Planning Tasks</text>
+  
+  <text x="220" y="450" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Query &amp; Fetch</text>
+  <text x="780" y="450" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Query &amp; Fetch</text>
+  
+  <text x="285" y="500" font-family="Arial" font-size="12" text-anchor="middle" fill="#666" transform="rotate(30 285 500)">Retrieved Content</text>
+  <text x="500" y="485" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Retrieved Content</text>
+  <text x="715" y="500" font-family="Arial" font-size="12" text-anchor="middle" fill="#666" transform="rotate(-30 715 500)">Retrieved Content</text>
+</svg>

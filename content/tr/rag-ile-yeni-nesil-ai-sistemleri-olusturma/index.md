@@ -1,7 +1,7 @@
 ---
 title: 'RAG: Retrieval Augmented Generation ile Yeni Nesil Yapay Zeka Sistemleri Oluşturma'
 summary: Bu makale, Retrieval Augmented Generation (RAG) temellerini, harici bilgi erişimi yoluyla LLM yeteneklerini nasıl geliştirdiğini ve farklı sektörlerdeki pratik uygulamalarını inceliyor. RAG mimarisini, uygulama stratejilerini ve daha doğru, güvenilir ve bağlam odaklı yapay zeka sistemleri oluşturmak için en iyi uygulamaları ele alacağız.
-date: 2025-03-14T10:00:00+03:00
+date: 2025-03-13T10:00:00+03:00
 cardimage: '/blog/tr/rag-ile-yeni-nesil-ai-sistemleri-olusturma/images/cover.svg'
 featureimage: '/blog/tr/rag-ile-yeni-nesil-ai-sistemleri-olusturma/images/cover.svg'
 featured: true

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cagatayturkan.com/blog/tr/</loc>
-    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -14,6 +14,80 @@
                 hreflang="tr"
                 href="https://cagatayturkan.com/blog/tr/"
                 />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/tr/tags/</loc>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/tags/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/tr/tags/g%C3%B6mme/</loc>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/tr/categories/</loc>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/categories/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/tr/tags/llm/</loc>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/tags/llm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/tags/llm/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/tr/tags/rag/</loc>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/tags/rag/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/tags/rag/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/tr/rag-ile-yeni-nesil-ai-sistemleri-olusturma/</loc>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/rag-building-next-gen-ai-systems/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/rag-ile-yeni-nesil-ai-sistemleri-olusturma/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/tr/tags/vekt%C3%B6r-veritaban%C4%B1/</loc>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/tr/categories/yapay-zeka/</loc>
+    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
   </url><url>
     <loc>https://cagatayturkan.com/blog/tr/categories/ai/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
@@ -41,19 +115,6 @@
                 href="https://cagatayturkan.com/blog/tr/tags/ai/"
                 />
   </url><url>
-    <loc>https://cagatayturkan.com/blog/tr/tags/</loc>
-    <lastmod>2025-03-01T10:00:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://cagatayturkan.com/blog/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="https://cagatayturkan.com/blog/tr/tags/"
-                />
-  </url><url>
     <loc>https://cagatayturkan.com/blog/tr/categories/javascript/</loc>
     <lastmod>2025-03-01T10:00:00+03:00</lastmod>
     <xhtml:link
@@ -65,19 +126,6 @@
                 rel="alternate"
                 hreflang="tr"
                 href="https://cagatayturkan.com/blog/tr/categories/javascript/"
-                />
-  </url><url>
-    <loc>https://cagatayturkan.com/blog/tr/categories/</loc>
-    <lastmod>2025-03-01T10:00:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://cagatayturkan.com/blog/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="https://cagatayturkan.com/blog/tr/categories/"
                 />
   </url><url>
     <loc>https://cagatayturkan.com/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/</loc>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">Text Embeddings Visualization</text>
+  <text x="400" y="70" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Semantic Clustering in 2D Space</text>
+  
+  <!-- Axes -->
+  <line x1="100" y1="500" x2="700" y2="500" stroke="#333" stroke-width="2" />
+  <line x1="100" y1="100" x2="100" y2="500" stroke="#333" stroke-width="2" />
+  <text x="400" y="530" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Dimension 1</text>
+  <text x="60" y="300" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" transform="rotate(-90, 60, 300)">Dimension 2</text>
+  
+  <!-- Cluster 1: Technology related words (blue) -->
+  <circle cx="200" cy="200" r="40" fill="rgba(66, 133, 244, 0.2)" stroke="rgba(66, 133, 244, 0.8)" stroke-width="2" />
+  <text x="200" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">computer</text>
+  <text x="180" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">software</text>
+  <text x="220" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">hardware</text>
+  <text x="200" y="225" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">internet</text>
+  <text x="170" y="185" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">code</text>
+  <text x="230" y="215" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">data</text>
+  <text x="200" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#4285F4" font-weight="bold">Technology</text>
+  
+  <!-- Cluster 2: Nature related words (green) -->
+  <circle cx="600" cy="350" r="40" fill="rgba(52, 168, 83, 0.2)" stroke="rgba(52, 168, 83, 0.8)" stroke-width="2" />
+  <text x="600" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">forest</text>
+  <text x="580" y="350" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">tree</text>
+  <text x="620" y="350" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">river</text>
+  <text x="600" y="375" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">mountain</text>
+  <text x="570" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">animal</text>
+  <text x="630" y="365" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">plant</text>
+  <text x="600" y="395" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#34A853" font-weight="bold">Nature</text>
+  
+  <!-- Cluster 3: Food related words (red) -->
+  <circle cx="350" cy="400" r="40" fill="rgba(234, 67, 53, 0.2)" stroke="rgba(234, 67, 53, 0.8)" stroke-width="2" />
+  <text x="350" y="375" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">cuisine</text>
+  <text x="330" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">recipe</text>
+  <text x="370" y="400" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">ingredient</text>
+  <text x="350" y="425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">restaurant</text>
+  <text x="320" y="385" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">meal</text>
+  <text x="380" y="415" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">cooking</text>
+  <text x="350" y="445" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#EA4335" font-weight="bold">Food</text>
+  
+  <!-- Cluster 4: Art related words (yellow) -->
+  <circle cx="500" cy="200" r="40" fill="rgba(251, 188, 5, 0.2)" stroke="rgba(251, 188, 5, 0.8)" stroke-width="2" />
+  <text x="500" y="175" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">painting</text>
+  <text x="480" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">music</text>
+  <text x="520" y="200" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">sculpture</text>
+  <text x="500" y="225" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">literature</text>
+  <text x="470" y="185" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">film</text>
+  <text x="530" y="215" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">dance</text>
+  <text x="500" y="245" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#FBBC05" font-weight="bold">Art</text>
+  
+  <!-- Connections between semantically related words across clusters -->
+  <line x1="230" y1="215" x2="320" y2="385" stroke="#999" stroke-width="1" stroke-dasharray="5,3" />
+  <line x1="620" y1="350" x2="370" y2="400" stroke="#999" stroke-width="1" stroke-dasharray="5,3" />
+  <line x1="520" y1="200" x2="470" y2="185" stroke="#999" stroke-width="1" stroke-dasharray="5,3" />
+  
+  <!-- Legend -->
+  <rect x="650" y="100" width="120" height="130" fill="white" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+  <text x="710" y="120" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold">Clusters</text>
+  
+  <circle cx="670" cy="140" r="6" fill="rgba(66, 133, 244, 0.8)" />
+  <text x="710" y="145" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Technology</text>
+  
+  <circle cx="670" cy="165" r="6" fill="rgba(52, 168, 83, 0.8)" />
+  <text x="710" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Nature</text>
+  
+  <circle cx="670" cy="190" r="6" fill="rgba(234, 67, 53, 0.8)" />
+  <text x="710" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Food</text>
+  
+  <circle cx="670" cy="215" r="6" fill="rgba(251, 188, 5, 0.8)" />
+  <text x="710" y="220" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Art</text>
+  
+  <!-- Additional Explanation -->
+  <text x="180" y="550" font-family="Arial, sans-serif" font-size="12" text-anchor="start" font-style="italic">Note: Words that are semantically similar appear closer together in the embedding space.</text>
+  <text x="180" y="570" font-family="Arial, sans-serif" font-size="12" text-anchor="start" font-style="italic">Dashed lines represent cross-cluster semantic relationships.</text>
+</svg>

@@ -1,7 +1,7 @@
 ---
 title: 'RAG: Building Next-Generation AI Systems with Retrieval Augmented Generation'
 summary: This article explores the fundamentals of Retrieval Augmented Generation (RAG), how it enhances LLM capabilities through external knowledge retrieval, and its practical applications across industries. We'll examine RAG architecture, implementation strategies, and best practices for creating more accurate, reliable, and context-aware AI systems.
-date: 2025-03-14T10:00:00+03:00
+date: 2025-03-13T10:00:00+03:00
 cardimage: '/blog/en/rag-building-next-gen-ai-systems/images/cover.svg'
 featureimage: '/blog/en/rag-building-next-gen-ai-systems/images/cover.svg'
 featured: true
