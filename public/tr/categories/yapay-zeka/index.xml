@@ -37,7 +37,10 @@
 &lt;h2 id=&#34;1-ragı-anlamak-prensipler-ve-mimari&#34;&gt;1. RAG&amp;rsquo;ı Anlamak: Prensipler ve Mimari&lt;/h2&gt;
 &lt;h3 id=&#34;retrieval-augmented-generation-nedir&#34;&gt;Retrieval Augmented Generation Nedir?&lt;/h3&gt;
 &lt;p&gt;Retrieval Augmented Generation (RAG), dil modellerini harici bilgi kaynaklarını dahil ederek geliştiren bir yapay zeka çerçevesidir. Yalnızca modelin parametrelerinde kodlanmış bilgilere güvenmek yerine, RAG harici bir bilgi tabanından ilgili belgeleri veya verileri alır ve bu bilgileri daha doğru, güncel ve bağlam odaklı yanıtlar üretmek için kullanır.&lt;/p&gt;
-&lt;p&gt;[GÖRSEL: Kullanıcı sorgusunun alıcı ve üretici bileşenleri aracılığıyla akışını gösteren temel RAG mimarisi diyagramı]&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/rag-ile-yeni-nesil-ai-sistemleri-olusturma/images/ragArchitecture.svg&#34;
+    alt=&#34;Kullanıcı sorgusunun alıcı ve üretici bileşenleri aracılığıyla akışını gösteren temel RAG mimarisi diyagramı&#34;&gt;
+&lt;/figure&gt;
+
 &lt;p&gt;Bir RAG sisteminin temel mimarisi iki ana bileşenden oluşur:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Alıcı (Retriever)&lt;/strong&gt;: Bilgi tabanından ilgili bilgileri bulma ve alma sorumluluğunu taşır&lt;/li&gt;
@@ -178,11 +181,10 @@
 &lt;li&gt;Birden fazla alıcı arasında topluluk yöntemleri&lt;/li&gt;
 &lt;li&gt;Alana özgü erişim stratejileri&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;[GÖRSEL: ]
 &lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/rag-ile-yeni-nesil-ai-sistemleri-olusturma/images/multiStageRetrieval.svg&#34;
     alt=&#34;Filtreler ve yeniden sıralama ile çok aşamalı erişim sürecinin akış şeması&#34;&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
+
 &lt;h3 id=&#34;bağlam-entegrasyonu-ve-yanıt-üretimi&#34;&gt;Bağlam Entegrasyonu ve Yanıt Üretimi&lt;/h3&gt;
 &lt;p&gt;RAG işlem hattındaki son aşama, hem alınan bilgileri hem de LLM&amp;rsquo;nin yeteneklerini kullanarak bir yanıt üretmektir:&lt;/p&gt;
 &lt;ol&gt;
@@ -289,11 +291,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;[GÖRSEL: ]
 &lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/tr/rag-ile-yeni-nesil-ai-sistemleri-olusturma/images/mockupDashboardRagMetric.svg&#34;
     alt=&#34;Temel RAG performans metriklerini gösteren gösterge paneli taslağı&#34;&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
+
 &lt;h3 id=&#34;insan-içinde-döngü-değerlendirmesi&#34;&gt;İnsan-İçinde-Döngü Değerlendirmesi&lt;/h3&gt;
 &lt;p&gt;Otomatik metrikler değerli sinyaller sağlar ancak insan değerlendirmesiyle tamamlanmalıdır:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Uzman İncelemesi&lt;/strong&gt;:&lt;/p&gt;

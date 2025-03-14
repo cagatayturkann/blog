@@ -33,7 +33,7 @@ In this article, we'll explore:
 
 Retrieval Augmented Generation (RAG) is an AI framework that enhances language models by incorporating external knowledge sources. Instead of relying solely on information encoded in the model's parameters, RAG retrieves relevant documents or data from an external knowledge base and uses this information to generate more accurate, current, and context-aware responses.
 
-[GÖRSEL: Diagram showing basic RAG architecture with user query flow through retriever and generator components]
+{{< figure src="./images/ragArchitecture.svg" alt="Diagram showing basic RAG architecture with user query flow through retriever and generator components">}}
 
 The core architecture of a RAG system consists of two primary components:
 
@@ -171,7 +171,6 @@ Modern RAG systems often employ sophisticated multi-stage retrieval pipelines:
 - Ensemble methods across multiple retrievers
 - Domain-specific retrieval strategies
 
-[GÖRSEL: ]
 {{< figure src="./images/multiStageRetrieval.svg" alt="Flowchart of multi-stage retrieval process with filters and re-ranking">}}
 
 ### Context Integration and Response Generation
@@ -276,7 +275,6 @@ Measuring RAG performance requires a multifaceted approach:
    - Time-to-answer
    - System latency
 
-[GÖRSEL: ]
 {{< figure src="./images/mockupDashboardRagMetric.svg" alt="Dashboard mockup showing key RAG performance metrics">}}
 
 ### Human-in-the-Loop Evaluation

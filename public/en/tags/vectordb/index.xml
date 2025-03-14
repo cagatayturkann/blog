@@ -37,7 +37,10 @@
 &lt;h2 id=&#34;1-understanding-rag-principles-and-architecture&#34;&gt;1. Understanding RAG: Principles and Architecture&lt;/h2&gt;
 &lt;h3 id=&#34;what-is-retrieval-augmented-generation&#34;&gt;What is Retrieval Augmented Generation?&lt;/h3&gt;
 &lt;p&gt;Retrieval Augmented Generation (RAG) is an AI framework that enhances language models by incorporating external knowledge sources. Instead of relying solely on information encoded in the model&amp;rsquo;s parameters, RAG retrieves relevant documents or data from an external knowledge base and uses this information to generate more accurate, current, and context-aware responses.&lt;/p&gt;
-&lt;p&gt;[GÖRSEL: Diagram showing basic RAG architecture with user query flow through retriever and generator components]&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/rag-building-next-gen-ai-systems/images/ragArchitecture.svg&#34;
+    alt=&#34;Diagram showing basic RAG architecture with user query flow through retriever and generator components&#34;&gt;
+&lt;/figure&gt;
+
 &lt;p&gt;The core architecture of a RAG system consists of two primary components:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Retriever&lt;/strong&gt;: Responsible for finding and retrieving relevant information from the knowledge base&lt;/li&gt;
@@ -178,11 +181,10 @@
 &lt;li&gt;Ensemble methods across multiple retrievers&lt;/li&gt;
 &lt;li&gt;Domain-specific retrieval strategies&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;[GÖRSEL: ]
 &lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/rag-building-next-gen-ai-systems/images/multiStageRetrieval.svg&#34;
     alt=&#34;Flowchart of multi-stage retrieval process with filters and re-ranking&#34;&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
+
 &lt;h3 id=&#34;context-integration-and-response-generation&#34;&gt;Context Integration and Response Generation&lt;/h3&gt;
 &lt;p&gt;The final stage in the RAG pipeline is generating a response using both the retrieved information and the LLM&amp;rsquo;s capabilities:&lt;/p&gt;
 &lt;ol&gt;
@@ -289,11 +291,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;[GÖRSEL: ]
 &lt;figure&gt;&lt;img src=&#34;https://cagatayturkan.com/blog/blog/en/rag-building-next-gen-ai-systems/images/mockupDashboardRagMetric.svg&#34;
     alt=&#34;Dashboard mockup showing key RAG performance metrics&#34;&gt;
 &lt;/figure&gt;
-&lt;/p&gt;
+
 &lt;h3 id=&#34;human-in-the-loop-evaluation&#34;&gt;Human-in-the-Loop Evaluation&lt;/h3&gt;
 &lt;p&gt;Automated metrics provide valuable signals but should be complemented with human evaluation:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Expert Review&lt;/strong&gt;:&lt;/p&gt;

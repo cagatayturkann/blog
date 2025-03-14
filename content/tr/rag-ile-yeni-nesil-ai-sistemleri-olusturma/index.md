@@ -33,7 +33,7 @@ Bu makalede şunları inceleyeceğiz:
 
 Retrieval Augmented Generation (RAG), dil modellerini harici bilgi kaynaklarını dahil ederek geliştiren bir yapay zeka çerçevesidir. Yalnızca modelin parametrelerinde kodlanmış bilgilere güvenmek yerine, RAG harici bir bilgi tabanından ilgili belgeleri veya verileri alır ve bu bilgileri daha doğru, güncel ve bağlam odaklı yanıtlar üretmek için kullanır.
 
-[GÖRSEL: Kullanıcı sorgusunun alıcı ve üretici bileşenleri aracılığıyla akışını gösteren temel RAG mimarisi diyagramı]
+{{< figure src="./images/ragArchitecture.svg" alt="Kullanıcı sorgusunun alıcı ve üretici bileşenleri aracılığıyla akışını gösteren temel RAG mimarisi diyagramı">}}
 
 Bir RAG sisteminin temel mimarisi iki ana bileşenden oluşur:
 
@@ -171,7 +171,6 @@ Modern RAG sistemleri genellikle sofistike çok aşamalı erişim işlem hatlar�
 - Birden fazla alıcı arasında topluluk yöntemleri
 - Alana özgü erişim stratejileri
 
-[GÖRSEL: ]
 {{< figure src="./images/multiStageRetrieval.svg" alt="Filtreler ve yeniden sıralama ile çok aşamalı erişim sürecinin akış şeması">}}
 
 ### Bağlam Entegrasyonu ve Yanıt Üretimi
@@ -276,7 +275,6 @@ RAG performansını ölçmek çok yönlü bir yaklaşım gerektirir:
    - Yanıt süresi
    - Sistem gecikmesi
 
-[GÖRSEL: ]
 {{< figure src="./images/mockupDashboardRagMetric.svg" alt="Temel RAG performans metriklerini gösteren gösterge paneli taslağı">}}
 
 ### İnsan-İçinde-Döngü Değerlendirmesi
