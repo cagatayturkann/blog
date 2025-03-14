@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cagatayturkan.com/blog/en/tags/ai/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/tags/ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/tags/ai/"
+                />
+  </url><url>
     <loc>https://cagatayturkan.com/blog/en/categories/ai/</loc>
-    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
@@ -15,8 +28,21 @@
                 href="https://cagatayturkan.com/blog/en/categories/ai/"
                 />
   </url><url>
+    <loc>https://cagatayturkan.com/blog/en/building-intelligent-ecommerce-rag/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/rag-ile-eticaret-deneyimleri-olusturma/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/building-intelligent-ecommerce-rag/"
+                />
+  </url><url>
     <loc>https://cagatayturkan.com/blog/en/</loc>
-    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
@@ -29,7 +55,7 @@
                 />
   </url><url>
     <loc>https://cagatayturkan.com/blog/en/categories/</loc>
-    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="tr"
@@ -42,7 +68,78 @@
                 />
   </url><url>
     <loc>https://cagatayturkan.com/blog/en/tags/embeddings/</loc>
-    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/en/tags/nodejs/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/tags/nodejs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/tags/nodejs/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/en/tags/rag/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/tags/rag/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/tags/rag/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/en/tags/semantic-search/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/en/tags/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/tags/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/en/vector-databases-weaviate/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/vector-veritabanlari-ve-weaviate/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/vector-databases-weaviate/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/en/tags/vectordb/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="https://cagatayturkan.com/blog/tr/tags/vectordb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://cagatayturkan.com/blog/en/tags/vectordb/"
+                />
+  </url><url>
+    <loc>https://cagatayturkan.com/blog/en/tags/weaviate/</loc>
+    <lastmod>2025-03-14T10:00:00+03:00</lastmod>
   </url><url>
     <loc>https://cagatayturkan.com/blog/en/tags/llm/</loc>
     <lastmod>2025-03-13T10:00:00+03:00</lastmod>
@@ -57,19 +154,6 @@
                 href="https://cagatayturkan.com/blog/en/tags/llm/"
                 />
   </url><url>
-    <loc>https://cagatayturkan.com/blog/en/tags/rag/</loc>
-    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="https://cagatayturkan.com/blog/tr/tags/rag/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://cagatayturkan.com/blog/en/tags/rag/"
-                />
-  </url><url>
     <loc>https://cagatayturkan.com/blog/en/rag-building-next-gen-ai-systems/</loc>
     <lastmod>2025-03-13T10:00:00+03:00</lastmod>
     <xhtml:link
@@ -81,35 +165,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://cagatayturkan.com/blog/en/rag-building-next-gen-ai-systems/"
-                />
-  </url><url>
-    <loc>https://cagatayturkan.com/blog/en/tags/</loc>
-    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="https://cagatayturkan.com/blog/tr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://cagatayturkan.com/blog/en/tags/"
-                />
-  </url><url>
-    <loc>https://cagatayturkan.com/blog/en/tags/vectordb/</loc>
-    <lastmod>2025-03-13T10:00:00+03:00</lastmod>
-  </url><url>
-    <loc>https://cagatayturkan.com/blog/en/tags/ai/</loc>
-    <lastmod>2025-03-01T10:00:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="https://cagatayturkan.com/blog/tr/tags/ai/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://cagatayturkan.com/blog/en/tags/ai/"
                 />
   </url><url>
     <loc>https://cagatayturkan.com/blog/en/categories/javascript/</loc>
@@ -149,19 +204,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://cagatayturkan.com/blog/en/categories/node.js/"
-                />
-  </url><url>
-    <loc>https://cagatayturkan.com/blog/en/tags/nodejs/</loc>
-    <lastmod>2025-03-01T10:00:00+03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="tr"
-                href="https://cagatayturkan.com/blog/tr/tags/nodejs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://cagatayturkan.com/blog/en/tags/nodejs/"
                 />
   </url><url>
     <loc>https://cagatayturkan.com/blog/en/categories/backend/</loc>

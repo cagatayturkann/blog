@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="tr"
+    dir="ltr"><head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+    <title>
+    
+    Vektör Veritabanları ve Weaviate: Anlamsal Arama Uygulamaları Oluşturma - Çağatay Türkan
+    
+</title>
+    
+    
+    
+    
+    
+    
+    <meta name="keywords" content="blog,yazılım,teknoloji">
+    <meta name="description" content="SEO description">
+    <link rel="canonical" href="http://localhost:1313/blog/tr/vector-veritabanlari-weaviate/" />
+    <link rel="icon" href="/favicon.ico?v=1741962041" type="image/x-icon">
+    
+<link rel="stylesheet" href="/blog/css/app.css">
+    
+<script src="/blog/js/main.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    
+
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NRES0X4BGY');
+    </script>
+    
+
+    
+    
+</head><body>
+    <div class="
+        mx-auto max-w-[calc(120rem)]
+        min-h-screen
+        2xl:px-[calc(16rem)]
+        xl:px-24
+        md:px-8
+        px-4
+    ">
+
+        <div x-data="{ openMenu: false }" class="relative">
+    <nav class="flex flex-1 flex-col lg:flex-row items-center justify-between">
+        <a href="/">
+            <img src="/blog/images/author.jpeg" alt="site logo"
+                class="w-16 h-16 my-5 p-1 bg-gray-100 rounded-full cursor-pointer hover:scale-110" />
+        </a>
+        <div class="hidden lg:block" :class="{'hidden': !openMenu}">
+            
+
+
+
+
+
+
+<ul
+    class="flex flex-col lg:flex-row justify-end mt-2 sm:mt-5 mb-5 pb-2 font-light text-xl lg:text-2xl gap-5 lg:gap-1 text-center">
+    
+
+
+
+
+
+
+
+
+<li>
+    <a    class="px-5 lg:px-10 py-3 font-light hover:border-b-2 hover:border-red-500"     href="/blog/tr/"  >Ana Sayfa</a>
+    
+</li>
+
+
+
+
+
+
+
+<li>
+    <a    class="px-5 lg:px-10 py-3 font-light hover:border-b-2 hover:border-red-500"     href="/blog/tr/categories/"  >Kategoriler</a>
+    
+</li>
+
+
+
+
+
+
+
+<li>
+    <a    class="px-5 lg:px-10 py-3 font-light hover:border-b-2 hover:border-red-500"     href="/blog/tr/tags/"  >Etiketler</a>
+    
+</li>
+
+<li class="flex items-center gap-2">
+    
+        
+            
+                <a href="http://localhost:1313/blog/en/vector-databases-weaviate/" class="text-gray-500 hover:text-gray-300 text-lg">🇺🇸 EN</a>
+            
+            
+                <span class="text-gray-600">|</span>
+            
+        
+    
+</li>
+
+</ul>
+
+
+
+
+        </div>
+    </nav>
+    <div class="absolute top-8 right-5 flex items-center lg:hidden">
+        
+        <button @click="openMenu = !openMenu" type="button"
+            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800 hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            aria-controls="mobile-menu" aria-expanded="openMenu">
+            
+            <svg x-show="!openMenu" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            
+            <svg x-show="openMenu" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+        <header class="flex flex-col w-full items-center justify-center text-white pt-8 pb-8">
+    <div class="w-full">
+        <div class="flex flex-1 flex-row justify-between">
+            <h2 class="w-full text-center text-3xl sm:text-5xl font-crimson font-bold tracking-tight text-gray-300">
+                <a href="http://localhost:1313/blog/">Çağatay Türkan</a>
+            </h2>
+        </div>
+        <p
+            class="w-full text-center pl-1 pb-4 sm:pt-3 sm:pb-0 font-crimson font-normal text-xl sm:text-2xl leading-8 text-gray-500">
+            Trust me! I am an Engineer.</p>
+    </div>
+
+    
+    <div class="flex justify-center w-full max-w-4xl mx-auto">
+        <div class="flex justify-between w-32 px-12 mt-3">
+            <a href="https://www.linkedin.com/in/cagatayturkann/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-100 transition-colors duration-200">
+                <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a href="https://github.com/cagatayturkann" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-100 transition-colors duration-200">
+                <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/cagatayturkann/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-100 transition-colors duration-200">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+            <a href="https://x.com/cagatayturkann" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-100 transition-colors duration-200">
+                <i class="fab fa-x-twitter text-2xl"></i>
+            </a>
+            <a href="https://facebook.com/cagatayturkann" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-100 transition-colors duration-200">
+                <i class="fab fa-facebook text-2xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="relative w-9/12 lg:w-1/2 h-12 my-5">
+        <form action="/blog/tr/search" method="get">
+            <input
+                class="bg-gray-800 placeholder:italic placeholder:text-gray-600 w-full h-12 rounded-full mt-1 pl-5 pr-5 border border-gray-800 text-gray-100"
+                placeholder='Arama yapmak için yazın...' type="text" name="q" id="search-input" />
+            <button type="submit" class="absolute inset-y-2 right-1 w-28 h-10 font-light bg-gray-900 hover:bg-red-500 text-gray-500 hover:text-gray-100 rounded-full cursor-pointer">
+                Ara
+            </button>
+        </form>
+    </div>
+
+    
+    <div class="w-full flex flex-row justify-start text-gray-500 text-lg px-1 border-l-4 border-l-red-500">
+        <ul class="flex flex-row gap-x-2">
+            <li class="">
+                <a href="/" class="hover:text-gray-100">Ana Sayfa</a>
+            </li>
+            
+            <li>
+                &gt;&nbsp;&nbsp;<a href="/blog/tr/vector-veritabanlari-weaviate/" class="hover:text-gray-100">Vektör Veritabanları ve Weaviate: Anlamsal Arama Uygulamaları Oluşturma</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="w-full h-2 border-b border-b-gray-600/50 border-dashed font-light text-gray-300">
+    </div>
+    
+
+</header>
+
+        <div class="
+            flex flex-col overflow-hidden
+            xl:px-0
+            lg:flex-row lg:space-x-8
+        ">
+            <main class="w-full overflow-hidden">
+                
+
+<article class="single-article">
+    <div class="group relative">
+        <h1 class="text-3xl font-medium leading-10 text-gray-400 hover:text-gray-100">
+            <a href="/blog/tr/vector-veritabanlari-weaviate/">
+                Vektör Veritabanları ve Weaviate: Anlamsal Arama Uygulamaları Oluşturma
+            </a>
+        </h1>
+        <div class="flex justify-between items-center">
+            <time class="flex items-center py-2 text-xl text-gray-600">
+                2025-03-14 12:00
+                &nbsp;&nbsp;|&nbsp;&nbsp;17 minute read
+            </time>
+            
+<div class="language-switch flex items-center space-x-2 text-gray-500 hover:text-gray-300">
+    
+    <a href="http://localhost:1313/blog/en/vector-databases-weaviate/" class="flex items-center space-x-1">
+        
+        <span>🇬🇧</span>
+        <span class="text-sm">English</span>
+        
+    </a>
+    
+</div>
+ 
+        </div>
+
+        
+        <div class="my-6">
+            <img src="/blog/tr/vector-veritabanlari-weaviate/images/cover.svg" alt="Vektör Veritabanları ve Weaviate: Anlamsal Arama Uygulamaları Oluşturma" class="w-full rounded-lg shadow-lg">
+        </div>
+        
+
+        <div class="mt-1 lg:pb-10 px-2 overflow-hidden break-words article-body">
+            <div class="text-gray-500">
+                <style>
+                    .article-body h1 { font-size: 36px; font-weight: 700; margin: 1.5rem 0 1rem; color: #9ca3af; }
+                    .article-body h2 { font-size: 30px; font-weight: 600; margin: 1.25rem 0 0.75rem; color: #9ca3af; }
+                    .article-body h3 { font-size: 26px; font-weight: 500; margin: 1rem 0 0.5rem; color: #9ca3af; }
+                    .article-body p { font-size: 20px; line-height: 1.8; margin: 0.75rem 0; }
+                    .article-body ul, .article-body ol { margin: 0.75rem 0; padding-left: 1.5rem; }
+                    .article-body li { font-size: 20px; line-height: 1.8; }
+                    .article-body strong { font-weight: 600; color: #d1d5db; }
+                    .article-body pre { background-color: #111827; font-size: 0.875rem; padding: 1rem; border-radius: 0.375rem; }
+                </style>
+                <h1 id="vektör-veritabanları-ve-weaviate-anlamsal-arama-uygulamaları-oluşturma">Vektör Veritabanları ve Weaviate: Anlamsal Arama Uygulamaları Oluşturma</h1>
+<h2 id="giriş">Giriş</h2>
+<p>Veri depolama ve erişim sistemlerinin sürekli gelişen dünyasında, vektör veritabanları geleneksel veritabanları ile modern yapay zeka uygulamaları arasındaki boşluğu dolduran devrim niteliğinde bir teknoloji olarak ortaya çıktı. Tam eşleşmelerde ve yapılandırılmış sorgularda mükemmel olan geleneksel veritabanlarının aksine, vektör veritabanları verilerin arkasındaki anlamı ve bağlamı anlamak için tasarlanmıştır, böylece yeni nesil uygulamaları güçlendiren benzerlik tabanlı arama yetenekleri sağlar.</p>
+<p>Bu makalede şunları inceleyeceğiz:</p>
+<ul>
+<li>Vektör veritabanlarının arkasındaki temel kavramlar ve geleneksel sistemlerden nasıl farklılaştıkları</li>
+<li>Vektör veritabanlarının mimarisi ve temel bileşenleri</li>
+<li>Önde gelen açık kaynaklı vektör veritabanı platformlarından biri olan Weaviate&rsquo;in derinlemesine incelenmesi</li>
+<li>Weaviate ile güçlü anlamsal arama uygulamalarının nasıl uygulanacağı</li>
+<li>En iyi uygulamalar, optimizasyon stratejileri ve gerçek dünya kullanım örnekleri</li>
+</ul>
+<p>İster vektör veritabanlarına yeni başlıyor olun, ister mevcut bilginizi geliştirmek istiyor olun, bu rehber bu güçlü teknolojiyi anlamanız ve kullanmanız için ihtiyacınız olan teorik temeli sağlayacaktır.</p>
+<h2 id="1-vektör-veritabanlarını-anlamak-temel-kavramlar">1. Vektör Veritabanlarını Anlamak: Temel Kavramlar</h2>
+<h3 id="vektör-veritabanları-nedir">Vektör Veritabanları Nedir?</h3>
+<p>Vektör veritabanı, verilerin yüksek boyutlu vektör temsillerini depolamak, yönetmek ve sorgulamak için tasarlanmış özel bir veritabanı sistemidir. Bu vektörler (gömme olarak da adlandırılır), metin, görüntü, ses veya sayısal formatta temsil edilebilen diğer verilerin anlamsal anlamını yakalar.</p>
+<p>Vektör veritabanlarının arkasındaki temel fikir basit ama güçlüdür: verileri anlamsal ilişkileri koruyan vektörlere dönüştürerek, tam eşleşmeler yerine anlama dayalı benzerlik aramaları gerçekleştirebiliriz. Bu, geleneksel veritabanı sistemleriyle daha önce zor veya imkansız olan çok çeşitli uygulamaları mümkün kılar.</p>
+<h3 id="vektör-gömmeleri-yapı-taşları">Vektör Gömmeleri: Yapı Taşları</h3>
+<p>Vektör veritabanlarının kalbinde gömmeler—yüksek boyutlu bir uzayda verilerin sayısal temsilleri—bulunur. İşte nasıl çalıştıkları:</p>
+<ol>
+<li><strong>Gömme Oluşturma</strong>: Veriler (metin, görüntü veya ses gibi) onu kayan noktalı sayılardan oluşan bir vektöre dönüştüren bir gömme modeli aracılığıyla işlenir.</li>
+<li><strong>Boyutsal Temsil</strong>: Bu vektörler genellikle yüzlerce veya binlerce boyuta sahiptir ve her boyut verinin anlamsal özelliklerinin bir yönünü yakalar.</li>
+<li><strong>Anlamsal Yakınlık</strong>: Benzer anlamlara veya özelliklere sahip öğeler, bu yüksek boyutlu uzayda birbirine yakın konumlandırılır.</li>
+</ol>
+<p>Örneğin, bir metin gömme uzayında, &ldquo;mutlu&rdquo; ve &ldquo;neşeli&rdquo; kelimeleri, &ldquo;mutlu&rdquo; ve &ldquo;otomobil&rdquo; kelimelerine göre daha fazla anlamsal benzerlik paylaştıkları için birbirlerine daha yakın konumlandırılır.</p>
+<figure><img src="./images/vectorEmbeddings.svg.png"
+    alt="Illustration of text embeddings in vector space">
+</figure>
+
+<h3 id="vektör-veritabanları-ve-geleneksel-veritabanları">Vektör Veritabanları ve Geleneksel Veritabanları</h3>
+<p>Vektör veritabanlarının değerini anlamak için, geleneksel veritabanı sistemlerinden nasıl farklılaştıklarını anlamak önemlidir:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Özellik</th>
+          <th>Geleneksel Veritabanları</th>
+          <th>Vektör Veritabanları</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Veri Depolama</strong></td>
+          <td>Yapılandırılmış kayıtlar, tablolar, belgeler</td>
+          <td>Vektör gömmeleri + meta veriler</td>
+      </tr>
+      <tr>
+          <td><strong>Sorgu Tipi</strong></td>
+          <td>Tam eşleşmeler, aralık sorguları, birleştirmeler</td>
+          <td>Benzerlik araması, en yakın komşular</td>
+      </tr>
+      <tr>
+          <td><strong>Arama Paradigması</strong></td>
+          <td>&ldquo;Kriterlere tam uyan kayıtları bul&rdquo;</td>
+          <td>&ldquo;Bu referansa benzer öğeleri bul&rdquo;</td>
+      </tr>
+      <tr>
+          <td><strong>İndeksleme</strong></td>
+          <td>B-ağaçları, hash indeksleri, ters indeksler</td>
+          <td>Yaklaşık En Yakın Komşu (ANN) indeksleri</td>
+      </tr>
+      <tr>
+          <td><strong>Kullanım Durumları</strong></td>
+          <td>İşlemsel veriler, yapılandırılmış raporlama</td>
+          <td>Anlamsal arama, öneriler, sınıflandırma</td>
+      </tr>
+      <tr>
+          <td><strong>Sorgu Karmaşıklığı</strong></td>
+          <td>SQL, karmaşık sorgu dilleri</td>
+          <td>Vektör benzerliği + isteğe bağlı filtreleme</td>
+      </tr>
+  </tbody>
+</table>
+<p>Temel fark, verileri anlama yaklaşımında yatar: geleneksel veritabanları verileri literal değerler olarak ele alırken, vektör veritabanları veri noktaları arasındaki anlamsal ilişkileri anlar.</p>
+<h2 id="2-vektör-veritabanlarının-mimarisi">2. Vektör Veritabanlarının Mimarisi</h2>
+<h3 id="vektör-veritabanının-temel-bileşenleri">Vektör Veritabanının Temel Bileşenleri</h3>
+<p>Modern vektör veritabanları, birlikte çalışan birkaç temel bileşenden oluşur:</p>
+<ol>
+<li><strong>Vektör Depolama Katmanı</strong>: Yüksek boyutlu vektör verilerini verimli bir şekilde depolamaktan sorumludur</li>
+<li><strong>İndeksleme Mekanizması</strong>: Benzer vektörlerin hızlı bir şekilde alınmasını sağlar</li>
+<li><strong>Meta Veri Depolama</strong>: Her vektör hakkında ek bilgileri (orijinal metin, kategoriler, zaman damgaları vb.) depolar</li>
+<li><strong>Sorgu İşleme Motoru</strong>: Vektör benzerlik aramalarını ve isteğe bağlı filtrelemeyi yönetir</li>
+<li><strong>API Katmanı</strong>: Veri ekleme ve sorgulama için arayüzler sağlar</li>
+</ol>
+<p>Bu bileşenler, vektörleri benzerliğe dayalı olarak depolama ve alma temel işlevini sunmak için birlikte çalışır.</p>
+<h3 id="yaklaşık-en-yakın-komşu-ann-algoritmaları">Yaklaşık En Yakın Komşu (ANN) Algoritmaları</h3>
+<p>Vektör veritabanlarındaki en büyük zorluklardan biri, yüksek boyutlu uzaylarda benzer vektörleri verimli bir şekilde bulmaktır. Veri kümesi büyüdükçe tam en yakın komşu aramaları hesaplama açısından yasaklayıcı hale gelir. İşte burada Yaklaşık En Yakın Komşu (ANN) algoritmaları devreye girer.</p>
+<p>Vektör veritabanlarında kullanılan popüler ANN algoritmaları şunları içerir:</p>
+<ul>
+<li><strong>HNSW (Hiyerarşik Gezinilebilir Küçük Dünya)</strong>: Verimli gezinme için çok katmanlı bir grafik yapısı oluşturur</li>
+<li><strong>IVF (Ters Dosya İndeksi)</strong>: Daha hızlı arama için vektör uzayını kümelere böler</li>
+<li><strong>PQ (Ürün Nicemleme)</strong>: Benzerlik ilişkilerini korurken vektörleri sıkıştırır</li>
+<li><strong>FAISS (Facebook AI Benzerlik Araması)</strong>: Ölçeklenebilir benzerlik araması için birden çok tekniği birleştirir</li>
+</ul>
+<p>Bu algoritmalar, arama doğruluğu ve performans arasında ödünleşimler yapar ve genellikle milyonlarca vektörle bile milisaniyenin altında sorgu süreleri sağlar.</p>
+<h3 id="vektör-veritabanı-mimari-modelleri">Vektör Veritabanı Mimari Modelleri</h3>
+<p>Vektör veritabanları farklı mimari yaklaşımlarla uygulanabilir:</p>
+<ol>
+<li><strong>Bağımsız Vektör Veritabanları</strong>: Özellikle vektör depolama ve erişimi için tasarlanmış amaca özel sistemler (örn. Weaviate, Pinecone)</li>
+<li><strong>Geleneksel Veritabanlarına Vektör Uzantıları</strong>: Mevcut veritabanı sistemlerine vektör yetenekleri ekleme (örn. pgvector ile PostgreSQL)</li>
+<li><strong>Hibrit Mimariler</strong>: Vektör aramasını geleneksel arama yetenekleriyle birleştirme</li>
+</ol>
+<p>Her yaklaşımın kendi avantajları vardır, bağımsız vektör veritabanları genellikle saf vektör tabanlı iş yükleri için en iyi performansı sunar.</p>
+<h2 id="3-weaviate-açık-kaynaklı-bir-vektör-veritabanı">3. Weaviate: Açık Kaynaklı Bir Vektör Veritabanı</h2>
+<h3 id="weaviate-nedir">Weaviate Nedir?</h3>
+<p>Weaviate, bir vektör arama motorunun yeteneklerini geleneksel bir veritabanı sisteminin özellikleriyle birleştiren güçlü bir açık kaynaklı vektör veritabanıdır. Üretim ortamlarında beklenen güvenilirlik ve ölçeklenebilirlikle anlamsal arama yetenekleri sağlamak için tasarlanmıştır.</p>
+<p>Weaviate&rsquo;in temel özellikleri şunları içerir:</p>
+<ul>
+<li><strong>GraphQL API</strong>: Sorgular ve mutasyonlar için sezgisel arayüz</li>
+<li><strong>RESTful API</strong>: Standart HTTP işlemleri için alternatif arayüz</li>
+<li><strong>Hibrit Arama</strong>: Vektör aramasını anahtar kelime tabanlı erişimle birleştirme</li>
+<li><strong>Modüler Mimari</strong>: Farklı gömme modelleri için takılabilir vektörleştirici modülleri</li>
+<li><strong>Şema Tanımı</strong>: Esnek veri modelleme yetenekleri</li>
+<li><strong>Çapraz Referanslar</strong>: Veritabanı içindeki nesneleri bağlama yeteneği</li>
+<li><strong>Sınıflandırma Yetenekleri</strong>: Veri sınıflandırması için yerleşik makine öğrenimi</li>
+</ul>
+<h3 id="weaviate-mimarisi">Weaviate Mimarisi</h3>
+<p>Weaviate&rsquo;in mimarisi birkaç temel bileşenden oluşur:</p>
+<ol>
+<li><strong>Vektör İndeksi</strong>: Benzerlik araması için HNSW tabanlı vektör indeksi</li>
+<li><strong>Nesne Deposu</strong>: Hem vektör verileri hem de ilişkili meta veriler için depolama</li>
+<li><strong>GraphQL Arayüzü</strong>: Weaviate ile etkileşim için birincil API</li>
+<li><strong>Vektörleştirme Modülleri</strong>: Gömmeler oluşturmak için takılabilir bileşenler</li>
+<li><strong>Sorgu Planlayıcısı</strong>: Arama sorgularını optimize eder ve yürütür</li>
+</ol>
+<p>Bu mimari, Weaviate&rsquo;in kullanıcı dostu bir arayüzü korurken yüksek performanslı vektör araması sunmasını sağlar.</p>
+<h3 id="weaviatede-veri-modelleme">Weaviate&rsquo;de Veri Modelleme</h3>
+<p>Weaviate, veri modellemede esnek bir şema tabanlı yaklaşım kullanır. Weaviate&rsquo;deki her veri nesnesi:</p>
+<ol>
+<li>Bir sınıfa aittir (ilişkisel veritabanlarındaki tablolara benzer)</li>
+<li>Özelliklere sahiptir (nesneyi tanımlayan nitelikler)</li>
+<li>İlişkili bir vektör gömmesine sahiptir (otomatik olarak oluşturulur veya içe aktarılır)</li>
+<li>Diğer nesnelere çapraz referanslara sahip olabilir</li>
+</ol>
+<p>Makaleler koleksiyonu için basit bir Weaviate şeması şöyle görünebilir:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;classes&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;class&#34;</span>: <span style="color:#e6db74">&#34;Article&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;A news or blog article&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;properties&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;title&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;dataType&#34;</span>: [<span style="color:#e6db74">&#34;text&#34;</span>],
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The title of the article&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;content&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;dataType&#34;</span>: [<span style="color:#e6db74">&#34;text&#34;</span>],
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The main content of the article&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;publishedDate&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;dataType&#34;</span>: [<span style="color:#e6db74">&#34;date&#34;</span>],
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;When the article was published&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;author&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;dataType&#34;</span>: [<span style="color:#e6db74">&#34;Author&#34;</span>],
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The author of the article&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;class&#34;</span>: <span style="color:#e6db74">&#34;Author&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;A person who writes articles&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;properties&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;name&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;dataType&#34;</span>: [<span style="color:#e6db74">&#34;text&#34;</span>],
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The author&#39;s full name&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;biography&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;dataType&#34;</span>: [<span style="color:#e6db74">&#34;text&#34;</span>],
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The author&#39;s biographical information&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Bu şema tabanlı yaklaşım, Weaviate&rsquo;i geleneksel veritabanı sistemlerine aşina olan geliştiriciler için erişilebilir kılar.</p>
+<h2 id="4-vektör-veritabanlarının-temel-özellikleri">4. Vektör Veritabanlarının Temel Özellikleri</h2>
+<h3 id="anlamsal-arama">Anlamsal Arama</h3>
+<p>Vektör veritabanlarının en önemli özelliği, anahtar kelimeler yerine anlama dayalı sonuçlar bulan anlamsal aramadır. Bu şunları içerir:</p>
+<ol>
+<li><strong>Kavramsal Eşleştirme</strong>: Farklı terminoloji kullansalar bile bir sorgunun kavramıyla eşleşen sonuçları bulma</li>
+<li><strong>Bağlamsal Anlama</strong>: Sorguların arkasındaki amacı tanıma ve buna göre eşleştirme</li>
+<li><strong>Çok Dilli Destek</strong>: Anlamsal benzerliğe dayalı olarak farklı dillerde ilgili içeriği bulma</li>
+</ol>
+<p>Anlamsal arama, özellikle karmaşık veya nüanslı sorgular için geleneksel anahtar kelime tabanlı yaklaşımlara göre arama kalitesini önemli ölçüde iyileştirir.</p>
+<h3 id="hibrit-arama">Hibrit Arama</h3>
+<p>Vektör araması anlamsal ilişkileri yakalamada mükemmel olsa da, ilgili tam anahtar kelime eşleşmelerini kaçırabilir. Hibrit arama, her iki dünyanın en iyi yanlarını birleştirir:</p>
+<ol>
+<li><strong>Vektör Araması</strong>: Anlamsal benzerliği ve kavramsal eşleştirmeyi yakalar</li>
+<li><strong>Anahtar Kelime Araması</strong>: Tam terim eşleşmelerinin kaçırılmadığından emin olur</li>
+<li><strong>Füzyon Yöntemleri</strong>: Her iki yaklaşımdan gelen sonuçları akıllıca birleştirir</li>
+</ol>
+<p>Hibrit arama, özellikle genel amaçlı arama uygulamaları için tek başına her iki yaklaşımdan daha iyi genel arama kalitesi sunar.</p>
+<h3 id="çok-modlu-arama">Çok Modlu Arama</h3>
+<p>Gelişmiş vektör veritabanları, tek bir sorgu kullanarak farklı medya türleri arasında arama yapabilme yeteneği olan çok modlu aramayı destekler:</p>
+<ol>
+<li><strong>Çapraz Modal Arama</strong>: Bir modaliteyi başka bir modaliteyi aramak için kullanma (örn. metinden görüntüye arama)</li>
+<li><strong>Birleşik Gömme Vektörleri</strong>: Farklı veri türlerini paylaşılan bir vektör uzayında temsil etme</li>
+<li><strong>Çok Modlu Sorgular</strong>: Tek bir sorguda birden fazla modaliteyi birleştirme</li>
+</ol>
+<p>Bu özellik, metin açıklamalarını kullanarak görüntüleri aramak veya bir görüntüyle ilgili metin içeriği bulmak gibi güçlü uygulamaları mümkün kılar.</p>
+<h3 id="sınıflandırma-ve-öneri">Sınıflandırma ve Öneri</h3>
+<p>Aramanın ötesinde, vektör veritabanları diğer önemli özellikleri sağlar:</p>
+<ol>
+<li><strong>Otomatik Sınıflandırma</strong>: Yeni öğeleri mevcut kategorize edilmiş öğelere benzerliğe göre sınıflandırma</li>
+<li><strong>Öneri Sistemleri</strong>: Vektör benzerliğine dayalı olarak ilgili öğeleri önerme</li>
+<li><strong>Anomali Tespiti</strong>: Vektör uzayındaki aykırı değerleri tanımlama</li>
+</ol>
+<p>Bu özellikler, vektör veritabanlarını sadece arama uygulamaları için değil, çok çeşitli AI destekli sistemler için değerli kılar.</p>
+<h2 id="5-vektör-veritabanlarının-avantajları">5. Vektör Veritabanlarının Avantajları</h2>
+<h3 id="gelişmiş-arama-kalitesi">Gelişmiş Arama Kalitesi</h3>
+<p>Vektör veritabanları, arama kalitesinde önemli iyileştirmeler sunar:</p>
+<ol>
+<li><strong>Amacı Anlama</strong>: Sadece anahtar kelimeleri eşleştirmek yerine sorguların arkasındaki anlamı yakalama</li>
+<li><strong>Eş Anlamlıları İşleme</strong>: Aynı anlama sahip farklı terimleri tanıma</li>
+<li><strong>Kavram Eşleştirme</strong>: Farklı terminoloji kullansa bile aynı kavramla ilgili sonuçları bulma</li>
+<li><strong>Bağlam Duyarlılığı</strong>: Sorguların nüansını ve bağlamını anlama</li>
+</ol>
+<p>Bu iyileştirmeler, daha iyi kullanıcı deneyimlerine ve daha etkili bilgi erişimine dönüşür.</p>
+<h3 id="ölçeklenebilirlik-ve-performans">Ölçeklenebilirlik ve Performans</h3>
+<p>Modern vektör veritabanları, üretim düzeyinde performans için tasarlanmıştır:</p>
+<ol>
+<li><strong>Saniyeden Az Sorgu Süreleri</strong>: Milyonlarca vektörle bile</li>
+<li><strong>Yatay Ölçekleme</strong>: İş yüklerini birden fazla düğüme dağıtma</li>
+<li><strong>Verimli Depolama</strong>: Yüksek boyutlu vektör verileri için optimize edilmiş</li>
+<li><strong>Düşük Gecikme</strong>: Gerçek zamanlı uygulamalar için</li>
+</ol>
+<p>Bu ölçeklenebilirlik, vektör veritabanlarını küçük uygulamalardan kurumsal ölçekli dağıtımlara kadar her şey için uygun hale getirir.</p>
+<h3 id="ai-iş-akışlarıyla-entegrasyon">AI İş Akışlarıyla Entegrasyon</h3>
+<p>Vektör veritabanları modern AI iş akışlarına sorunsuz bir şekilde uyum sağlar:</p>
+<ol>
+<li><strong>LLM Entegrasyonu</strong>: Büyük dil modellerini erişim yetenekleriyle geliştirme</li>
+<li><strong>Gömme Vektörü İşlem Hattı Entegrasyonu</strong>: Doğrudan gömme modelleriyle çalışma</li>
+<li><strong>Veri İşleme Desteği</strong>: Sürekli güncellemeleri ve yeni verileri işleme</li>
+<li><strong>API Öncelikli Tasarım</strong>: Mevcut sistemlerle kolay entegrasyon</li>
+</ol>
+<p>Bu entegrasyon potansiyeli, vektör veritabanlarını AI altyapı yığınında kilit bir bileşen haline getirir.</p>
+<h2 id="6-vektör-veritabanları-için-yaygın-kullanım-durumları">6. Vektör Veritabanları için Yaygın Kullanım Durumları</h2>
+<h3 id="anlamsal-belge-araması">Anlamsal Belge Araması</h3>
+<p>Vektör veritabanları, anlama dayalı ilgili belgeleri bulmada mükemmeldir:</p>
+<ul>
+<li><strong>Kurumsal Bilgi Tabanları</strong>: Çalışanların ilgili bilgileri bulmasına yardımcı olma</li>
+<li><strong>Hukuki Belge Araması</strong>: Kavramlara dayalı emsal ve içtihat bulma</li>
+<li><strong>Araştırma Veritabanları</strong>: Farklı terminolojiler arasında ilgili makaleleri keşfetme</li>
+<li><strong>İçerik Yönetimi</strong>: İçeriği temalara göre düzenleme ve erişme</li>
+</ul>
+<h3 id="öneri-sistemleri">Öneri Sistemleri</h3>
+<p>Vektör benzerliği etkili öneri sistemlerini güçlendirir:</p>
+<ul>
+<li><strong>Ürün Önerileri</strong>: &ldquo;Bunu görüntüleyen müşteriler şunları da görüntüledi&hellip;&rdquo;</li>
+<li><strong>İçerik Keşfi</strong>: Benzer temalara sahip makaleler, videolar veya müzikler bulma</li>
+<li><strong>Kişi Eşleştirme</strong>: Arkadaşlık uygulamaları, profesyonel ağ oluşturma, takım oluşturma</li>
+<li><strong>Eğitim Kaynakları</strong>: Benzer konularda öğrenme materyalleri önerme</li>
+</ul>
+<h3 id="görüntü-ve-medya-araması">Görüntü ve Medya Araması</h3>
+<p>Metin ötesinde, vektör veritabanları multimedya içeriğini etkili bir şekilde işler:</p>
+<ul>
+<li><strong>Ters Görüntü Araması</strong>: Bir referansa benzer görüntüler bulma</li>
+<li><strong>İçerik Tabanlı Medya Erişimi</strong>: Benzer içeriğe sahip videolar veya ses bulma</li>
+<li><strong>Dijital Varlık Yönetimi</strong>: İçeriğe dayalı medyayı düzenleme ve erişme</li>
+<li><strong>Görsel Ürün Araması</strong>: Bir referansa benzeyen ürünler bulma</li>
+</ul>
+<h3 id="rag-erişim-destekli-üretim">RAG (Erişim Destekli Üretim)</h3>
+<p>Vektör veritabanları RAG sistemlerinde kilit bir bileşendir:</p>
+<ul>
+<li><strong>Sorgu Tabanlı Belge Erişimi</strong>: LLM için ilgili belgeleri bulma</li>
+<li><strong>Bilgi Temellendirme</strong>: LLM yanıtlarını temellendirmek için gerçek bilgiler sağlama</li>
+<li><strong>Alan Adaptasyonu</strong>: Genel LLM&rsquo;lerin alana özgü bilgilere erişmesine izin verme</li>
+<li><strong>Gerçek Doğrulama</strong>: LLM tarafından oluşturulan içeriği doğrulamak için bilgi erişimi</li>
+</ul>
+<h2 id="7-uygulamalarda-weaviatei-uygulama">7. Uygulamalarda Weaviate&rsquo;i Uygulama</h2>
+<h3 id="weaviate-sunucusu-kurma">Weaviate Sunucusu Kurma</h3>
+<p>Weaviate ile çalışmanın ilk adımı bir sunucu kurmaktır. Bu birkaç şekilde yapılabilir:</p>
+<ol>
+<li>Docker kullanarak (en yaygın yöntem)</li>
+<li>Bulut tabanlı seçenekler</li>
+<li>Kaynak koddan derleme</li>
+</ol>
+<p>Uygulama bölümünde, Weaviate&rsquo;in kendi sandbox yöntemi ve örnek kodlar paylaşacağım.</p>
+<h3 id="veri-şemanızı-tanımlama">Veri Şemanızı Tanımlama</h3>
+<p>Verileri içe aktarmadan önce, şemanızı tanımlamanız gerekir. Bu şunları içerir:</p>
+<ol>
+<li>Sınıfları tanımlama (benzer nesnelerin koleksiyonları)</li>
+<li>Her sınıf için özellikleri belirleme</li>
+<li>Sınıflar arasında çapraz referanslar kurma</li>
+<li>Vektörleştirici modülleri yapılandırma</li>
+</ol>
+<p>Uygulama bölümü, Weaviate&rsquo;de bir şema tanımlama ve oluşturma için kod içerecektir.</p>
+<h3 id="weaviatee-veri-içe-aktarma">Weaviate&rsquo;e Veri İçe Aktarma</h3>
+<p>Şemanız tanımlandıktan sonra, verileri içe aktarabilirsiniz. Bu genellikle şunları içerir:</p>
+<ol>
+<li>Verilerinizi doğru formatta hazırlama</li>
+<li>Verimli içe aktarmalar için verileri toplu işleme</li>
+<li>Hataları ve doğrulamayı yönetme</li>
+<li>İçe aktarma sürecini izleme</li>
+</ol>
+<p>Uygulama bölümünde verimli veri içe aktarma için kod örnekleri sunacağım.</p>
+<h3 id="hibrit-aramayı-uygulama">Hibrit Aramayı Uygulama</h3>
+<p>Hibrit arama, vektör aramasını geleneksel anahtar kelime aramasıyla birleştirir. Uygulama şunları içerir:</p>
+<ol>
+<li>Her iki arama türünü yapılandırma</li>
+<li>Her biri için uygun ağırlıkları belirleme</li>
+<li>Optimal sonuçlar için parametreleri ayarlama</li>
+<li>Sonuçları işleme ve yönetme</li>
+</ol>
+<p>Uygulama kodu, hibrit arama sorgularını nasıl kurup yürüteceğinizi gösterecektir.</p>
+<h2 id="8-en-iyi-uygulamalar-ve-optimizasyon-stratejileri">8. En İyi Uygulamalar ve Optimizasyon Stratejileri</h2>
+<h3 id="şema-tasarımı-en-iyi-uygulamaları">Şema Tasarımı En İyi Uygulamaları</h3>
+<p>Etkili şema tasarımı, Weaviate performansı için çok önemlidir:</p>
+<ol>
+<li><strong>Uygun Özellik Türleri</strong>: Her özellik için doğru veri türlerini kullanma</li>
+<li><strong>Vektörleştirme Yapılandırması</strong>: Verileriniz için doğru vektörleştiriciyi seçme</li>
+<li><strong>Çapraz Referans Planlama</strong>: Verimli nesne ilişkileri tasarlama</li>
+<li><strong>İndeksleme Stratejisi</strong>: Kullanım durumunuz için HNSW parametrelerini yapılandırma</li>
+</ol>
+<h3 id="veri-içe-aktarma-optimizasyonu">Veri İçe Aktarma Optimizasyonu</h3>
+<p>Verimli veri içe aktarma, daha hızlı değer elde etmeyi sağlar:</p>
+<ol>
+<li><strong>Toplu İşleme</strong>: Daha verimli içe aktarmalar için nesneleri gruplandırma</li>
+<li><strong>Paralel İşleme</strong>: Daha hızlı içe aktarmalar için birden fazla iş parçacığı kullanma</li>
+<li><strong>Artımlı Güncellemeler</strong>: Mevcut verileri güncelleme stratejileri</li>
+<li><strong>Hata Yönetimi</strong>: İçe aktarma hatalarını düzgün bir şekilde yönetme</li>
+</ol>
+<h3 id="sorgu-optimizasyon-teknikleri">Sorgu Optimizasyon Teknikleri</h3>
+<p>Sorguları optimize etmek hem performansı hem de sonuç kalitesini iyileştirir:</p>
+<ol>
+<li><strong>Vektör Arama Parametreleri</strong>: Mesafe metriklerini ve k değerlerini ayarlama</li>
+<li><strong>Hibrit Arama Yapılandırması</strong>: Vektör ve anahtar kelime bileşenlerini dengeleme</li>
+<li><strong>Filtre Optimizasyonu</strong>: Meta veri filtrelerinin verimli kullanımı</li>
+<li><strong>Sonuç İşleme</strong>: Arama sonuçlarını işleme ve dönüştürme</li>
+</ol>
+<h3 id="ölçekleme-ve-üretim-hususları">Ölçekleme ve Üretim Hususları</h3>
+<p>Üretim dağıtımları için, bu en iyi uygulamaları göz önünde bulundurun:</p>
+<ol>
+<li><strong>Kaynak Tahsisi</strong>: CPU, bellek ve depolama gereksinimleri</li>
+<li><strong>Yedekleme Stratejileri</strong>: Veri dayanıklılığını sağlama</li>
+<li><strong>İzleme ve Günlük Tutma</strong>: Performansı ve hataları takip etme</li>
+<li><strong>Yüksek Kullanılabilirlik</strong>: Yedeklilik ve yük devretme için yapılandırma</li>
+</ol>
+<h2 id="9-zorluklar-ve-sınırlamalar">9. Zorluklar ve Sınırlamalar</h2>
+<h3 id="vektör-veritabanı-zorlukları">Vektör Veritabanı Zorlukları</h3>
+<p>Güçlü olmalarına rağmen, vektör veritabanları belirli zorluklarla gelir:</p>
+<ol>
+<li><strong>Soğuk Başlangıç Sorunu</strong>: Mevcut gömme vektörleri olmadan ilk kurulum</li>
+<li><strong>Gömme Vektörü Kayması</strong>: Zaman içinde gömme modellerindeki değişiklikler</li>
+<li><strong>Açıklanabilirlik</strong>: Belirli sonuçların neden döndürüldüğünü anlama</li>
+<li><strong>Kaynak Yoğunluğu</strong>: Geleneksel veritabanlarından daha yüksek hesaplama gereksinimleri</li>
+</ol>
+<h3 id="yaygın-tuzakları-ele-alma">Yaygın Tuzakları Ele Alma</h3>
+<p>Vektör veritabanlarıyla ilgili yaygın sorunlardan kaçınmak için:</p>
+<ol>
+<li><strong>Arama Kalitesini Test Edin</strong>: Gerçek sorgularla arama sonuçlarını düzenli olarak değerlendirin</li>
+<li><strong>Performansı İzleyin</strong>: Sorgu sürelerini ve kaynak kullanımını takip edin</li>
+<li><strong>Gömme Vektörlerini Güncelleyin</strong>: Modeller değiştiğinde gömme vektörlerini yeniden oluşturun</li>
+<li><strong>Kademeli Olarak Ayarlayın</strong>: Küçük değişiklikler yapın ve etkiyi ölçün</li>
+</ol>
+<hr>
+<h2 id="uygulama-weaviate-ile-geliştirme">Uygulama: Weaviate ile Geliştirme</h2>
+<p><a href="https://weaviate.io/developers/weaviate/quickstart">https://weaviate.io/developers/weaviate/quickstart</a> adresindeki adımları izleyerek bir kendimize bir endpoint ve api key oluşturuyoruz.</p>
+<p>Bir proje başlatıyoruz localimizde veya github reposundan ve sırasıyla aşağıdaki komutları çalıştırıyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm init -y
+</span></span><span style="display:flex;"><span>npm install axios openai weaviate-client
+</span></span></code></pre></div><p>Projemizi oluşturup gerekli bileşenleri yükledikten sonra <a href="https://dummyjson.com/products">https://dummyjson.com/products</a> adresinden aldığımız örnek dataları embedding haline getirmek için aşağıdaki scripti kullanıyoruz.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">writeFileSync</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fs&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">OpenAI</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;openai&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fs&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Initialize OpenAI API client
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">openai</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">OpenAI</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#75715e">// Add your OpenAI API key here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Converts product title to URL-friendly format
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param {string} title - Product title
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @returns {string} - Formatted URI string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatProductUri</span>(<span style="color:#a6e22e">title</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">title</span>) <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">toLowerCase</span>().<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/\s+/g</span>, <span style="color:#e6db74">&#39;-&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Processes product data and generates embeddings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param {Object} product - Raw product data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @returns {Object} - Formatted product with vector embedding
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatProductData</span>(<span style="color:#a6e22e">product</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Combine product data as string for embedding
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">productString</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">product</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Generate embedding using OpenAI
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">embeddingResponse</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">openai</span>.<span style="color:#a6e22e">embeddings</span>.<span style="color:#a6e22e">create</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text-embedding-ada-002&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">productString</span>,
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">embedding</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">embeddingResponse</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">embedding</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Return product in the required format
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">product</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">formatProductUri</span>(<span style="color:#a6e22e">product</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">title</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">product</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">id</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">vectorContent</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">embedding</span>,
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">`Error processing product: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">error</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Main function to fetch products from API and process them
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Generates vector embeddings for each product
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fetchAndProcessProducts</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Fetching products...&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;https://dummyjson.com/products?limit=200&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">products</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFileSync</span>(<span style="color:#e6db74">&#39;products.json&#39;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">products</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Fetched </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> products. Processing...`</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Process all products
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">processedProducts</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Process each product sequentially to avoid rate limits
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">product</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">products</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Processing product </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">index</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formattedProduct</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">formatProductData</span>(<span style="color:#a6e22e">product</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">processedProducts</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">formattedProduct</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add delay every 10 products to avoid OpenAI rate limits
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">index</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Waiting 1 second for rate limit...&#39;</span>);
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>) =&gt; <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#ae81ff">1000</span>));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">`Error processing product: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">product</span>.<span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Continue despite errors
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Save results to JSON file
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">writeFileSync</span>(<span style="color:#e6db74">&#39;processed_products.json&#39;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">processedProducts</span>, <span style="color:#66d9ef">null</span>, <span style="color:#ae81ff">2</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Processing complete. Results saved to &#39;processed_products.json&#39;&#34;</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error occurred:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Start the process
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fetchAndProcessProducts</span>();
+</span></span></code></pre></div><p>Bu script bize &lsquo;processed_products.json&rsquo; isminde datanın kendisini ve embed edilmiş halini barındıran bir json dosyası verecek. Daha sonra bu datayı aşağıdaki script ile weaviate bulut ortamına import ediyoruz. Yukarıda anlatılanlardan farklı olarak şema yaklaşımını burada kullanmıyorum daha çok işin mantığını kavramayı anlatamaya çalıştığım için.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Import script for loading product data into Weaviate vector database
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * This script reads product data from a JSON file and imports it into a Weaviate collection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">weaviate</span>, { <span style="color:#a6e22e">generateUuid5</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;weaviate-client&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">readFileSync</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;fs&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Load product data from JSON file
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">products</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">readFileSync</span>(<span style="color:#e6db74">&#39;./processed_products.json&#39;</span>, <span style="color:#e6db74">&#39;utf8&#39;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Weaviate cloud service connection details
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">WCD_URL</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// Add your WCD URL here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">WCD_API_KEY</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>; <span style="color:#75715e">// Add your WCD API key here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">wcdUrl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">WCD_URL</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">wcdApiKey</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">WCD_API_KEY</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Validate connection details are available
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">wcdUrl</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">wcdApiKey</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#39;Missing required environment variables WCD_URL or WCD_API_KEY&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Initialize Weaviate client
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">weaviate</span>.<span style="color:#a6e22e">connectToWeaviateCloud</span>(<span style="color:#a6e22e">wcdUrl</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">authCredentials</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">weaviate</span>.<span style="color:#a6e22e">ApiKey</span>(<span style="color:#a6e22e">wcdApiKey</span>),
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Main function to import product data into Weaviate
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Starting data import to Weaviate...&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;products recieved&#39;</span>, <span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Transform product data into Weaviate objects
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dataObjects</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">products</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>) =&gt; ({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">properties</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">data</span>),
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Generate a deterministic UUID based on collection name and item ID
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">generateUuid5</span>(<span style="color:#e6db74">&#39;Ecommerce&#39;</span>, <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span>),
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Use vector if available, otherwise let Weaviate generate it
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">vector</span><span style="color:#f92672">:</span> Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">vectorContent</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">vectorContent</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">undefined</span>,
+</span></span><span style="display:flex;"><span>    }));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;dataObjects received&#39;</span>, <span style="color:#a6e22e">dataObjects</span>.<span style="color:#a6e22e">length</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Get reference to the Ecommerce collection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">collection</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">collections</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Ecommerce&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Insert all objects in a batch operation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">collection</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">insertMany</span>(<span style="color:#a6e22e">dataObjects</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Insertion response: &#39;</span>, <span style="color:#a6e22e">result</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Data import completed&#39;</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Run the main function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">main</span>().<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>);
+</span></span></code></pre></div><p>Bu script ile oluşturulan json dosyasını weaviate sistemine yüklemiş oluyoruz. Burada iki kısım önemli.</p>
+<ol>
+<li>Eğer aldığınız datanın içerisinde kendinea ait bir ID değeri var ise bunu kullanmak için properties kısmında ayrıca belirtebilirsiniz veya farklı bir property ismi ile tanımlamanız gerekiyor çünkü Weaviate&rsquo;in kendi Id parametresi var ve bu UUID formatında olmalı bu yüzden direkt datanın id alanını orada kullanamıyoruz. Ancak Weavaite&rsquo;in kendi UUID oluşturucusunu kullanabiliriz örnekte olduğu gibi.</li>
+<li>Diğer alan ise collection name. Burası aslında class ismini temsil ediyor. Arama yaparken, data silerken vb tüm işlemlerde buradaki collection ismi kullanılıyor.</li>
+</ol>
+<p>Datamızı import ettikten sonra ise geldi datayı search etme işlemine. Yukarıda çeşitli arama çeşitlerinden hem Weaviate özelinde hem vektör veritabanları özelinde bahsetmiştim. Ben aşağıdaki scriptte Weaviate&rsquo;in graphql özelliğini ve hybrid arama özelliğini kullandım.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Import required libraries
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// axios for making HTTP requests
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;axios&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// OpenAI SDK for generating embeddings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">OpenAI</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;openai&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Initialize OpenAI client with API key
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">openai</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">OpenAI</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">apiKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#75715e">//Add your openAI API key
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Array of questions to process
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">questions</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;do you have macbook?&#39;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Generate an embedding vector for the given text using OpenAI&#39;s API
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param {string} text - The text to generate an embedding for
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @returns {Promise&lt;Array&lt;number&gt;&gt;} The embedding vector
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getEmbedding</span>(<span style="color:#a6e22e">text</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">openai</span>.<span style="color:#a6e22e">embeddings</span>.<span style="color:#a6e22e">create</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;text-embedding-ada-002&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span>,
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">embedding</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Search Weaviate database using hybrid search (text + vector)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param {string} question - The question to search for
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param {Array&lt;number&gt;} vector - The embedding vector of the question
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @returns {Promise&lt;Object&gt;} Search results and metadata
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">searchWeaviate</span>(<span style="color:#a6e22e">question</span>, <span style="color:#a6e22e">vector</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Track response time
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">startTime</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Prepare GraphQL query for Weaviate
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">query</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Get {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Ecommerce (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          hybrid: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            query: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">question</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            alpha: 0.5,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            vector: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">vector</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          limit: 3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          data
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          _additional { score }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }`</span>,
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Configure request parameters
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;post&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;https://ltwfnj0szusp5t1natqdw.c0.us-west3.gcp.weaviate.cloud/v1/graphql&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Authorization</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Bearer AUV3GwGDrHKwVCJpFFxKc6ppUl7xXF54uQAM&#39;</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>,
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Execute the request
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">request</span>(<span style="color:#a6e22e">config</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">endTime</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Format and return results
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">question</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">question</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">results</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">Get</span>.<span style="color:#a6e22e">Ecommerce</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">data</span>),
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">responseTime</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">endTime</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">startTime</span><span style="color:#e6db74">}</span><span style="color:#e6db74">ms`</span>,
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Handle errors
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">`Error for question &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">question</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;:`</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">question</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">question</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">responseTime</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Main function to process all questions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">question</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">questions</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Generate embedding for the question
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">embedding</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">getEmbedding</span>(<span style="color:#a6e22e">question</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Search Weaviate using the question and its embedding
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">searchWeaviate</span>(<span style="color:#a6e22e">question</span>, <span style="color:#a6e22e">embedding</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Output results
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;\n-------------------&#39;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Question:&#39;</span>, <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">question</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Products:&#39;</span>, <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">results</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Response Time:&#39;</span>, <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">responseTime</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">`Failed to process question &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">question</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;:`</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Execute the main function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">main</span>();
+</span></span></code></pre></div><p>Bu script questions içerisinde yer alan soruyu/soruları alarak sırayla weaviate sunucularında arama yapıyor. Bunu yaparken</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">query</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Get {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Ecommerce (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          hybrid: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            query: &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">question</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            alpha: 0.5,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            vector: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">vector</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          limit: 3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        ) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          data
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          _additional { score }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }`</span>,
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>kısmındaki Weaviate hybrid arama özelliğini kullanıyor. Burada query kısmında direkt sorunun kendisi yer alıyor. vector kısmında ise sorunun embedding haline çevrilmiş versiyonu yer alıyor. Böylece hem text hem vector olarak hybrid arama gerçekleştiriyor. alpha kısmı ise aramanın ağırlığını belirtiyor. Artırdıkça vector aramasının ağırlığı, azalttıkça ise kelime aramasının ağırlığı artıyor. limit kısmında ise dönen data sayısını belirtiyoruz. data kısmında ise dönmesini istediğimi property ismini belirtiyoruz. score kısmı ise arama sonuçları için belirlenen skorları gösteriyor.</p>
+<h2 id="sonuç">Sonuç</h2>
+<p>Weaviate gibi vektör veritabanları, verileri depolama, erişme ve anlama şeklimizde önemli bir ilerlemeyi temsil eder. Anlamsal ilişkileri yakalayarak ve benzerlik tabanlı aramayı mümkün kılarak, geleneksel veritabanı sistemleriyle daha önce pratik olmayan yeni yeteneklerin kilidini açarlar.</p>
+<p>AI yazılım geliştirmeyi dönüştürmeye devam ederken, vektör veritabanları dil modellerini, arama sistemlerini ve kullanıcı arayüzlerini birbirine bağlamada giderek daha merkezi bir rol oynayacaktır. Yeteneklerini, mimarisini ve uygulama stratejilerini anlamak, AI destekli uygulamalarla çalışan geliştiriciler için temel bir beceri haline gelmektedir.</p>
+<p>Takip eden uygulama bölümünde, bir Weaviate sunucusu kurma, veri içe aktarma ve güçlü anlamsal arama yeteneklerini uygulama için somut kod örnekleri sunacağım. Bu örnekler, teoriden pratiğe geçmenize yardımcı olacak ve kendi vektör destekli uygulamalarınızı oluşturmanıza olanak tanıyacaktır.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="my-10 py-5 border-t border-dashed border-t-white/10 text-xl text-gray-600">
+        
+    </div>
+</article>
+
+
+            </main>
+
+            <aside id="sidebar" class="aside-container">
+
+    
+    <div class="aside-section-title">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+        </svg>
+        Hakkımda
+    </div>
+
+    <img src="/blog/images/bg.jpg" class="w-80 self-center rounded-lg" alt="Logo" />
+
+    
+    <div class="aside-section-title">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+        </svg>
+        Son Yazılar
+    </div>
+
+    <ul class="text-lg">
+        
+        
+        <li class="leading-10 line-clamp-1 mb-3 font-light border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/vector-veritabanlari-weaviate/" class="py-5 hover:text-gray-300">Vektör Veritabanları ve Weaviate: Anlamsal Arama Uygulamaları Oluşturma</a>
+        </li>
+        
+        
+        
+        <li class="leading-10 line-clamp-1 mb-3 font-light border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/rag-ile-eticaret-chatbot-olusturma/" class="py-5 hover:text-gray-300">RAG ile Akıllı E-ticaret Deneyimleri Oluşturma</a>
+        </li>
+        
+        
+        
+        <li class="leading-10 line-clamp-1 mb-3 font-light border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/rag-ile-yeni-nesil-ai-sistemleri-olusturma/" class="py-5 hover:text-gray-300">RAG: Retrieval Augmented Generation ile Yeni Nesil Yapay Zeka Sistemleri Oluşturma</a>
+        </li>
+        
+        
+        
+        <li class="leading-10 line-clamp-1 mb-3 font-light border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/modern-ai-teknolojileri-nodejs-entegrasyonu/" class="py-5 hover:text-gray-300">Modern AI Teknolojileri ve Node.js Entegrasyonu</a>
+        </li>
+        
+        
+        
+        <li class="leading-10 line-clamp-1 mb-3 font-light border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/fastify-ile-rest-api-olusturma/" class="py-5 hover:text-gray-300">Fastify ile RESTful API Oluşturma</a>
+        </li>
+        
+        
+    </ul>
+
+    
+    <div class="aside-section-title">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z" />
+        </svg>
+        Popüler Kategoriler
+    </div>
+    <ul class="leading-10 text-lg">
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/typescript/" class="hover:text-gray-300">TypeScript <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">9</span></a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/ai/" class="hover:text-gray-300">AI <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">3</span></a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/node.js/" class="hover:text-gray-300">Node.js <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">3</span></a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/yapay-zeka/" class="hover:text-gray-300">Yapay Zeka <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/backend/" class="hover:text-gray-300">Backend <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/javascript/" class="hover:text-gray-300">JavaScript <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/geli%C5%9Ftirme/" class="hover:text-gray-300">Geliştirme <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/linux/" class="hover:text-gray-300">Linux <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-gray-900 border-dashed font-light">
+            <a href="/blog/tr/categories/git/" class="hover:text-gray-300">Git <span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </ul>
+
+    
+    <div class="aside-section-title">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
+        </svg>
+        Etiketler
+    </div>
+    <div class="flex flex-wrap gap-2 text-lg leading-8 pt-3 pl-1">
+        
+        
+        
+        
+        <a href="/blog/tr/tags/typescript/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Typescript&nbsp;&nbsp;9</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/nodejs/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Nodejs&nbsp;&nbsp;4</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/javascript/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Javascript&nbsp;&nbsp;3</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/rag/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Rag&nbsp;&nbsp;2</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/vectordb/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Vectordb&nbsp;&nbsp;2</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/g%C3%B6mme/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Gömme&nbsp;&nbsp;2</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/ai/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Ai&nbsp;&nbsp;2</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/api/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Api&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/app-store/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">App-Store&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/object-types/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Object-Types&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/type-guards/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Type-Guards&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/type-system/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Type-System&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/classes/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Classes&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/compiler/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Compiler&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/configuration/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Configuration&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/generics/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Generics&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/interfaces/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Interfaces&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/microservices/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Microservices&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/weaviate/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Weaviate&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        <a href="/blog/tr/tags/git/"><span
+                class="inline-block p-0 bg-gray-800 hover:bg-gray-900 border border-gray-800 text-gray-500 hover:text-gray-300 font-light mb-1 px-5 rounded-full hover:scale-105">Git&nbsp;&nbsp;1</span></a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+
+    
+    <div class="aside-section-title">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+        </svg>
+        Arşiv
+    </div>
+    <ul class="leading-10 text-lg font-light">
+        
+        
+        
+        
+        <li class="mb-1 border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/archives">Mar 2025<span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">4</span></a>
+        </li>
+        
+        
+        
+        <li class="mb-1 border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/archives">Şub 2025<span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">11</span></a>
+        </li>
+        
+        
+        
+        <li class="mb-1 border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/archives">Oca 2025<span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        <li class="mb-1 border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/archives">Haz 2024<span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        <li class="mb-1 border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/archives">Mar 2024<span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+        <li class="mb-1 border-b border-b-white/10 border-dashed">
+            <a href="/blog/tr/archives">Kas 2023<span
+                    class="ml-2 px-2 bg-gray-800 rounded-full text-gray-500">1</span></a>
+        </li>
+        
+        
+        
+    </ul>
+
+    
+    <div class="aside-section-title">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+        </svg>
+        İletişim
+    </div>
+    <div class="flex flex-row gap-2">
+        Email：cagatayturkann@gmail.com
+    </div>
+</aside>
+        </div>
+    </div>
+    </script>
+</body>
+
+</html>

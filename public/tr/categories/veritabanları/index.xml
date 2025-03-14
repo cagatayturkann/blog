@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Veritabanları on Çağatay Türkan</title>
+    <link>http://localhost:1313/blog/tr/categories/veritabanlar%C4%B1/</link>
+    <description>Recent content in Veritabanları on Çağatay Türkan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>tr</language>
+    <lastBuildDate>Fri, 14 Mar 2025 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/blog/tr/categories/veritabanlar%C4%B1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vektör Veritabanları ve Weaviate: Anlamsal Arama Uygulamaları Oluşturma</title>
+      <link>http://localhost:1313/blog/tr/vector-databases-weaviate/</link>
+      <pubDate>Fri, 14 Mar 2025 10:00:00 +0300</pubDate>
+      
+      <guid>http://localhost:1313/blog/tr/vector-databases-weaviate/</guid>
+      <description>Bu makale, Weaviate&amp;rsquo;e odaklanarak vektör veritabanlarını inceliyor, temel kavramları, mimarisi ve uygulama stratejilerini kapsıyor. Vektör veritabanlarının anlamsal arama yeteneklerini nasıl sağladığını, geleneksel veritabanlarına göre avantajlarını ve Weaviate ile güçlü arama uygulamaları nasıl oluşturulacağını öğrenin.</description>
+      
+      <cardimage>http://localhost:1313/blog/tr/vector-databases-weaviate/images/cover.svg</cardimage>
+      
+      
+      <featureimage>http://localhost:1313/blog/tr/vector-databases-weaviate/images/cover.svg</featureimage>
+      
+      <content:encoded>&lt;h1 id=&#34;vektör-veritabanları-ve-weaviate-anlamsal-arama-uygulamaları-oluşturma&#34;&gt;Vektör Veritabanları ve Weaviate: Anlamsal Arama Uygulamaları Oluşturma&lt;/h1&gt;
+&lt;h2 id=&#34;giriş&#34;&gt;Giriş&lt;/h2&gt;
+&lt;p&gt;Veri depolama ve erişim sistemlerinin sürekli gelişen dünyasında, vektör veritabanları geleneksel veritabanları ile modern yapay zeka uygulamaları arasındaki boşluğu dolduran devrim niteliğinde bir teknoloji olarak ortaya çıktı. Tam eşleşmelerde ve yapılandırılmış sorgularda mükemmel olan geleneksel veritabanlarının aksine, vektör veritabanları verilerin arkasındaki anlamı ve bağlamı anlamak için tasarlanmıştır, böylece yeni nesil uygulamaları güçlendiren benzerlik tabanlı arama yetenekleri sağlar.&lt;/p&gt;
+&lt;p&gt;Bu makalede şunları inceleyeceğiz:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vektör veritabanlarının arkasındaki temel kavramlar ve geleneksel sistemlerden nasıl farklılaştıkları&lt;/li&gt;
+&lt;li&gt;Vektör veritabanlarının mimarisi ve temel bileşenleri&lt;/li&gt;
+&lt;li&gt;Önde gelen açık kaynaklı vektör veritabanı platformlarından biri olan Weaviate&amp;rsquo;in derinlemesine incelenmesi&lt;/li&gt;
+&lt;li&gt;Weaviate ile güçlü anlamsal arama uygulamalarının nasıl uygulanacağı&lt;/li&gt;
+&lt;li&gt;En iyi uygulamalar, optimizasyon stratejileri ve gerçek dünya kullanım örnekleri&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;İster vektör veritabanlarına yeni başlıyor olun, ister mevcut bilginizi geliştirmek istiyor olun, bu rehber bu güçlü teknolojiyi anlamanız ve kullanmanız için ihtiyacınız olan teorik temeli sağlayacaktır.&lt;/p&gt;
+&lt;h2 id=&#34;1-vektör-veritabanlarını-anlamak-temel-kavramlar&#34;&gt;1. Vektör Veritabanlarını Anlamak: Temel Kavramlar&lt;/h2&gt;
+&lt;h3 id=&#34;vektör-veritabanları-nedir&#34;&gt;Vektör Veritabanları Nedir?&lt;/h3&gt;
+&lt;p&gt;Vektör veritabanı, verilerin yüksek boyutlu vektör temsillerini depolamak, yönetmek ve sorgulamak için tasarlanmış özel bir veritabanı sistemidir. Bu vektörler (gömme olarak da adlandırılır), metin, görüntü, ses veya sayısal formatta temsil edilebilen diğer verilerin anlamsal anlamını yakalar.&lt;/p&gt;
+&lt;p&gt;Vektör veritabanlarının arkasındaki temel fikir basit ama güçlüdür: verileri anlamsal ilişkileri koruyan vektörlere dönüştürerek, tam eşleşmeler yerine anlama dayalı benzerlik aramaları gerçekleştirebiliriz. Bu, geleneksel veritabanı sistemleriyle daha önce zor veya imkansız olan çok çeşitli uygulamaları mümkün kılar.&lt;/p&gt;
+&lt;h3 id=&#34;vektör-gömmeleri-yapı-taşları&#34;&gt;Vektör Gömmeleri: Yapı Taşları&lt;/h3&gt;
+&lt;p&gt;Vektör veritabanlarının kalbinde gömmeler—yüksek boyutlu bir uzayda verilerin sayısal temsilleri—bulunur. İşte nasıl çalıştıkları:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Gömme Oluşturma&lt;/strong&gt;: Veriler (metin, görüntü veya ses gibi) onu kayan noktalı sayılardan oluşan bir vektöre dönüştüren bir gömme modeli aracılığıyla işlenir.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Boyutsal Temsil&lt;/strong&gt;: Bu vektörler genellikle yüzlerce veya binlerce boyuta sahiptir ve her boyut verinin anlamsal özelliklerinin bir yönünü yakalar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anlamsal Yakınlık&lt;/strong&gt;: Benzer anlamlara veya özelliklere sahip öğeler, bu yüksek boyutlu uzayda birbirine yakın konumlandırılır.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Örneğin, bir metin gömme uzayında, &amp;ldquo;mutlu&amp;rdquo; ve &amp;ldquo;neşeli&amp;rdquo; kelimeleri, &amp;ldquo;mutlu&amp;rdquo; ve &amp;ldquo;otomobil&amp;rdquo; kelimelerine göre daha fazla anlamsal benzerlik paylaştıkları için birbirlerine daha yakın konumlandırılır.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/vector-embeddings.svg&#34; alt=&#34;Vektör uzayında metin gömmelerinin gösterimi&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;vektör-veritabanları-ve-geleneksel-veritabanları&#34;&gt;Vektör Veritabanları ve Geleneksel Veritabanları&lt;/h3&gt;
+&lt;p&gt;Vektör veritabanlarının değerini anlamak için, geleneksel veritabanı sistemlerinden nasıl farklılaştıklarını anlamak önemlidir:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Özellik&lt;/th&gt;
+          &lt;th&gt;Geleneksel Veritabanları&lt;/th&gt;
+          &lt;th&gt;Vektör Veritabanları&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Veri Depolama&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Yapılandırılmış kayıtlar, tablolar, belgeler&lt;/td&gt;
+          &lt;td&gt;Vektör gömmeleri + meta veriler&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Sorgu Tipi&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Tam eşleşmeler, aralık sorguları, birleştirmeler&lt;/td&gt;
+          &lt;td&gt;Benzerlik araması, en yakın komşular&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Arama Paradigması&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&amp;ldquo;Kriterlere tam uyan kayıtları bul&amp;rdquo;&lt;/td&gt;
+          &lt;td&gt;&amp;ldquo;Bu referansa benzer öğeleri bul&amp;rdquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;İndeksleme&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;B-ağaçları, hash indeksleri, ters indeksler&lt;/td&gt;
+          &lt;td&gt;Yaklaşık En Yakın Komşu (ANN) indeksleri&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Kullanım Durumları&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;İşlemsel veriler, yapılandırılmış raporlama&lt;/td&gt;
+          &lt;td&gt;Anlamsal arama, öneriler, sınıflandırma&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Sorgu Karmaşıklığı&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;SQL, karmaşık sorgu dilleri&lt;/td&gt;
+          &lt;td&gt;Vektör benzerliği + isteğe bağlı filtreleme&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Temel fark, verileri anlama yaklaşımında yatar: geleneksel veritabanları verileri literal değerler olarak ele alırken, vektör veritabanları veri noktaları arasındaki anlamsal ilişkileri anlar.&lt;/p&gt;
+&lt;h2 id=&#34;2-vektör-veritabanlarının-mimarisi&#34;&gt;2. Vektör Veritabanlarının Mimarisi&lt;/h2&gt;
+&lt;h3 id=&#34;vektör-veritabanının-temel-bileşenleri&#34;&gt;Vektör Veritabanının Temel Bileşenleri&lt;/h3&gt;
+&lt;p&gt;Modern vektör veritabanları, birlikte çalışan birkaç temel bileşenden oluşur:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Vektör Depolama Katmanı&lt;/strong&gt;: Yüksek boyutlu vektör verilerini verimli bir şekilde depolamaktan sorumludur&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;İndeksleme Mekanizması&lt;/strong&gt;: Benzer vektörlerin hızlı bir şekilde alınmasını sağlar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Meta Veri Depolama&lt;/strong&gt;: Her vektör hakkında ek bilgileri (orijinal metin, kategoriler, zaman damgaları vb.) depolar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sorgu İşleme Motoru&lt;/strong&gt;: Vektör benzerlik aramalarını ve isteğe bağlı filtrelemeyi yönetir&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API Katmanı&lt;/strong&gt;: Veri ekleme ve sorgulama için arayüzler sağlar&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Bu bileşenler, vektörleri benzerliğe dayalı olarak depolama ve alma temel işlevini sunmak için birlikte çalışır.&lt;/p&gt;
+&lt;h3 id=&#34;yaklaşık-en-yakın-komşu-ann-algoritmaları&#34;&gt;Yaklaşık En Yakın Komşu (ANN) Algoritmaları&lt;/h3&gt;
+&lt;p&gt;Vektör veritabanlarındaki en büyük zorluklardan biri, yüksek boyutlu uzaylarda benzer vektörleri verimli bir şekilde bulmaktır. Veri kümesi büyüdükçe tam en yakın komşu aramaları hesaplama açısından yasaklayıcı hale gelir. İşte burada Yaklaşık En Yakın Komşu (ANN) algoritmaları devreye girer.&lt;/p&gt;
+&lt;p&gt;Vektör veritabanlarında kullanılan popüler ANN algoritmaları şunları içerir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HNSW (Hiyerarşik Gezinilebilir Küçük Dünya)&lt;/strong&gt;: Verimli gezinme için çok katmanlı bir grafik yapısı oluşturur&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IVF (Ters Dosya İndeksi)&lt;/strong&gt;: Daha hızlı arama için vektör uzayını kümelere böler&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PQ (Ürün Nicemleme)&lt;/strong&gt;: Benzerlik ilişkilerini korurken vektörleri sıkıştırır&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FAISS (Facebook AI Benzerlik Araması)&lt;/strong&gt;: Ölçeklenebilir benzerlik araması için birden çok tekniği birleştirir&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu algoritmalar, arama doğruluğu ve performans arasında ödünleşimler yapar ve genellikle milyonlarca vektörle bile milisaniyenin altında sorgu süreleri sağlar.&lt;/p&gt;
+&lt;h3 id=&#34;vektör-veritabanı-mimari-modelleri&#34;&gt;Vektör Veritabanı Mimari Modelleri&lt;/h3&gt;
+&lt;p&gt;Vektör veritabanları farklı mimari yaklaşımlarla uygulanabilir:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Bağımsız Vektör Veritabanları&lt;/strong&gt;: Özellikle vektör depolama ve erişimi için tasarlanmış amaca özel sistemler (örn. Weaviate, Pinecone)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Geleneksel Veritabanlarına Vektör Uzantıları&lt;/strong&gt;: Mevcut veritabanı sistemlerine vektör yetenekleri ekleme (örn. pgvector ile PostgreSQL)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hibrit Mimariler&lt;/strong&gt;: Vektör aramasını geleneksel arama yetenekleriyle birleştirme&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Her yaklaşımın kendi avantajları vardır, bağımsız vektör veritabanları genellikle saf vektör tabanlı iş yükleri için en iyi performansı sunar.&lt;/p&gt;
+&lt;h2 id=&#34;3-weaviate-açık-kaynaklı-bir-vektör-veritabanı&#34;&gt;3. Weaviate: Açık Kaynaklı Bir Vektör Veritabanı&lt;/h2&gt;
+&lt;h3 id=&#34;weaviate-nedir&#34;&gt;Weaviate Nedir?&lt;/h3&gt;
+&lt;p&gt;Weaviate, bir vektör arama motorunun yeteneklerini geleneksel bir veritabanı sisteminin özellikleriyle birleştiren güçlü bir açık kaynaklı vektör veritabanıdır. Üretim ortamlarında beklenen güvenilirlik ve ölçeklenebilirlikle anlamsal arama yetenekleri sağlamak için tasarlanmıştır.&lt;/p&gt;
+&lt;p&gt;Weaviate&amp;rsquo;in temel özellikleri şunları içerir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GraphQL API&lt;/strong&gt;: Sorgular ve mutasyonlar için sezgisel arayüz&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RESTful API&lt;/strong&gt;: Standart HTTP işlemleri için alternatif arayüz&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hibrit Arama&lt;/strong&gt;: Vektör aramasını anahtar kelime tabanlı erişimle birleştirme&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modüler Mimari&lt;/strong&gt;: Farklı gömme modelleri için takılabilir vektörleştirici modülleri&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Şema Tanımı&lt;/strong&gt;: Esnek veri modelleme yetenekleri&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Çapraz Referanslar&lt;/strong&gt;: Veritabanı içindeki nesneleri bağlama yeteneği&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sınıflandırma Yetenekleri&lt;/strong&gt;: Veri sınıflandırması için yerleşik makine öğrenimi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;weaviate-mimarisi&#34;&gt;Weaviate Mimarisi&lt;/h3&gt;
+&lt;p&gt;Weaviate&amp;rsquo;in mimarisi birkaç temel bileşenden oluşur:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Vektör İndeksi&lt;/strong&gt;: Benzerlik araması için HNSW tabanlı vektör indeksi&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nesne Deposu&lt;/strong&gt;: Hem vektör verileri hem de ilişkili meta veriler için depolama&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GraphQL Arayüzü&lt;/strong&gt;: Weaviate ile etkileşim için birincil API&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vektörleştirme Modülleri&lt;/strong&gt;: Gömmeler oluşturmak için takılabilir bileşenler&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sorgu Planlayıcısı&lt;/strong&gt;: Arama sorgularını optimize eder ve yürütür&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Bu mimari, Weaviate&amp;rsquo;in kullanıcı dostu bir arayüzü korurken yüksek performanslı vektör araması sunmasını sağlar.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./images/weaviate-architecture.svg&#34; alt=&#34;Weaviate’in mimari bileşenleri&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;weaviatede-veri-modelleme&#34;&gt;Weaviate&amp;rsquo;de Veri Modelleme&lt;/h3&gt;
+&lt;p&gt;Weaviate, veri modellemede esnek bir şema tabanlı yaklaşım kullanır. Weaviate&amp;rsquo;deki her veri nesnesi:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Bir sınıfa aittir (ilişkisel veritabanlarındaki tablolara benzer)&lt;/li&gt;
+&lt;li&gt;Özelliklere sahiptir (nesneyi tanımlayan nitelikler)&lt;/li&gt;
+&lt;li&gt;İlişkili bir vektör gömmesine sahiptir (otomatik olarak oluşturulur veya içe aktarılır)&lt;/li&gt;
+&lt;li&gt;Diğer nesnelere çapraz referanslara sahip olabilir&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Makaleler koleksiyonu için basit bir Weaviate şeması şöyle görünebilir:&lt;/p&gt;
+</content:encoded>
+    </item>
+    
+  </channel>
+</rss> 

@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    
+    <!-- Network pattern for knowledge representation -->
+    <pattern id="network-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="50" cy="10" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="90" cy="10" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="30" cy="30" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="70" cy="30" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="10" cy="50" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="50" cy="50" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="90" cy="50" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="30" cy="70" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="70" cy="70" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="10" cy="90" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="50" cy="90" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      <circle cx="90" cy="90" r="1.5" fill="#60a5fa" opacity="0.3"/>
+      
+      <!-- Connect some dots with lines -->
+      <line x1="10" y1="10" x2="50" y2="10" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="50" y1="10" x2="90" y2="10" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="10" y1="10" x2="30" y2="30" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="50" y1="10" x2="30" y2="30" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="50" y1="10" x2="70" y2="30" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="90" y1="10" x2="70" y2="30" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="30" y1="30" x2="10" y2="50" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="30" y1="30" x2="50" y2="50" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="70" y1="30" x2="50" y2="50" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="70" y1="30" x2="90" y2="50" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="10" y1="50" x2="10" y2="90" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+      <line x1="90" y1="50" x2="90" y2="90" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  
+  <!-- Network pattern overlay -->
+  <rect width="1200" height="630" fill="url(#network-pattern)" opacity="0.7"/>
+  
+  <!-- Main content container -->
+  <rect x="100" y="80" width="1000" height="470" rx="15" ry="15" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  
+  <!-- Title and Subtitle -->
+  <text x="600" y="160" font-family="Arial" font-size="48" font-weight="bold" text-anchor="middle" fill="white">RAG ile Akıllı</text>
+  <text x="600" y="220" font-family="Arial" font-size="48" font-weight="bold" text-anchor="middle" fill="white">E-ticaret Deneyimleri</text>
+  <text x="600" y="280" font-family="Arial" font-size="48" font-weight="bold" text-anchor="middle" fill="#3b82f6">Oluşturma</text>
+
+  <!-- Illustration Elements -->
+  <!-- RAG Architecture Simplified -->
+  <g transform="translate(600, 400)">
+    <!-- Central AI/LLM Node -->
+    <circle cx="0" cy="0" r="70" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
+    <text x="0" y="8" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="white">LLM</text>
+    
+    <!-- Product Database Node -->
+    <g transform="translate(-200, -80)">
+      <rect x="-60" y="-30" width="120" height="60" rx="8" ry="8" fill="#0f766e" stroke="#2dd4bf" stroke-width="2"/>
+      <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Ürün</text>
+      <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Veritabanı</text>
+    </g>
+    
+    <!-- User Behavior Node -->
+    <g transform="translate(200, -80)">
+      <rect x="-60" y="-30" width="120" height="60" rx="8" ry="8" fill="#0369a1" stroke="#38bdf8" stroke-width="2"/>
+      <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Kullanıcı</text>
+      <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Davranışı</text>
+    </g>
+    
+    <!-- Reviews & Ratings Node -->
+    <g transform="translate(-200, 80)">
+      <rect x="-60" y="-30" width="120" height="60" rx="8" ry="8" fill="#9333ea" stroke="#c084fc" stroke-width="2"/>
+      <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Değerlendirmeler &</text>
+      <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Puanlar</text>
+    </g>
+    
+    <!-- Market Trends Node -->
+    <g transform="translate(200, 80)">
+      <rect x="-60" y="-30" width="120" height="60" rx="8" ry="8" fill="#be123c" stroke="#fb7185" stroke-width="2"/>
+      <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Piyasalar</text>
+      <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Trendler</text>
+    </g>
+    
+    <!-- Connection lines with animation -->
+    <line x1="0" y1="0" x2="-170" y2="-80" stroke="#60a5fa" stroke-width="2" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" from="8" to="0" dur="3s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="0" y1="0" x2="170" y2="-80" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" from="8" to="0" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="0" y1="0" x2="-170" y2="80" stroke="#c084fc" stroke-width="2" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" from="8" to="0" dur="3.2s" repeatCount="indefinite"/>
+    </line>
+    
+    <line x1="0" y1="0" x2="170" y2="80" stroke="#fb7185" stroke-width="2" stroke-dasharray="4,4">
+      <animate attributeName="stroke-dashoffset" from="8" to="0" dur="2.8s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- E-commerce elements -->
+  <!-- Shopping Cart -->
+  <g transform="translate(150, 150)">
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+    <path d="M-12,-5 L5,-5 L10,10 L-7,10 Z" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+    <line x1="-5" y1="15" x2="-5" y2="5" stroke="#60a5fa" stroke-width="1.5"/>
+    <line x1="8" y1="15" x2="8" y2="5" stroke="#60a5fa" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Product Tag -->
+  <g transform="translate(1050, 150)">
+    <path d="M0,-15 L15,0 L0,15 L-15,0 Z" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="5" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Mobile device outline -->
+  <g transform="translate(150, 480)">
+    <rect x="-20" y="-35" width="40" height="70" rx="5" ry="5" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+    <line x1="-10" y1="-25" x2="10" y2="-25" stroke="#60a5fa" stroke-width="1"/>
+    <line x1="-10" y1="-15" x2="10" y2="-15" stroke="#60a5fa" stroke-width="1"/>
+    <line x1="-10" y1="-5" x2="10" y2="-5" stroke="#60a5fa" stroke-width="1"/>
+    <circle cx="0" cy="20" r="8" fill="none" stroke="#60a5fa" stroke-width="1"/>
+  </g>
+  
+  <!-- Computer/laptop outline -->
+  <g transform="translate(1050, 480)">
+    <path d="M-25,-20 L25,-20 L25,15 L-25,15 Z" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+    <path d="M-30,15 L30,15 L25,25 L-25,25 Z" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+  </g>
+  
+  <!-- "RAG" text with glow effect -->
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Subtle Accent Elements -->
+  <circle cx="200" cy="340" r="5" fill="#3b82f6" opacity="0.7">
+    <animate attributeName="r" values="5;7;5" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="1000" cy="340" r="5" fill="#3b82f6" opacity="0.7">
+    <animate attributeName="r" values="5;7;5" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Footer line -->
+  <rect x="350" y="570" width="500" height="2" fill="rgba(255,255,255,0.3)"/>
+</svg>

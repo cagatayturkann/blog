@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2980" />
+      <stop offset="100%" stop-color="#26d0ce" />
+    </linearGradient>
+    
+    <!-- Glow filter for nodes -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient)" />
+  
+  <!-- Vector space grid -->
+  <g stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.2">
+    <!-- Horizontal lines -->
+    <line x1="100" y1="100" x2="700" y2="100" />
+    <line x1="100" y1="150" x2="700" y2="150" />
+    <line x1="100" y1="200" x2="700" y2="200" />
+    <line x1="100" y1="250" x2="700" y2="250" />
+    <line x1="100" y1="300" x2="700" y2="300" />
+    
+    <!-- Vertical lines -->
+    <line x1="200" y1="50" x2="200" y2="350" />
+    <line x1="300" y1="50" x2="300" y2="350" />
+    <line x1="400" y1="50" x2="400" y2="350" />
+    <line x1="500" y1="50" x2="500" y2="350" />
+    <line x1="600" y1="50" x2="600" y2="350" />
+  </g>
+  
+  <!-- Vector nodes with connections -->
+  <!-- Node 1 (central query node) -->
+  <circle cx="400" cy="200" r="15" fill="#ffcc00" filter="url(#glow)" />
+  
+  <!-- Similar/relevant nodes -->
+  <circle cx="320" cy="150" r="10" fill="#00ffcc" filter="url(#glow)" />
+  <circle cx="480" cy="130" r="8" fill="#00ffcc" filter="url(#glow)" />
+  <circle cx="360" cy="260" r="12" fill="#00ffcc" filter="url(#glow)" />
+  <circle cx="520" cy="220" r="9" fill="#00ffcc" filter="url(#glow)" />
+  <circle cx="450" cy="290" r="11" fill="#00ffcc" filter="url(#glow)" />
+  
+  <!-- Less relevant nodes -->
+  <circle cx="180" cy="120" r="6" fill="#cccccc" filter="url(#glow)" />
+  <circle cx="220" cy="280" r="5" fill="#cccccc" filter="url(#glow)" />
+  <circle cx="600" cy="160" r="7" fill="#cccccc" filter="url(#glow)" />
+  <circle cx="650" cy="270" r="5" fill="#cccccc" filter="url(#glow)" />
+  <circle cx="540" cy="90" r="6" fill="#cccccc" filter="url(#glow)" />
+  
+  <!-- Connection lines (semantic relationships) -->
+  <!-- Strong connections (to similar nodes) -->
+  <line x1="400" y1="200" x2="320" y2="150" stroke="#00ffcc" stroke-width="2" stroke-opacity="0.7" />
+  <line x1="400" y1="200" x2="480" y2="130" stroke="#00ffcc" stroke-width="2" stroke-opacity="0.7" />
+  <line x1="400" y1="200" x2="360" y2="260" stroke="#00ffcc" stroke-width="2" stroke-opacity="0.7" />
+  <line x1="400" y1="200" x2="520" y2="220" stroke="#00ffcc" stroke-width="2" stroke-opacity="0.7" />
+  <line x1="400" y1="200" x2="450" y2="290" stroke="#00ffcc" stroke-width="2" stroke-opacity="0.7" />
+  
+  <!-- Weak connections (to less relevant nodes) -->
+  <line x1="400" y1="200" x2="180" y2="120" stroke="#cccccc" stroke-width="1" stroke-opacity="0.3" />
+  <line x1="400" y1="200" x2="220" y2="280" stroke="#cccccc" stroke-width="1" stroke-opacity="0.3" />
+  <line x1="400" y1="200" x2="600" y2="160" stroke="#cccccc" stroke-width="1" stroke-opacity="0.3" />
+  <line x1="400" y1="200" x2="650" y2="270" stroke="#cccccc" stroke-width="1" stroke-opacity="0.3" />
+  <line x1="400" y1="200" x2="540" y2="90" stroke="#cccccc" stroke-width="1" stroke-opacity="0.3" />
+  
+  <!-- Secondary connections between similar nodes -->
+  <line x1="320" y1="150" x2="360" y2="260" stroke="#00ffcc" stroke-width="1.5" stroke-opacity="0.5" />
+  <line x1="480" y1="130" x2="520" y2="220" stroke="#00ffcc" stroke-width="1.5" stroke-opacity="0.5" />
+  <line x1="360" y1="260" x2="450" y2="290" stroke="#00ffcc" stroke-width="1.5" stroke-opacity="0.5" />
+  
+  <!-- Abstract database symbol -->
+  <g transform="translate(680, 350) scale(0.8)">
+    <rect x="-30" y="-30" width="60" height="40" rx="5" ry="5" fill="#ffffff" fill-opacity="0.9" />
+    <line x1="-20" y1="-20" x2="20" y2="-20" stroke="#1a2980" stroke-width="3" />
+    <line x1="-20" y1="-10" x2="20" y2="-10" stroke="#1a2980" stroke-width="3" />
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#1a2980" stroke-width="3" />
+    <line x1="-20" y1="10" x2="20" y2="10" stroke="#1a2980" stroke-width="3" />
+  </g>
+  
+  <!-- Abstract search symbol -->
+  <g transform="translate(120, 60) scale(0.7)">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#ffffff" stroke-width="5" />
+    <line x1="15" y1="15" x2="30" y2="30" stroke="#ffffff" stroke-width="5" stroke-linecap="round" />
+  </g>
+  
+  <!-- Weaviate-inspired geometric icon -->
+  <g transform="translate(700, 80) scale(0.7)">
+    <polygon points="0,0 30,15 0,30 -30,15" fill="none" stroke="#ffffff" stroke-width="2" />
+    <polygon points="0,-15 30,0 0,15 -30,0" fill="none" stroke="#ffffff" stroke-width="2" />
+    <polygon points="0,15 30,30 0,45 -30,30" fill="none" stroke="#ffffff" stroke-width="2" />
+  </g>
+  
+  <!-- Vector representation elements -->
+  <g transform="translate(100, 320)">
+    <text x="0" y="0" font-family="monospace" font-size="12" fill="#ffffff">[0.2, 0.5, 0.1, ...]</text>
+  </g>
+  <g transform="translate(600, 60)">
+    <text x="0" y="0" font-family="monospace" font-size="12" fill="#ffffff">[0.8, 0.3, 0.7, ...]</text>
+  </g>
+</svg>
