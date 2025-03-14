@@ -76,7 +76,7 @@
     <!-- Reviews & Ratings Node -->
     <g transform="translate(-200, 80)">
       <rect x="-60" y="-30" width="120" height="60" rx="8" ry="8" fill="#9333ea" stroke="#c084fc" stroke-width="2"/>
-      <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Değerlendirmeler &</text>
+      <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Değerlendirmeler </text>
       <text x="0" y="20" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Puanlar</text>
     </g>
     
