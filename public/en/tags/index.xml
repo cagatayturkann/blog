@@ -8,13 +8,13 @@
     <description>Recent content in Tags on Çağatay Türkan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Mar 2025 10:00:00 +0300</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Mar 2025 12:00:00 +0300</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ai</title>
-      <link>https://cagatayturkan.com/blog/en/tags/ai/</link>
-      <pubDate>Fri, 14 Mar 2025 10:00:00 +0300</pubDate>
+      <title>Embeddings</title>
+      <link>https://cagatayturkan.com/blog/en/tags/embeddings/</link>
+      <pubDate>Fri, 14 Mar 2025 12:00:00 +0300</pubDate>
       
-      <guid>https://cagatayturkan.com/blog/en/tags/ai/</guid>
+      <guid>https://cagatayturkan.com/blog/en/tags/embeddings/</guid>
       <description></description>
       
       
@@ -22,11 +22,47 @@
     </item>
     
     <item>
-      <title>Embeddings</title>
-      <link>https://cagatayturkan.com/blog/en/tags/embeddings/</link>
+      <title>Semantic-Search</title>
+      <link>https://cagatayturkan.com/blog/en/tags/semantic-search/</link>
+      <pubDate>Fri, 14 Mar 2025 12:00:00 +0300</pubDate>
+      
+      <guid>https://cagatayturkan.com/blog/en/tags/semantic-search/</guid>
+      <description></description>
+      
+      
+      <content:encoded></content:encoded>
+    </item>
+    
+    <item>
+      <title>Vectordb</title>
+      <link>https://cagatayturkan.com/blog/en/tags/vectordb/</link>
+      <pubDate>Fri, 14 Mar 2025 12:00:00 +0300</pubDate>
+      
+      <guid>https://cagatayturkan.com/blog/en/tags/vectordb/</guid>
+      <description></description>
+      
+      
+      <content:encoded></content:encoded>
+    </item>
+    
+    <item>
+      <title>Weaviate</title>
+      <link>https://cagatayturkan.com/blog/en/tags/weaviate/</link>
+      <pubDate>Fri, 14 Mar 2025 12:00:00 +0300</pubDate>
+      
+      <guid>https://cagatayturkan.com/blog/en/tags/weaviate/</guid>
+      <description></description>
+      
+      
+      <content:encoded></content:encoded>
+    </item>
+    
+    <item>
+      <title>Ai</title>
+      <link>https://cagatayturkan.com/blog/en/tags/ai/</link>
       <pubDate>Fri, 14 Mar 2025 10:00:00 +0300</pubDate>
       
-      <guid>https://cagatayturkan.com/blog/en/tags/embeddings/</guid>
+      <guid>https://cagatayturkan.com/blog/en/tags/ai/</guid>
       <description></description>
       
       
@@ -51,42 +87,6 @@
       <pubDate>Fri, 14 Mar 2025 10:00:00 +0300</pubDate>
       
       <guid>https://cagatayturkan.com/blog/en/tags/rag/</guid>
-      <description></description>
-      
-      
-      <content:encoded></content:encoded>
-    </item>
-    
-    <item>
-      <title>Semantic-Search</title>
-      <link>https://cagatayturkan.com/blog/en/tags/semantic-search/</link>
-      <pubDate>Fri, 14 Mar 2025 10:00:00 +0300</pubDate>
-      
-      <guid>https://cagatayturkan.com/blog/en/tags/semantic-search/</guid>
-      <description></description>
-      
-      
-      <content:encoded></content:encoded>
-    </item>
-    
-    <item>
-      <title>Vectordb</title>
-      <link>https://cagatayturkan.com/blog/en/tags/vectordb/</link>
-      <pubDate>Fri, 14 Mar 2025 10:00:00 +0300</pubDate>
-      
-      <guid>https://cagatayturkan.com/blog/en/tags/vectordb/</guid>
-      <description></description>
-      
-      
-      <content:encoded></content:encoded>
-    </item>
-    
-    <item>
-      <title>Weaviate</title>
-      <link>https://cagatayturkan.com/blog/en/tags/weaviate/</link>
-      <pubDate>Fri, 14 Mar 2025 10:00:00 +0300</pubDate>
-      
-      <guid>https://cagatayturkan.com/blog/en/tags/weaviate/</guid>
       <description></description>
       
       

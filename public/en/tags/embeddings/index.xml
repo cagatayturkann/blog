@@ -8,11 +8,11 @@
     <description>Recent content in Embeddings on Çağatay Türkan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Mar 2025 10:00:00 +0300</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/en/tags/embeddings/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Mar 2025 12:00:00 +0300</lastBuildDate><atom:link href="https://cagatayturkan.com/blog/en/tags/embeddings/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vector Databases and Weaviate: Building Semantic Search Applications</title>
       <link>https://cagatayturkan.com/blog/en/vector-databases-weaviate/</link>
-      <pubDate>Fri, 14 Mar 2025 10:00:00 +0300</pubDate>
+      <pubDate>Fri, 14 Mar 2025 12:00:00 +0300</pubDate>
       
       <guid>https://cagatayturkan.com/blog/en/vector-databases-weaviate/</guid>
       <description>This article explores vector databases with a focus on Weaviate, covering fundamental concepts, architecture, and implementation strategies. Learn how vector databases enable semantic search capabilities, their advantages over traditional databases, and how to build powerful search applications with Weaviate.</description>

@@ -1,7 +1,7 @@
 ---
 title: 'Vector Databases and Weaviate: Building Semantic Search Applications'
 summary: This article explores vector databases with a focus on Weaviate, covering fundamental concepts, architecture, and implementation strategies. Learn how vector databases enable semantic search capabilities, their advantages over traditional databases, and how to build powerful search applications with Weaviate.
-date: 2025-03-14T10:00:00+03:00
+date: 2025-03-14T12:00:00+03:00
 cardimage: '/blog/en/vector-databases-weaviate/images/cover.svg'
 featureimage: '/blog/en/vector-databases-weaviate/images/cover.svg'
 featured: true
